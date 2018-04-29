@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">文章</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/PaperReading/">PaperReading</a></li><li><a class="category-link" href="/categories/Training/">Training</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/experiment/" title="实验室">
+		                实验室
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/CAN/CAN_2.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ICCC2017 CAN创意对抗网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1706.07068" target="_blank" rel="noopener"><strong>CAN: Creative Adversarial Networks Generating “Art” by Learning About Styles and Deviating from Style Norms</strong></a></p>
+<h2 id="1-研究亮点"><a href="#1-研究亮点" class="headerlink" title="1 研究亮点"></a>1 研究亮点</h2><ul>
+<li>看绘画，学风格</li>
+<li>确保生成的结果可被称为绘画(经典GAN可以实现)</li>
+<li><strong>生成难以进行风格归类的绘画——即新风格，体现创意</strong></li>
+</ul>
+<h2 id="2-从模仿到创意"><a href="#2-从模仿到创意" class="headerlink" title="2 从模仿到创意"></a>2 从模仿到创意</h2><blockquote>
+<p>GAN的缺点：只能生成和已有图像相似的结果，缺乏创新性</p>
+</blockquote>
+<p><img src="/img/CAN/CAN_1.png" alt="CAN模型"></p>
+<h3 id="2-1-先看损失函数"><a href="#2-1-先看损失函数" class="headerlink" title="2.1 先看损失函数"></a>2.1 先看损失函数</h3><p>$$<br>\begin{equation}\begin{split}<br>\min_G \max_D V(D,G) =&amp; \mathbb{E}_{x,\hat{c}\sim p_{data}} [\log D_r(x) + \log D_c(c=\hat{c}|x)] + \\<br>&amp; \mathbb{E}_{z\sim p_z} [\log(1-D_r(G(z))) - \\<br>&amp; \sum_{k=1}^K \frac {1}{K} \log(D_c(c_k|G(z))+ (1-\frac {1}{K}) \log(1-D_c(c_k|G(z))) ]<br>\end{split}\end{equation}<br>$$</p>
+<h3 id="2-2-判别器"><a href="#2-2-判别器" class="headerlink" title="2.2 判别器"></a>2.2 判别器</h3><blockquote>
+<p>一个中心，两个基本点</p>
+</blockquote>
+<ul>
+<li>一个中心<ul>
+<li>通过带风格标签（如巴洛克、印象派等）的绘画数据库，学习区分风格</li>
+</ul>
+</li>
+<li>两个基本点：<ul>
+<li>真品鉴定： $D_r(x)$</li>
+<li>风格分类： $D_c(c=\hat{c}|x)$</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-生成器"><a href="#2-3-生成器" class="headerlink" title="2.3 生成器"></a>2.3 生成器</h3><blockquote>
+<p>很惭愧，做了三件小事</p>
+</blockquote>
+<ul>
+<li>从随机输入生成图像</li>
+<li>伪造：$D_r(G(z))$（以上都同GAN）</li>
+<li>风格模糊化（即新风格）：$-\sum_{k=1}^K \frac {1}{K} \log(D_c(c_k|G(z))+  (1-\frac {1}{K}) \log(1-D_c(c_k|G(z)))$<blockquote>
+<p>风格模糊化中，使用了$D_c$和均匀分布的交叉熵，因为交叉熵在分类越确定时惩罚力度越大</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="3-架构"><a href="#3-架构" class="headerlink" title="3 架构"></a>3 架构</h2><p>采用DCGAN的结构，在生成器中，随机噪声z经过多层反卷积转化为256*256的RGB图像（第一个应该是$4 × 4 × 2048$吧，不知是不是论文里写错了，公式和文本描述不一样）；</p>
+<p>$$<br>\begin{equation}\begin{split}<br>z \in \mathbb R^{100} &amp; → 4 × 4 × 1024 → 8 × 8 × 1024 → 16 × 16 × 512 → 32×32×256 \\<br>&amp; →64×64×128→128×128×64→256×256×3<br>\end{split}\end{equation}<br>$$</p>
+<p>在判别器中，两个分类器共用6个卷积层，这些以LeakyReLU为激活函数的公共卷积层将输入图片转化为4*4*512的feature map。真假分类器使用一层fc将feature map转化为真品的概率$D_r(c|x)$，风格分类器使用3层fc（$1024→512→K$）将feature map转化为多分类的概率$D_c(c=\hat{c}|x)$</p>
+<h2 id="4-算法"><a href="#4-算法" class="headerlink" title="4 算法"></a>4 算法</h2><ul>
+<li>参数初始化为正态分布$N(0,0.02)$</li>
+<li>mini-batch大小128</li>
+<li>学习率0.0001</li>
+<li>LeakyReLU负数端斜率0.2</li>
+<li>Batch-Nomalization</li>
+<li>Adam优化器迭代100次</li>
+<li>使用crop数据增强，上下左右中5处90%裁剪</li>
+<li>数据集：<a href="https://www.wikiart.org/" target="_blank" rel="noopener">WikiArt</a></li>
+</ul>
+<hr>
+<p>Input: mini-batch图像x，相应的风格标签c， #迭代步 S<br>for n=1 to S do<br>$z\sim \mathcal N(0,1)^Z$ //绘制随机噪声<br>$\hat{x} ← G(z)$ //生成图像<br>$s^r_D ← D_r(x)$ //真画，真/假损失<br>$s^c_D ← D_r(\hat{c}|x)$ //真画，风格损失<br>$s^f_G ← D_r(\hat{x})$ //假画，真/假损失<br>$s^c_G ← \sum_{k=1}^K \frac {1}{K} \log(D_c(c_k|G(z))+  (1-\frac {1}{K}) \log(1-D_c(c_k|G(z)))$ //假画，风格损失<br>$\mathcal L_D ← \log (s^r_D)+ log(s^c_D)+\log (1-s^f_G)$ //判别器损失函数<br>$D ← D-\alpha \partial \mathcal L_D/\partial D$ //更新判别器<br>$\mathcal L_D ← \log (s^f_D)-s^c_G$ //生成器损失函数<br>$G ← G-\alpha \partial \mathcal L_G/\partial G$ //更新生成器<br>end for</p>
+<hr>
+<h2 id="5-结果"><a href="#5-结果" class="headerlink" title="5 结果"></a>5 结果</h2><p><img src="/img/CAN/CAN_2.png" alt="CAN生成的结果"></p>
+<p>人工打分表示一些生成的画作甚至超过了艺术家的作品</p>
+<h2 id="6-总结"><a href="#6-总结" class="headerlink" title="6 总结"></a>6 总结</h2><p>本文的网络结构其实并不复杂，亮点就在损失函数上</p>
+<p>风格损失的定义很有启发意义，更多的需求就可以在这类损失函数上入手</p>
+<p>引入多模态输入的话，或许可以实现情感化生成</p>
+<p>本文生成的图片其实语义性很弱，更偏向于抽象画，应用领域偏向于艺术绘画。如果能够在产品领域得到应用，会更好</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
