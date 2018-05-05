@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/CGAN/CGAN_image_labeling.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >CGAN条件生成对抗网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1411.1784" target="_blank" rel="noopener">Conditional Generative Adversarial Nets</a></p>
+<p>生成对抗网络GAN属于无监督学习，靠博弈逼近概率分布，不需要马尔科夫链，不需要推断，不需要对概率分布进行预先建模。虽然方法简单、粗暴、有效，但这种机制缺乏对生成数据的控制。</p>
+<p>条件生成对抗网络CGAN为其加上条件约束后，转化为监督学习，可以有效改善这一问题。将条件变量$y$引入生成器和判别器，使用条件变量指导结果生成。</p>
+<h2 id="1-损失函数"><a href="#1-损失函数" class="headerlink" title="1 损失函数"></a>1 损失函数</h2><p>$$<br>\min_G \max_D V(D,G) = \mathbb E_{x \sim p_{data}(x)} [\log D(x|y)] + \mathbb E_{z \sim p_z(z)} [\log (1-D(G(z|y)))]<br>$$</p>
+<p>和GAN相比，D和G的输入加了条件变量$y$。$y$可以是类别标签、其他模态的数据等，非常灵活。</p>
+<p>生成器输入是随机噪声$p_z(z)$和条件信息$y$组成的联合隐含表征。</p>
+<h2 id="2-网络架构"><a href="#2-网络架构" class="headerlink" title="2 网络架构"></a>2 网络架构</h2><p><img src="/img/CGAN/CGAN_architecture.png" alt="CGAN网络架构"></p>
+<h2 id="3-实验"><a href="#3-实验" class="headerlink" title="3 实验"></a>3 实验</h2><h3 id="3-1-单模态学习"><a href="#3-1-单模态学习" class="headerlink" title="3.1 单模态学习"></a>3.1 单模态学习</h3><p>使用0~9数字标签生成MNIST手写图像</p>
+<p><img src="/img/CGAN/CGAN_MNIST.png" alt="单模态学习"></p>
+<h3 id="3-2-多模态学习"><a href="#3-2-多模态学习" class="headerlink" title="3.2 多模态学习"></a>3.2 多模态学习</h3><p>研究图像自动标注问题。</p>
+<h4 id="G结构"><a href="#G结构" class="headerlink" title="G结构"></a>G结构</h4><p>输入噪声$z$的维度：100 → 500 ReLU</p>
+<p>输入图像$y$的维度：使用ImageNet数据集、21000个标签预训练的CNN分类器，将最后一层4096维FC的输出作为图像特征，维度：4096 → 2000 ReLU</p>
+<p>输出标签的维度：从YFCC100M数据集训练了200维词向量的skip-gram模型作为输出。</p>
+<blockquote>
+<p>可见$z$和$y$不是一开始就联合了，而是变换了一次维度之后才联合进入200维。</p>
+</blockquote>
+<blockquote>
+<p>一般来说，多模态联合的方法是直接拼接concat。只要二者都已经被转化成了序列，直接把y拼接在x或z序列后边即可。</p>
+</blockquote>
+<h4 id="D结构"><a href="#D结构" class="headerlink" title="D结构"></a>D结构</h4><p>输入词向量$x$的维度：200 → 500 ReLU</p>
+<p>输入图像$y$的维度：4096 → 1200 ReLU</p>
+<p>然后是1000维最大化输出层联合3个pieces（这部分隐层没看懂，应该也是和G类似，先变换一次维度再联合），最后全部喂给一个sigmoid输出真假。</p>
+<blockquote>
+<p><a href="https://blog.csdn.net/solomon1558/article/details/52555083" target="_blank" rel="noopener">有的博文</a>中对G的输出和D输入维度产生了疑问，认为不匹配。实际上并没有问题，博文作者搞错了D的输入。我的分析见下：</p>
+</blockquote>
+<p>此处是图像自动标注，因此图像是条件变量$y$。</p>
+<p>生成器$G(z|y)$，输入100维噪声 | 4096维图像特征，输出200维词向量；</p>
+<p>使用图像$y$及人工标注的标签$x$（即ground truth）训练D，为$D(x|y)$，输入200维人工标注标签的词向量 | 4096维图像特征，输出真；</p>
+<p>使用生成的标签让D判断时，输入200维G生成标签的词向量 | <strong>4096维图像特征</strong>，输出假。所以我觉得至少从便于理解的角度，此步应该记为$D(G(x|y)|y)$。博文作者首先将D的隐含层的维度当成了输入维度，其次忽略了D在判断G生成数据时还要进行的$y$输入</p>
+<p><img src="/img/CGAN/CGAN_image_labeling.png" alt="多模态学习"></p>
+<h2 id="4-展望"><a href="#4-展望" class="headerlink" title="4 展望"></a>4 展望</h2><p>文章工作比较初级，更多应用和复杂模型有待研究</p>
+<p>文章的图像自动标注只是单标签的，未来可以做多标签</p>
+<p>学习语言模型</p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>GAN多模态学习，很有启发。使用条件变量指导模型生成，这一点在设计领域非常有用，设计师或用户给出需求，用这个需求去指导和驱动设计结果的生成。而由于CGAN的灵活性，需求的形式可以是多种多样的。</p>
+<p>曾经的多标签分类多麻烦啊，用CGAN进一步去做多标签分类，似乎也很有前景。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

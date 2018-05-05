@@ -132,23 +132,23 @@ sub {
 
 /* 让链接在 hover 状态下显示下划线 */
 a {
-  color: #555;
+  color: #00f;
   text-decoration: none;
 }
 
 a:hover {
-  color: #555;
+  color: #00f;
   text-decoration: none;
 }
 
 .typo a {
-  color: #555;
+  color: #00f;
   text-decoration: none;
 }
 
 .typo a:hover {
-  border-bottom-color: #555;
-  color: #555;
+  border-bottom-color: #00f;
+  color: #00f;
   text-decoration: none;
 }
 
