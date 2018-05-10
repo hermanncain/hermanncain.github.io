@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/DesIGN/DesIGN_title.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >DesIGN 设计灵感对抗网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1804.00921" target="_blank" rel="noopener">DesIGN: Design Inspiration from Generative Networks</a></p>
+<blockquote>
+<p>GAN强大的生成能力让它在设计领域备受重视。这是一篇Yann LeCun大佬参与的人工智能+设计方向的文章，和之前分析过的、也是本文主要参考文献之一的CAN相比，不仅应用领域直指最实用的服饰，而且干脆给网络起名Design，可以说要在设计领域当仁不让了。</p>
+</blockquote>
+<ul>
+<li><p>以往的创新性绘画生成使用遗传算法和预定义的适应度函数，并且需要样本图片。</p>
+</li>
+<li><p>GAN生成是在模仿，缺乏创造性</p>
+</li>
+<li><p>CAN鼓励生成和已有风格不同的结果，适合抽象绘画，但对写实主义、标准化产品的创意生成没有评判</p>
+</li>
+</ul>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h2><ul>
+<li>探索使用不同的GAN模型生成服饰</li>
+<li>构造新型损失函数以鼓励生成结果的创新性</li>
+<li>分解了形状和纹理的生成过程（遵循了服饰设计中的基本要素）</li>
+<li>难点：生成结果的评价和优选：结合自动评测与人工评测</li>
+<li>比CAN的效果要好，创新性和相似性得分都是目前最高</li>
+</ul>
+<h2 id="2-创新点"><a href="#2-创新点" class="headerlink" title="2 创新点"></a>2 创新点</h2><ul>
+<li>首次提出了时装图像的创意损失函数<ul>
+<li>考虑到了纹理和形状</li>
+<li>从已有案例的衍生中学习</li>
+<li>搭建新应用</li>
+</ul>
+</li>
+<li>首次提出了结果更好、更通用的多类别交叉熵准则用于学习，以从已有的形状和纹理中衍生</li>
+<li>构造基于熵的时装纹理和形状自动评测准则，结合人工调研，给出了一些有用的结论</li>
+<li>提出了让风格GAN以非确定方式运行的具体解决方案，使用创意损失进行训练，得到创新而有效的模型</li>
+</ul>
+<p>4000张512*512的训练集，超过60%的生成图片被设计师认为是人工设计、并且具有原创性</p>
+<h2 id="3-损失函数"><a href="#3-损失函数" class="headerlink" title="3 损失函数"></a>3 损失函数</h2><h3 id="3-1-判别器"><a href="#3-1-判别器" class="headerlink" title="3.1 判别器"></a>3.1 判别器</h3><p>使用形状标签$\hat t$、纹理标签$\hat s$，让判别器学习出形状分类器$D_s$和纹理分类器$D_t$。判别器可以包含两种分类器中的一个或全部。用记号$D_{b,k}$代表分类器$b$及其相应的分类$k\in \{1,…,K\}$，则损失可以表示为：</p>
+<p>$$<br>\mathcal {L}_D = \lambda_{D_r}\mathcal L_{D  {\rm real/fake}} + \lambda_{D_b}\mathcal L_{D  {\rm classif}}<br>$$</p>
+<p>其中，分类损失为</p>
+<p>$$<br>\mathcal L_{D  {\rm classif}} = - \sum _{x_i \in \mathcal D} \log ({\rm softmax} (D_{b,\hat c_i} (x_i)))<br>$$</p>
+<h3 id="3-2-生成器"><a href="#3-2-生成器" class="headerlink" title="3.2 生成器"></a>3.2 生成器</h3><p>生成器的损失为</p>
+<p>$$<br>\mathcal L_G = \lambda _{G_r} \mathcal L_{G  {\rm real/fake}} + \lambda_{G_e}  \mathcal L_{G  {\rm creativity}}<br>$$</p>
+<p>其中，创意损失$\mathcal L_{G  \rm {creativity}}$借鉴CAN中的创意损失。CAN中的创意损失使用本文定义的符号可以表示为（$\sigma$为sigmoid函数）</p>
+<p>$$<br>\mathcal L_{\rm CAN} = - \sum _{x_i \in \mathcal D} \sum ^K_{k=1} \frac{1}{K} \log (\sigma (D_{b,k}(x_i))) + \frac{K-1}{K} \log (1-\sigma (D_{b,k}(x_i)))<br>$$</p>
+<p>衡量了sigmoid函数输出和均匀分布的<strong>交叉熵</strong>，其意义是使生成的结果在判别器看来不属于已经有的任何一种类型。</p>
+<p>CAN的创意损失存在的问题是，由于使用的是sigmoid二分类，用无标签的生成图像训练生成器，二分类的交叉熵在接近0和1的损失都很大，这就会让损失函数对负样本的惩罚很大。虽然最后的结果仍然看起来不像任何一类，但它们的创新性确实被上述问题削弱了，在所有分类上只是趋向于1/K——“不像”得太均匀，也就导致了平庸。</p>
+<blockquote>
+<p>想想看，生成了一个完全不属于某个类别的结果，因为二分类太接近于0，惩罚很大，和接近1是类似的，导致这个结果反而是“不好的”结果。</p>
+</blockquote>
+<p>因此文章使用了softmax多分类，采用多分类交叉熵MCE来衡量全局CAN损失：</p>
+<p>$$<br>\begin{aligned}<br>\mathcal L_{\rm CAN(H)} &amp; = - \sum _{x_i \in \mathcal D} \frac{1}{K} \log {\rm softmax} (D_b(x_i)) \\<br>&amp; = - \sum _{x_i \in \mathcal D} \frac{1}{K} \log \left(\frac{e^{D_b,\hat c_i(x_i)}}{\sum ^K_{k=1}e^{D_{b,k}(x_i)}} \right)<br>\end{aligned}<br>$$</p>
+<p>全局CAN损失实际上是在衡量softmax输出和均匀分布的<strong>相对熵</strong>，因为均匀分布是常数（这样说来，CAN衡量的是sigmoid和均匀分布的相对熵）。softmax能够综合考虑不像所有类别的程度，不会造成“不像均匀化”的结果。</p>
+<blockquote>
+<p>插一个无聊的小知识：最小化KL散度的方法叫Minxent方法，或Principle of Minimum Cross-Entropy，缩写也是MCE，和多分类交叉熵Multi-class Cross-Entropy的缩写MCE一样，好巧哦=_=</p>
+</blockquote>
+<h2 id="4-网络架构"><a href="#4-网络架构" class="headerlink" title="4 网络架构"></a>4 网络架构</h2><p>文章测试了三种网络架构，分别是修改了输出图像尺寸的DCGAN（CAN就是用的DCGAN架构），不带文本输入的StackGAN，和文章提出的StyleGAN。</p>
+<h3 id="4-1-无文本StackGAN"><a href="#4-1-无文本StackGAN" class="headerlink" title="4.1 无文本StackGAN"></a>4.1 无文本StackGAN</h3><p>StackGAN是一种分步生成的架构，先用一个GAN生成低分辨率的小图片，再输入到另一个GAN生成高分辨率的大图片，最初用于从文本生成图像。无文本StackGAN去掉了StackGAN的文本输入，而用DCGAN生成一个64*64的低分辨率的图像作为输入。然后受到pix2pix启发，加入4个残差块生成高分辨率图像。原StackGAN中，上采样是通过最近邻实现，本文的StackGAN则是用反卷积上采样，得到256*256的清晰图像。</p>
+<p><img src="/img/DesIGN/DesIGN_stackGAN.png" alt="无文本StackGAN"></p>
+<p>生成高分辨率图像的网络详细结构如下，除了最后一层，其他每层卷积/反卷积都跟着BN和ReLU；最后一层没有BN，跟的是tanh。</p>
+<p><img src="/img/DesIGN/DesIGN_stackGAN_detail.png" alt="无文本StackGAN细节"></p>
+<h3 id="4-2-StyleGAN"><a href="#4-2-StyleGAN" class="headerlink" title="4.2 StyleGAN"></a>4.2 StyleGAN</h3><p>StyleGAN以二值形状蒙版作为需求的形状，以随机噪声输入生成纹理。这也符合服饰设计流程——形状和图案是分开的。蒙版的计算采用的是Random Walker随机游走算法。采用了ECCV’16文章<a href="https://arxiv.org/abs/1603.05631" target="_blank" rel="noopener">Generative Image Modeling using Style and Structure Adversarial Networks</a>的结构</p>
+<p><img src="/img/DesIGN/DesIGN_styleGAN.png" alt="StyleGAN结构"></p>
+<p>网络细节如下，除了最后一层，其他每层跟BN，卷积层跟Leaky ReLU，反卷积层跟ReLU，最后一层跟tanh。对蒙版卷积下采样，对噪声反卷积上采样，然后将两个结果拼接起来再进行一波卷积和反卷积。</p>
+<p><img src="/img/DesIGN/DesIGN_styleGAN_detail.png" alt="StyleGAN细节"></p>
+<p>以往的图像到图像的模型，比如pix2pix，CycleGAN，都是建立了输入图像和单幅响应图像之间的确定性映射。而拥有多模态输入的生成器很难训练，因为有时某些输入会被忽略。为了在相同形状下对不同纹理进行采样，加入一个L1损失来避免确定性映射：</p>
+<p>$$<br>\mathcal L_{rec} = \sum _i \sum _{p \in \mathcal P} |G(m_{i,p},z_i=0)-m_{i,p}|<br>$$</p>
+<p>其中，$m_{i,p}$是输入图像$x_i$在像素p处的蒙版，P为蒙版$m_i$的像素集。万一随机噪声为0，可以重构输入蒙版，保证噪声上采样分支上的权重的影响。</p>
+<h2 id="5-评价方法"><a href="#5-评价方法" class="headerlink" title="5 评价方法"></a>5 评价方法</h2><h3 id="5-1-自动评价"><a href="#5-1-自动评价" class="headerlink" title="5.1 自动评价"></a>5.1 自动评价</h3><p>自动评价由3部分构成，Inception score，AM score和kNN均值距离。</p>
+<p><strong>Inception score</strong></p>
+<p>$$<br>I_{score}(\{x\}^N_1) = exp(\mathbb E [KL(C(x)||\mathbb E[C(x)])])<br>$$</p>
+<p>衡量生成结果的多样性和质量。形状和纹理分开评测，本文使用的是Resnet-18。</p>
+<p><strong>AM score</strong></p>
+<p>$$<br>AM_{score}(\{x\}^N_1) = \mathbb E[KL(\bar C^{train}||C(x))-KL(C^{train}||\mathbb E[\bar C(x)])]<br>$$</p>
+<p>其中$\bar C^{train} = \mathbb E[C(\bar x)]$</p>
+<p>AM score将训练样本的分布考虑了进来，改进评价</p>
+<p><strong>kNN均值距离</strong></p>
+<p>用于衡量结果是在创新而不是在重复。计算每个样本和由它检索到的kNN的平均距离</p>
+<p>至于由样本检索kNN的方法，看得不是非常明白，应该是计算Restnet-18去掉最后一层fc得到512维特征之间的欧几里得距离进行度量，得到距离样本最近的10个近邻。</p>
+<p>不过这一项的得分高，可能很创新，也可能很失败，比如太创新了反而不够真实。</p>
+<h3 id="5-2-手动评价"><a href="#5-2-手动评价" class="headerlink" title="5.2 手动评价"></a>5.2 手动评价</h3><p>使用AMT，总体1-5评分，形状和纹理的新颖性和复杂性1-5评分，以及判断是人还是机器生成的。</p>
+<blockquote>
+<p>自动评价中，采用了CAN和CAN(H)损失的DCGAN各项得分在衣服生成上得分较高；DCGAN架构+CAN(H)损失在人工评价中的表现最好。（所以StackGAN和StyleGAN然并卵啊……）</p>
+</blockquote>
+<h2 id="6-数据集"><a href="#6-数据集" class="headerlink" title="6 数据集"></a>6 数据集</h2><p>Ready To Wear，4157张图像，7类衣服形状，7类纹理</p>
+<p>Attribute discovery，5783张图像，7类手提包形状，7类纹理</p>
+<h2 id="7-结果展示"><a href="#7-结果展示" class="headerlink" title="7 结果展示"></a>7 结果展示</h2><p>DCGAN生成的结果</p>
+<p><img src="/img/DesIGN/DesIGN_DCGAN_r.png" alt="DCGAN生成的结果"></p>
+<p>kNN检索示例</p>
+<p><img src="/img/DesIGN/DesIGN_knn.png" alt="kNN检索示例"></p>
+<p>更多生成结果</p>
+<p><img src="/img/DesIGN/DesIGN_clothes.png" alt="衣服"></p>
+<p><img src="/img/DesIGN/DesIGN_bags.png" alt="手提包"></p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>虽然文章的标题和贡献写的看起来很厉害，并且指出了CAN应用领域上的局限，但是仔细考虑一下本文的结果，衣服和箱包上的图案也是抽象画啊！只不过CAN是方形画布，DesIGN是衣服/包形画布而已。</p>
+<p>StyleGAN中的蒙版生成形状在文中表述的不够，看完文章之后有种蒙版就是CGAN的输入条件的感觉，因为似乎形状生成这一分支能够生成创新性服装版型的可能性不大，文中的服装版型都是类似的。</p>
+<blockquote>
+<p>一句话概括，文章改进二分类的CAN损失，提出了多分类的CAN(H)损失；提出了效果一般的改进的StackGAN和StyleGAN架构；提出了评价方法并做了大量评测，最终测出来还是DCGAN+CAN(H)最好。</p>
+</blockquote>
+<p>我认为和kNN的结合才是最容易落实到产业的，根据用户需求生成一张图片之后，第一反馈给产品的设计师改进或研发新产品，第二检索商品库中类似的商品推荐给用户，比传统的以图搜图或者根据用户行为的统计数据推送要精准得多。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
