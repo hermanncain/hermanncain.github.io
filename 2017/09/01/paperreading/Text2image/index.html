@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/Text2image/Text2image_architecture.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ICML2016 GAN文本生成图像</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1605.05396" target="_blank" rel="noopener">Generative Adversarial Text to Image Synthesis</a></p>
+<p>图像自动标注乃至自动起标题的研究非常火热，MSCOCO还举办过几次比赛。但反过来，文本生成图像的研究上，谷歌DRAW等基于RNN的模型有了不错的效果，本文则使用最火的生成对抗网络来实现。</p>
+<h2 id="1-损失函数"><a href="#1-损失函数" class="headerlink" title="1 损失函数"></a>1 损失函数</h2><p>$$<br>\min_G \max_D V(D,G) = \mathbb E_{x \sim p_{data}(x)}[\log D(x,\varphi(t))] + \mathbb E_{z \sim p_z(z)}[\log D(G(z,\varphi(t)),\varphi(t)]<br>$$</p>
+<p>z为随机噪声，$\varphi$为句子的编码器，将文本序列t编码为嵌入$\varphi(t)$，然后拼接到z上。</p>
+<p>实际上就是增强版的CGAN啊，条件就是$\varphi(t)$</p>
+<h2 id="2-架构"><a href="#2-架构" class="headerlink" title="2 架构"></a>2 架构</h2><p><img src="/img/Text2image/Text2image_architecture.png" alt="架构"></p>
+<h3 id="2-1-条件匹配判别器GAN-CLS"><a href="#2-1-条件匹配判别器GAN-CLS" class="headerlink" title="2.1 条件匹配判别器GAN-CLS"></a>2.1 条件匹配判别器GAN-CLS</h3><p>输入真实图像时，输入的文字描述可能是正确也可能是错误，因此判别器需要把 { 真实图像，错误描述 } 也作为不接受的结果，强化D的训练效果。</p>
+<p><strong>算法</strong></p>
+<p>for n=1 to S do</p>
+<p>$h \gets \varphi(t)$ 编码正确描述</p>
+<p>$\hat h \gets \varphi(\hat t)$ 编码错误描述</p>
+<p>$z \sim \gets N(0,1)^Z$ 随机噪声</p>
+<p>$\hat x \gets G(z,h)$ 生成器生成图像</p>
+<p>$s_r \gets D(x,h)$ 真图像，正确描述</p>
+<p>$s_w \gets D(x,\hat h)$ 真图像，错误配描述</p>
+<p>$s_f \gets D(\hat x, h)$ 假图像，正确描述</p>
+<p>$\mathcal L_D \gets \log(s_r)+(\log(1-s_w)+\log(1-s_f))/2$</p>
+<p>$D \gets D-\alpha \partial \mathcal L_D / \partial D$ 更新判别器</p>
+<p>$\mathcal L_G \gets \log(s_f)$</p>
+<p>$G \gets G - \alpha \partial \mathcal L_G / \partial G$ 更新生成器</p>
+<h3 id="2-2-流形插值学习GAN-INT"><a href="#2-2-流形插值学习GAN-INT" class="headerlink" title="2.2 流形插值学习GAN-INT"></a>2.2 流形插值学习GAN-INT</h3><p>对句子的嵌入进行插值，可以得到渐变的生成结果。给定2个描述$t_1,t_2$，内插值权重为$\beta$，向生成器引入最小化项：</p>
+<p>$$<br>\mathbb E_{t_1,t_2 \sim p_{data}}[\log(1-D(G(z,\beta t_1 + (1-\beta)t_2)))]<br>$$</p>
+<p>生成器可以填补数据流形上的空缺。需要注意的是，插值出的语料并没有对应的真实图像。</p>
+<blockquote>
+<p>这一点很有意思。其实用有真实图像的文本训练很有可能会导致结果在尽量模仿真实图像，这样会使结果缺乏多样性。但将没有真实图像的文本作为输入，就不存在“模仿真实”这一说了，“创意”也就随之而生。</p>
+</blockquote>
+<h3 id="2-3-风格转移"><a href="#2-3-风格转移" class="headerlink" title="2.3 风格转移"></a>2.3 风格转移</h3><p>这里的风格转移，驱动是风格化的图片，目标是文本。因此需要反转G来构造一个风格编码器S，将生成的图片$\hat x$编码为噪声z。风格编码器S的损失为</p>
+<p>$$<br>\mathcal L_{style} = \mathbb E_{t,z \sim \mathcal N(0,1)}||z-S(G(z,\varphi(t)))||^2_2<br>$$</p>
+<p>则将驱动图片x向文本t进行风格转移的过程如下：</p>
+<ul>
+<li>$s \gets S(x)$ 将驱动图片x使用风格编码器S转化为风格噪声s</li>
+<li>$\hat x \gets G(s,\varphi(t))$ 然后和目标文本一起输入生成器G，生成风格转移的结果$\hat x$</li>
+</ul>
+<blockquote>
+<p>这部分我觉得很有意思！</p>
+</blockquote>
+<h2 id="3-实验"><a href="#3-实验" class="headerlink" title="3 实验"></a>3 实验</h2><p>原文代码是<a href="https://github.com/soumith/dcgan.torch" target="_blank" rel="noopener">基于torch的DCGAN</a>编写的，<a href="https://github.com/zsdonghao/text-to-image" target="_blank" rel="noopener">这里</a>有tensorlayer的作者使用tensorflow+tensorlayer实现的版本，用了残差块。</p>
+<p>文本生成图像结果</p>
+<p><img src="/img/Text2image/Text2image_r.png" alt="文本生成图像"></p>
+<p>风格转移结果</p>
+<p><img src="/img/Text2image/Text2image_t.png" alt="风格转移"></p>
+<p>插值结果</p>
+<p><img src="/img/Text2image/Text2image_i.png" alt="插值结果"></p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>这篇文章倒不如说是对CGAN的详细实现。GAN-CLS-INT的设计，CLS提升了判别器的训练效果，INT提供了生成更丰富结果的方法。从生成的图片上来说，除了INT的插值，其他结果仍然是“依葫芦画瓢”。</p>
+<p>让我觉得有意思的，反而是风格转移那里。不过用噪声编码风格、用风格图片驱动文本生成图片结果，这个方向其实和以前的neural style transfer的套路差不多，只是多了个文本生成图像。</p>
+<p>如果反过来，用文本作为驱动，来改变输入图像，生成风格化的结果，这个角度就比较有趣了——而且应用场景也很明确：买家找到一个商品，但想要另一种风格的同类商品。和驱动图片相比，驱动文本可能是普通买家容易提供的。关于这点暂且不表，在以后的文章中再深入探究。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
