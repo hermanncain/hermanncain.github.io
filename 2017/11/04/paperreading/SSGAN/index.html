@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/SSGAN/SSGAN_architecture.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ECCV2016 SSGAN结构风格对抗网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1603.05631" target="_blank" rel="noopener">Generative Image Modeling using Style and Structure Adversarial Networks</a></p>
+<p>以往生成图像的研究是端到端的，对均匀分布的噪声采样而生成图像。</p>
+<p>然而图像是兼具结构和纹理的一种产品（尤其是表征三维空间的图像）。纯粹通过像素采样所生成的图像无视了这一重要原则。</p>
+<p>因此，文章提出了结构-风格生成对抗网络SS-GAN：</p>
+<ul>
+<li>先使用结构GAN生成法线图像</li>
+<li>然后将法线图像作为风格GAN的输入，生成2D图像</li>
+<li>从生成图像再生成法线来衡量损失</li>
+<li>先各自独立训练，再联合训练</li>
+</ul>
+<p><img src="/img/SSGAN/SSGAN_overview.png" alt="overview"></p>
+<h2 id="1-网络细节"><a href="#1-网络细节" class="headerlink" title="1 网络细节"></a>1 网络细节</h2><p><img src="/img/SSGAN/SSGAN_details.png" alt="网络细节"></p>
+<p>uconv是反卷积层</p>
+<h2 id="2-Structure-GAN"><a href="#2-Structure-GAN" class="headerlink" title="2 Structure GAN"></a>2 Structure GAN</h2><p>生成器输入100维噪声，除了最后一层tanh外，其他每层BN+ReLU。输出法线图像</p>
+<p>判别器激活函数使用Leaky-ReLU，不使用BN。输出法线图像的真假判断。</p>
+<h2 id="3-Style-GAN"><a href="#3-Style-GAN" class="headerlink" title="3 Style GAN"></a>3 Style GAN</h2><p>这是一个CGAN，条件是法线图像。使用场景的RGB图像和Kinect采集的法线图数据训练，只把 <code>{ 真实RGB图，相应的法线图 }</code> 作为正例。</p>
+<p>设噪声为$\hat Z$，RGB图像为X，法线图像为C，熵损失为L，则损失函数为</p>
+<p>$$<br>\mathcal L_D = \sum ^{M/2}_{i=1}L(D(C_i,X_i),1)+\sum ^M_{i=M/2+1} L(D(C_i,G(C_i,\tilde z_i)),0)<br>$$<br>$$<br>\mathcal L_G = \sum ^M_{i=M/2+1} L(D(C_i,G(C_i,\tilde z_i)),1)<br>$$</p>
+<p>生成器的细节如下</p>
+<p><img src="/img/SSGAN/SSGAN_Style-GAN-G.png" alt="Style-GAN生成器"></p>
+<p>整个Style-GAN的架构如下</p>
+<p><img src="/img/SSGAN/SSGAN_Style-GAN-architecture.png" alt="Style-GAN架构"></p>
+<p>可以看到和CGAN相比，多了一个FCN，将G生成的图像作为输入，输出法线图像。这一层的作用是提供额外的损失以优化生成的RGB图像结果。如果没有这个FCN，生成的RGB图像会有不少噪点，且和输入的法线图像也不能很好的对齐。</p>
+<h2 id="4-像素约束FCN"><a href="#4-像素约束FCN" class="headerlink" title="4 像素约束FCN"></a>4 像素约束FCN</h2><p>FCN处理图片-法线图像时，将法线的取值离散化，使用k-means聚类为40个类别。定义输出的法线图像尺寸是K*K（K=128），$F_k(X_i)$是第i个样本的第k个像素的输出，$C_{i,k} \in [1,40]$是第i个样本的第k个像素的法线的类别，$L_s$为softmax损失，则FCN的损失为</p>
+<p>$$<br>\mathcal L_{FCN} = \frac{1}{K\times K} \sum ^M_{i=1} \sum ^{K \times K}_{k=1}L_s(F_k(X_i),C_{i,k})<br>$$</p>
+<p>FCN的架构是AlexNet，128*128的图像先上采样成512*512再喂入FCN。倒数第2,3层采用512和1024个卷积核，最后一层是stride=2的反卷积。最终执行4倍分辨率上采样，生成高质量的结果。</p>
+<p>引入了FCN之后，就将FCN和G的损失之和作为生成器的损失。</p>
+<p>单独训练过程就是如下3步的循环：</p>
+<ul>
+<li>固定G，更新D</li>
+<li>固定FCN和D，更新G</li>
+<li>固定G，更新FCN</li>
+</ul>
+<h2 id="5-SSGAN的最终架构和训练"><a href="#5-SSGAN的最终架构和训练" class="headerlink" title="5 SSGAN的最终架构和训练"></a>5 SSGAN的最终架构和训练</h2><p>最终SSGAN的架构如下</p>
+<p><img src="/img/SSGAN/SSGAN_architecture.png" alt="SSGAN架构"></p>
+<p>联合训练时，将FCN去掉。Structure-GAN生成的法线图像进入Style-GAN之前先进行一次双线性插值。</p>
+<p>反向传播中，Structure-GAN的生成器不仅会得到其判别器的梯度,也会得到Style-GAN的梯度。所以联合以后生成器损失就变成了2个GAN的生成器损失的加权和:</p>
+<p>$$<br>\mathcal L^{joint} = L_G^{struct}(\hat Z) + \lambda L_G^{style}(G(\hat Z),\tilde Z)<br>$$</p>
+<p>$\lambda=0.1$，并且设置Structure-GAN的学习速率比Style-GAN小,防止生成的法线图像过拟合生成的RGB图像。</p>
+<h2 id="6-结果"><a href="#6-结果" class="headerlink" title="6 结果"></a>6 结果</h2><p><img src="/img/SSGAN/SSGAN_r.png" alt="SSGAN结果"></p>
+<p>上面三行是采集到的法线图像、生成的RGB和原始RGB；下面两行是从3D场景模型中获得的法线图像和生成的RGB。</p>
+<p><img src="/img/SSGAN/SSGAN_i.png" alt="SSGAN插值"></p>
+<p>对2个法线图像进行插值得到一系列渐变的法线图像，采用固定的风格，SSGAN可以生成系列对应渐变的RGB结果；当结构固定，风格插值时，也能使结果略有差别。</p>
+<blockquote>
+<p>风格插值时的差异确实挺小的。不得不说，结构+风格的分段还是比较粗略的</p>
+</blockquote>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>这篇文章可以算是将过程融入对抗生成的代表作了。站在设计的角度，结构+风格划分仍然比较粗略，这也导致结果虽然和以往CGAN等模型相比好一些，但是和真实差距还是不小。</p>
+<p>论文中的输入是法线图像，推而广之，更丰富的信息可以作为“结构”输入，比如轮廓，比如元素分布等等。关键是如何矢量化这些类型的结构信息。</p>
+<p>对整个网络架构进行推广，将来能生成好结果的网络架构，可能是建立在更加细分的过程建模上的，比如草图一个网络，元素一个网络，排布一个网络，颜色一个网络……不过这种架构带来的问题也很明显：各过程网络差异化严重，连续过程导致总网络更深，反向传递很可能造成梯度消失，而这不一定是残差块能解决得了的。</p>
+<p>那么如何更简单而有效地对过程进行分段、如何向量化各分段的输入信息，可能就是SSGAN的推广模型在更广泛领域落地的关键了。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
