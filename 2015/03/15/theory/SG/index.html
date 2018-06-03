@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/SG/SG_L.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >Shape Grammar 形状文法</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>形状文法最早由George Stiny于1971年在国际信息处理联合会IFIP正式提出，并被选为最佳论文，发表在1972年的论文集中[1]。将形状作为元语primitive，使用规则对形状进行生成。论文就抽象几何绘画（2D）和雕塑（3D）领域给出了一套形式化的生成理论。</p>
+<h2 id="形式定义"><a href="#形式定义" class="headerlink" title="形式定义"></a>形式定义</h2><p>形状文法SG和乔姆斯基在语言学领域提出的短语结构语法PSG相似。PSG用符号集生成1维字符串，SG用形状集生成n维形状。SG遵循PSG的标准定义，有形式语言基础的话，理解起来会容易很多：</p>
+<p>$SG = (V_T, V_M, R, I)$</p>
+<ul>
+<li>$V_T$ 是终结形状的有限集合；<blockquote>
+<p>终结形状出现在最终结果中</p>
+</blockquote>
+</li>
+<li>$V_M$ 是非终结形状的有限集合，有 $V_T^* \cap V_M = \varnothing$，集合的星闭包 $( \cdot )^*$ 是形式语言和自动机的基础知识，不再赘述。<blockquote>
+<p>非终结形状用完即弃，不会出现在最终结果中。一个形状不能同时是二者</p>
+</blockquote>
+</li>
+<li>$I$ 是初始形状，有 $I \subset V_T^* + V_M$<blockquote>
+<p>初始形状可以是任意终结形状和非终结形状的组合</p>
+</blockquote>
+</li>
+<li>$R$ 是形状规则的有限集合。形状规则是产生式 $u \to v$，有 $u \subset (V_T^* +V_M)$，即 $u$ 由 $V_T^*$ + $V_M$ 中的任意元素组成（可以没有终结形状，但必须有非终结形状）；而 $v$ 则有三种形式：<ul>
+<li><strong>A类</strong>：$v \subset (u \cap V_T^*)$，$v$ 由 $u$ 中的终结形状组成<blockquote>
+<p>实际上是做了减法，应用这类规则后，将$u$中的非终结形状去掉了。而且此种规则是终结性规则：一旦应用了这种规则，继续应用规则时要么没有可用的规则，要么用了也不会有改变，生成终止。</p>
+</blockquote>
+</li>
+<li><strong>B类</strong>：$v \subset ((u \cap V_T^*) + V_M)$，$v$ 由 $u$ 中的终结形状和 $V_M$ 中的形状组成；<blockquote>
+<p>纯生成性规则，因为必须有$V_M$中的形状存在。此类规则其实是冗余的，可以用下面的囊括</p>
+</blockquote>
+</li>
+<li><strong>C类</strong>：$v \subset (u \cap V_T^*) + (V_T^* \cup V_M)$，$v$ 由 $u$ 中的终结形状和 $V_T^*$ 及 $V_M$ 中的任意元素组成。<blockquote>
+<p>和上一条相比，多了$V_T^*$中的形状，因此涵盖的范围更广，可以是生成性规则，也可以是终结性规则，不管作为哪种规则，都比A和B多向结果中引入了$V_T^*$中的形状。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>一个抽象绘画的形状文法示例：</p>
+<p><img src="/img/SG/SG_SG.png" alt=""></p>
+<h2 id="规则应用"><a href="#规则应用" class="headerlink" title="规则应用"></a>规则应用</h2><p>从初始形状开始，不断应用形状规则，可以生成复杂的形状结果。形状规则应用的过程如下，和PSG中字符匹配、替换的过程是相似的：</p>
+<ol>
+<li>在形状中找到和规则中 $u$ 相似的部分 $u’$；</li>
+<li>计算基本图形变换 $\tau$ （平移、旋转、缩放、镜像），有 $u’ = \tau (u)$，即$u$经过了怎样的图形变换变成了形状中的 $u’$；</li>
+<li>对规则中的 $v$ 执行基本变换 $v’ = \tau (v)$，然后使用 $v’$ 替换掉形状中的 $u’$。</li>
+</ol>
+<p>使用该形状文法生成抽象绘画的过程：</p>
+<p><img src="/img/SG/SG_GEN.png" alt=""></p>
+<p>因为$V_M$是非终结符，因此SG所生成的语言L(SG)是一个不包含$V_M$中任何元素的集合，一个由有限类形状构成的无限集合。</p>
+<p>该文法所对应的语言：</p>
+<p><img src="/img/SG/SG_L.png" alt=""></p>
+<p>Stiny在1970年把上面三个上色之后作为绘画作品Urform I, II, III</p>
+<h2 id="终结层次"><a href="#终结层次" class="headerlink" title="终结层次"></a>终结层次</h2><p>终结形状的<strong>层次</strong>和PSG中一样:</p>
+<ul>
+<li>初始形状中的终结符层次为0；</li>
+<li>当一个形状规则被应用之后，假设规则左侧 $u$ 中的终结形状层次为N，规则右侧 $v$ 中的终结形状的层次有<ul>
+<li>A类规则，为N。这也体现了A类规则的确是终止规则，终结形状的层次不再增加了；</li>
+<li>B类规则，N+1，体现了纯生成性规则的特点；</li>
+<li>C类规则，N+1，囊括了B类规则。</li>
+</ul>
+</li>
+</ul>
+<p>终结符的层次：</p>
+<p><img src="/img/SG/SG_Level.png" alt=""></p>
+<hr>
+<p>参考文献</p>
+<p>[1] Stiny G, Gips J. Shape grammar and the generative specification of painting and sculpture. Information Processing 71 Proceedings of the IFIP Congress 1971. Volume 2, 71, 1460–1465.</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
