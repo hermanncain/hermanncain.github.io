@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/LAPGAN/LAPGAN_3d.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >NIPS 2015 LAPGAN拉普拉斯金字塔生成对抗网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1506.05751" target="_blank" rel="noopener">Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks</a></p>
+<h2 id="1-金字塔"><a href="#1-金字塔" class="headerlink" title="1 金字塔"></a>1 金字塔</h2><p>高斯金字塔$\mathcal G(I) = [I_0,I_1,…,I_K]$将原始图像$I_0$经过一系列下采样$d(.)$（$2\times 2 \to 1$）压缩为$I_K$。</p>
+<p>将高斯金字塔的过程反过来，一系列上采样$u(.)$之后可以得到高分辨率的图片。显然正反过程不是完全对称的，因为下采样会丢失信息，而上采样很难还原信息。信息的差构成拉普拉斯金字塔。</p>
+<p>拉普拉斯金字塔每层的系数为</p>
+<p>$$<br>h_k = \mathcal L_k(I) = \mathcal G_k(I)-u(\mathcal G_{k+1}(I))=I_k-u(I_{k+1})<br>$$</p>
+<p>所以低分辨率图像可以通过拉普拉斯金字塔递推公式重建为高分辨率图像：</p>
+<p>$$<br>I_k = u(I_{k+1})+h_k<br>$$</p>
+<h2 id="2-生成器"><a href="#2-生成器" class="headerlink" title="2 生成器"></a>2 生成器</h2><blockquote>
+<p>CGAN的损失函数终于在本文中补全了！$D(G(z,c),c)$。好多论文（包括CGAN原文）都没写第二个c，不严谨啊。</p>
+</blockquote>
+<p>生成器是一系列convnet：$\{G_0,…,G_K\}$，这一系列网络做的事情是：</p>
+<p>$$<br>\tilde I_k = u(\tilde I_{k+1})+\tilde h_k = u(\tilde I_{k+1})+G_k(z_k, u(\tilde I_{k+1}))<br>$$</p>
+<p>说人话就是：</p>
+<ul>
+<li>Step1: 令$\tilde I_{K+1}=0$，则$\tilde I_K = G_K(z_K)$。即$G_K$不是CGAN，其他都是CGAN；</li>
+<li>Step2: 对于CGAN  $G_k$，输入噪声$z_k$，条件按照如下方式获得：对$\tilde I_{k+1}$进行上采样得到$l_k$，作为$G_k$的条件输入。$G_k$生成的是拉普拉斯金字塔参数$\tilde h_k = G_k(z_k, u(\tilde I_{k+1}))$；</li>
+<li>Step3: 按照拉普拉斯金字塔递推公式，从上一步中的$l_k$和$\tilde h_k$得到新图像$\tilde I_k$;</li>
+<li>Step4: 重复Step2 ~ 3，直到得到$\tilde I_0$</li>
+</ul>
+<p>例如K=3时，生成器架构如下：</p>
+<p><img src="/img/LAPGAN/LAPGAN_3g.png" alt="3层LAPGAN生成器"></p>
+<h2 id="3-判别器"><a href="#3-判别器" class="headerlink" title="3 判别器"></a>3 判别器</h2><p>判别器的输入有2种，ground truth是真实的金字塔参数$h_k$，fake是生成的$\tilde h_0$。条件是$l_k$。循环的具体过程是：</p>
+<ul>
+<li>Step1: 输入$I_k$，先下采样为$I_{k+1}$；</li>
+<li>Step2: 将$I_{k+1}$再上采样为$l_k$；</li>
+<li>Step3: 计算拉普拉斯金字塔参数$h_k=I_k-l_k$，作为ground truth输入，$l_k$作为条件输入；</li>
+<li>Step4: 将$z_k,l_k$经$G_k$生成的金字塔参数$\tilde h_k$作为fake输入，$l_k$作为条件输入；</li>
+</ul>
+<p><img src="/img/LAPGAN/LAPGAN_3d.png" alt="3层LAPGAN判别器"></p>
+<h2 id="4-实验"><a href="#4-实验" class="headerlink" title="4 实验"></a>4 实验</h2><p>以CIFAR10为例（32*32*3图像）：</p>
+<ul>
+<li>噪声是[-1,1]的均匀分布，100维；</li>
+<li>输入图像是从32*32裁剪出的28*28图像；</li>
+<li>生成器2层fc带ReLU，每层1200个神经元，然后经过一层fc生成8*8*3的图像；</li>
+<li>通过金字塔对8*8像素的图像进行上采样，尺寸变化是8,14,28；</li>
+<li>判别器2层fc，ReLU+Droupout，每层600个神经元，然后一个单元fc的sigmoid输出判断结果；</li>
+<li>SGD学习率0.02，学习率衰减1+4*10^-5每步，初始动量0.5，每步增加0.0008；</li>
+</ul>
+<p>在CIFAR10数据集上的结果（CC-LAPGAN是带类别标签的LAPGAN，将标签转化为张量后拼在第一层张量后边）：</p>
+<p><img src="/img/LAPGAN/LAPGAN_CIFAR10.png" alt="CIFAR10结果"></p>
+<p>在LSUN数据集上的结果，第一列是验证集的初始图像，后边是各种结果。</p>
+<p><img src="/img/LAPGAN/LAPGAN_LSUN.png" alt="LSUN结果"></p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><ul>
+<li><p>CGAN大法好！</p>
+</li>
+<li><p>金字塔的每层都是分开训练的，对于堆叠了这么多层的架构来说，降低了训练难度；</p>
+</li>
+<li><p>分开训练就带来了信息可能会丢失、缺乏全局约束的问题。但是LAPGAN将上一个生成的结果处理下作为下个生成器的条件，堪比残差网络啊，只是没跨那么多；</p>
+</li>
+<li><p>将CGAN放入拉普拉斯金字塔里，得到了不错的结果。那么是否有其他类似的架构也能将GAN放入呢？更推广一步，除了一些固定的算法架构以外，是否可以有一些更抽象、通用的工作流程可以将GAN放入，从而得到很好的结果呢？比如绘画或雕塑过程、平面设计过程、造房子过程等等……大有可为啊。</p>
+</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

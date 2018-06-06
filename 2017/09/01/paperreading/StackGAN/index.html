@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/StackGAN/StackGAN_a.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ICCV 2017 StackGAN堆叠式文本生成图像</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="https://arxiv.org/abs/1612.03242" target="_blank" rel="noopener">StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks</a></p>
+<p>StackGAN是两个堆叠的CGAN，分别生成低、高精度的图像。</p>
+<h2 id="1-结构"><a href="#1-结构" class="headerlink" title="1 结构"></a>1 结构</h2><ul>
+<li>第一阶段：从文本描述和随机噪声生成基本形状和色彩、背景的低分辨率图像；</li>
+<li>第二阶段：从文本描述进一步强化第一阶段的结果，提高分辨率，改善图像细节。</li>
+</ul>
+<p><img src="/img/StackGAN/StackGAN_a.png" alt="整体架构"></p>
+<h3 id="2-条件增强CA"><a href="#2-条件增强CA" class="headerlink" title="2 条件增强CA"></a>2 条件增强CA</h3><p>在文本到图像中，文本嵌入的隐空间维度通常在100维以上。数据有限时，流形就会不连续，对学习不利。以往是一个文本嵌入$\varphi_t$作为条件c，对应一个图像；为了缓解这个问题，进行如下处理：</p>
+<ul>
+<li>求文本嵌入的独立高斯分布$\mathcal N(\mu (\varphi _t), \sum(\varphi_t))$;</li>
+<li>从分布中随机采样，得到多个条件变量$\hat c$;</li>
+<li>多个条件变量可以对应一个图像</li>
+</ul>
+<p>上述方法扩充了文本-图像对的数量，由以前的一个文本嵌入对应一个图像变成了多个文本嵌入分布的采样对应一个图像。通过随机采样在一定程度上填补了流形的孔洞，鲁棒性更强。</p>
+<p>为了进一步增强光滑性，并避免过拟合，再加入正则化项：</p>
+<p>$$<br>D_{KL}(\mathcal N(\mu (\varphi _t), \sum(\varphi_t)||\mathcal N(0,I))<br>$$</p>
+<p>这个正则化是文本嵌入的高斯分布和标准高斯分布的KL散度（相对熵）。</p>
+<blockquote>
+<p>文中提到，条件增强过程中引入的随机性对文本-图像的转化很有帮助，因为相同的句子通常对应多种结果（一千个读者一千个哈姆雷特）。这个很有意思，它实际上是如下过程：单个文本 – 附近采样得到的多个文本（可以理解为相似表述） – 图像。虽然在增强出来的样本中是一图对多句（$\hat c \sim x$），但训练出来的模型就可以达到一句对多图（$c \sim \hat x$）的效果了。</p>
+</blockquote>
+<h2 id="3-第一阶段"><a href="#3-第一阶段" class="headerlink" title="3 第一阶段"></a>3 第一阶段</h2><h3 id="3-1-损失函数"><a href="#3-1-损失函数" class="headerlink" title="3.1 损失函数"></a>3.1 损失函数</h3><p>判别器$D_0$损失</p>
+<p>$$<br>\mathcal L_{D_0} = \mathbb E_{(I_0,t)\sim p_{data}}[\log D_0(I_0,\varphi _t)] + \mathbb E_{z\sim p_z, t\sim p_{data}}[\log(1-D_0(G_0(z,\hat c_0),\varphi_t))]<br>$$</p>
+<p>$I_0$是真实图像</p>
+<p>生成器$G_0$损失</p>
+<p>$$<br>\mathcal L_{G_0} = \mathbb E_{z\sim p_z, t\sim p_{data}}[\log(1-D_0(G_0(z,\hat c_0),\varphi_t))]+\lambda D_{KL}(\mathcal N(\mu _0(\varphi_t),\sum_0(\varphi_t))||\mathcal N(0,I))<br>$$</p>
+<p>超参数$\lambda=1$</p>
+<h3 id="3-2-生成器架构"><a href="#3-2-生成器架构" class="headerlink" title="3.2 生成器架构"></a>3.2 生成器架构</h3><ul>
+<li>文本嵌入$\varphi_t$先经过一层fc生成$\mu_0$和$\sigma_0$，将$\sigma_0$作为对角元素，从而构造高斯分布$\mathcal N(\mu (\varphi _t), \sum(\varphi_t))$；</li>
+<li>对高斯分布随机采样得到$N_g$维的条件向量$\hat c_0$。计算方法为$\hat c_0 = \mu_0 + \sigma_0 \bigodot \epsilon$。其中$\bigodot$是元素乘，$\epsilon \sim \mathcal N(0,I)$；</li>
+<li>$\hat c_0$和$N_z$维的噪声拼接，经过多次上采样生成图像。</li>
+</ul>
+<h3 id="3-3-判别器架构"><a href="#3-3-判别器架构" class="headerlink" title="3.3 判别器架构"></a>3.3 判别器架构</h3><ul>
+<li>文本嵌入$\varphi_t$先通过一层fc压缩成$N_d$维向量，然后复制成$M_d \times M_d \times N_d$维的张量；</li>
+<li>图像经过一系列下采样变成宽高为$M_d \times M_d$维的张量，然后和上述文本转化成的张量在深度上拼接；</li>
+<li>经过1层1*1的卷积和1层单节点的fc输出判断。</li>
+</ul>
+<h2 id="4-第二阶段"><a href="#4-第二阶段" class="headerlink" title="4 第二阶段"></a>4 第二阶段</h2><p>第一阶段生成的低分辨率结果往往会丢失一些细节，并且会出现扭曲。</p>
+<h3 id="4-1-损失函数"><a href="#4-1-损失函数" class="headerlink" title="4.1 损失函数"></a>4.1 损失函数</h3><p>判别器D损失</p>
+<p>$$<br>\mathcal L_D = \mathbb E_{(I,t)\sim p_{data}}[\log D(I,\varphi _t)] + \mathbb E_{s_0 \sim p_{G_0}, t\sim p_{data}}[\log(1-D(G(s_0,\hat c),\varphi_t))]<br>$$</p>
+<p>其中，$s_0 = G_0(z,\hat c_0)$是第一阶段生成的图像。</p>
+<p>生成器G损失</p>
+<p>$$<br>\mathcal L_G = \mathbb E_{s_0 \sim p_{G_0}, t\sim p_{data}}[\log(1-D(G(s_0,\hat c),\varphi_t))]+\lambda D_{KL}(\mathcal N(\mu (\varphi_t),\sum(\varphi_t))||\mathcal N(0,I))<br>$$</p>
+<p>文本嵌入和第一阶段共享，但是采用的条件增强fc层不和第一阶段共享。</p>
+<h3 id="4-2-生成器架构"><a href="#4-2-生成器架构" class="headerlink" title="4.2 生成器架构"></a>4.2 生成器架构</h3><p>生成器是带残差块的编码-解码器网络。</p>
+<ul>
+<li>文本嵌入$\varphi _t$转化为$N_g$维的$\hat c$，然后复制扩充为$M_g \times M_g \times N_g$维的张量；</li>
+<li>第一阶段生成的$s_0$经过一系列下采样块（即编码器），转化为宽高为$M_g \times M_g$维的张量，然后和上述文本转化成的张量在深度上拼接；</li>
+<li>拼接后的张量经过一系列残差块（即解码器），生成高分辨率的图像。</li>
+</ul>
+<h3 id="4-3-判别器架构"><a href="#4-3-判别器架构" class="headerlink" title="4.3 判别器架构"></a>4.3 判别器架构</h3><p>类似第一阶段，只是因为输入图像分辨率更高，下采样更多。</p>
+<h2 id="5-网络细节"><a href="#5-网络细节" class="headerlink" title="5 网络细节"></a>5 网络细节</h2><p>上采样块：3*3 stride单卷积，除最后一层，每层BN+ReLU。</p>
+<p>残差块：3*3 stride单卷积，BN+ReLU。</p>
+<p>下采样块：4*4 stride2卷积，BN+LeakyReLU，第一层没有BN。</p>
+<p>$N_g=128, N_z = 100, M_g = 16, M_d = 4, N_d = 128, W_0 = H_0 = 64, W = H = 256$</p>
+<p>一阶段训练600次，二阶段训练600次，ADAM解算器，动态学习率，初始为0.0002，每100次降为之前的1/2。</p>
+<h2 id="6-实验结果"><a href="#6-实验结果" class="headerlink" title="6 实验结果"></a>6 实验结果</h2><p>在不同数据集上和不同网络架构相比的结果：</p>
+<p><img src="/img/StackGAN/StackGAN_r.png" alt="不同数据集结果"></p>
+<p>分阶段的结果：</p>
+<p><img src="/img/StackGAN/StackGAN_Staged.png" alt="阶段结果"></p>
+<p>有无CA对比：</p>
+<p><img src="/img/StackGAN/StackGAN_CA.png" alt="有无CA结果"></p>
+<p>插值结果：</p>
+<p><img src="/img/StackGAN/StackGAN_i.png" alt="插值结果"></p>
+<p><a href="https://github.com/hanzhanggit/StackGAN" target="_blank" rel="noopener">源码</a>是用python 2.7和比较低版本的tensorflow写的，有待升级啊~</p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>这篇文章让人想起LAPGAN（文章当然也提到了这篇经典论文）。两个堆叠的CGAN比LAPGAN的架构要简单了很多，而且应用场景是文本到图像。</p>
+<p>LAPGAN、GAN-CLS-INT和StackGAN显示，先粗后精的生成思路确实达到了不错的效果，这种思路或许是接下来图像生成研究的热门方向。</p>
+<p>就像在LAPGAN文献阅读的体会中谈到的，将GAN用到一些流程中组成的复杂架构，将朴素的“从粗到精”推广到工作序列，能够提升结果质量、丰富应用场景、加快落地。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
