@@ -130,34 +130,42 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h2 id="1-熵"><a href="#1-熵" class="headerlink" title="1 熵"></a>1 熵</h2><p>香农信息量$\log \frac{1}{p}$的期望，即用真实分布p衡量样本所需要的平均编码长度</p>
-<p>$$<br>H(p) = \sum _{x \in X \sim p} p(x)\log \frac {1}{p(x)}<br>$$</p>
-<h2 id="2-交叉熵"><a href="#2-交叉熵" class="headerlink" title="2 交叉熵"></a>2 交叉熵</h2><h2 id="2-1-信息论中的交叉熵"><a href="#2-1-信息论中的交叉熵" class="headerlink" title="2.1 信息论中的交叉熵"></a>2.1 信息论中的交叉熵</h2><p>用另一个分布q，衡量分布为p的样本所需要的平均编码长度</p>
-<p>$$<br>H(p,q) = \sum _{x \in X \sim p} p(x)\log \frac {1}{q(x)}<br>$$</p>
-<p>有</p>
-<p>$$<br>H(p,q) \ge H(p)<br>$$</p>
-<h2 id="2-2-sigmoid与交叉熵"><a href="#2-2-sigmoid与交叉熵" class="headerlink" title="2.2 sigmoid与交叉熵"></a>2.2 sigmoid与交叉熵</h2><p>在机器学习中，常用sigmoid函数作为激活函数</p>
+                <h2 id="1-熵"><a href="#1-熵" class="headerlink" title="1 熵"></a>1 熵</h2><p>$X \sim p(x)$，用分布p表示X时的平均编码长度，也是香农信息量$-\log p$的期望。</p>
+<p>$$<br>H(X) = -\sum p(x)\log p(x)<br>$$</p>
+<h2 id="2-交叉熵"><a href="#2-交叉熵" class="headerlink" title="2 交叉熵"></a>2 交叉熵</h2><p>$X \sim p(x)$，采用另一个概率分布q(x)来描述X，需要的平均编码长度。</p>
+<p>$$<br>H(X,q) = -\sum p(x) \log q(x)<br>$$</p>
+<h2 id="3-相对熵（KL散度、KL距离）"><a href="#3-相对熵（KL散度、KL距离）" class="headerlink" title="3 相对熵（KL散度、KL距离）"></a>3 相对熵（KL散度、KL距离）</h2><p>$X \sim p(x)$，采用另一个概率分布q(x)来描述X，额外的编码长度。</p>
+<p>$$<br>H(X||q) = H(X,q) - H(X) = \sum p(x)\log \frac{p(x)}{q(x)}<br>$$</p>
+<p>当$p$已知时，$H(p)$是常数，相对熵和交叉熵等价。</p>
+<h2 id="4-条件熵"><a href="#4-条件熵" class="headerlink" title="4 条件熵"></a>4 条件熵</h2><p>$X|Y \sim p(x|y)$</p>
+<p>$$<br>H(X|Y) = -\sum p(x,y) \log \frac{p(x,y)}{p(y)}<br>$$</p>
+<p>若X,Y独立，则$H(X|Y)=H(X)$</p>
+<h2 id="5-联合熵"><a href="#5-联合熵" class="headerlink" title="5 联合熵"></a>5 联合熵</h2><p>$X,Y \sim p(x,y)$</p>
+<p>$$<br>\begin{aligned}<br>H(X,Y) &amp; = -\sum \sum p(x,y)\log p(x,y) \\<br>&amp; =H(X|Y)+H(Y) \\<br>&amp; = H(Y|X)+H(X)<br>\end{aligned}<br>$$</p>
+<h2 id="6-互信息"><a href="#6-互信息" class="headerlink" title="6 互信息"></a>6 互信息</h2><p>$X,Y \sim p(x,y)$两个变量的相关性。</p>
+<p>$$<br>\begin{aligned}<br>I(X;Y) &amp; = -\sum \sum p(x,y) \log \frac{p(x)p(y)}{p(x,y)} \\<br>&amp; = H(X)+H(Y)-H(X,Y) \\<br>&amp; = H(X)-H(X|Y) \\<br>&amp; = H(Y)-H(Y|X) \\<br>&amp; = H(X,Y) - H(X|Y) - H(Y|X) \\<br>&amp; = H(p(x,y)||p(x)p(y))<br>\end{aligned}<br>$$</p>
+<p>从等式的最后一行可以看出，互信息还是联合分布p(x,y)和边缘分布p(x)p(y)的相对熵。</p>
+<p>$H(X;X) = H(X)$，因此熵也叫自信息。</p>
+<h2 id="7-关系"><a href="#7-关系" class="headerlink" title="7 关系"></a>7 关系</h2><p><img src="/img/Entropy/Entropy_relation.png" alt="Venn图"></p>
+<h2 id="8-机器学习中的熵损失"><a href="#8-机器学习中的熵损失" class="headerlink" title="8 机器学习中的熵损失"></a>8 机器学习中的熵损失</h2><p>在机器学习中，常用sigmoid函数作为激活函数</p>
 <p>$$<br>a = \sigma (z) = \frac{1}{1+e^{-z}} = \frac{1}{1+e^{-(w^{\rm T} x+b)}}<br>$$</p>
 <p>其导数可以用自身表示：</p>
-<p>$$<br>\sigma ‘(z) = \sigma (z) (1-\sigma (z))<br>$$</p>
+<p>$$<br>\sigma ^\prime(z) = \sigma (z) (1-\sigma (z))<br>$$</p>
 <p>均方误差MSE是一种常用的损失函数</p>
 <p>$$<br>L = (y-a)^2/2<br>$$</p>
 <p>反向传播时，梯度$\nabla z$为</p>
-<p>$$<br>\frac{\partial L}{\partial w} = (a-y)\sigma ‘(z)x<br>$$<br>$$<br>\frac{\partial L}{\partial b} = (a-y)\sigma ‘(z)<br>$$</p>
-<p>可以看到，因为当越接近真实分布时，激活函数的梯度越小，所以w和b的梯度也很小，这会降低学习速率。因此最好能够去掉$\sigma ‘(z)$。考察变量的梯度公式:</p>
+<p>$$<br>\frac{\partial L}{\partial w} = (a-y)\sigma ^\prime(z)x<br>$$<br>$$<br>\frac{\partial L}{\partial b} = (a-y)\sigma ^\prime(z)<br>$$</p>
+<p>可以看到，因为当越接近真实分布时，激活函数的梯度越小，所以w和b的梯度也很小，这会降低学习速率。因此最好能够去掉$\sigma ^\prime(z)$。考察变量的梯度公式:</p>
 <p>$$<br>\begin{aligned}<br>\nabla L &amp;= \frac{\partial L}{\partial a}\frac{\partial a}{\partial z} \nabla z \\<br>&amp; = \frac{\partial L}{\partial a} a (1-a) \nabla z<br>\end{aligned}<br>$$</p>
-<p>将$\nabla z$中的$\sigma ‘(z)$拿掉就能避免上述问题了，以$\partial L/\partial b$为例，有</p>
+<p>将$\nabla z$中的$\sigma ^\prime(z)$拿掉就能避免上述问题了，以$\partial L/\partial b$为例，有</p>
 <p>$$<br>\frac{\partial L}{\partial a} a (1-a) = a-y<br>$$</p>
 <p>求积分，略去常数项，有</p>
 <p>$$<br>\begin{aligned}<br>L &amp; = -[y\log a + (1-y)\log(1-a)] \\<br> &amp; = \begin{cases}<br>\log \frac {1}{1-a}, &amp;  y = 0 \\<br>\log \frac {1}{a}, &amp;  y = 1<br>\end{cases}<br>\end{aligned}<br>$$</p>
 <p>对比信息论中交叉熵的定义可以发现，上式恰好是y和a的交叉熵！在机器学习中实际上是用a的分布来衡量y的分布，这进一步解释了交叉熵的意义。</p>
-<p>因为交叉熵损失的梯度消除了$\sigma ‘(z)$，只受到误差a-y的影响，因此在机器学习中，常用交叉熵损失代替均方误差损失：</p>
+<p>因为交叉熵损失的梯度消除了$\sigma ^\prime(z)$，只受到误差a-y的影响，因此在机器学习中，常用交叉熵损失代替均方误差损失：</p>
 <p>$$<br>L = - \frac {1}{n} \sum [y\log a + (1-y)\log(1-a)]<br>$$</p>
 <p>softmax和sigmoid类似</p>
 <p>$$<br>\begin{aligned}<br>s_i &amp;= \frac{e^{a_i}}{\sum e^{a_k}} \\<br>\frac{\partial s_i}{\partial a_i}  &amp; = s_i(1-s_i) \\<br>L &amp;= -\log s_i \\<br>\frac{\partial L}{\partial a_i} &amp;= s_i-1<br>\end{aligned}<br>$$</p>
-<h2 id="3-相对熵"><a href="#3-相对熵" class="headerlink" title="3 相对熵"></a>3 相对熵</h2><p>又叫KL散度，使用分布q，衡量分布为p的样本需要的平均编码长度比单纯使用真实分布p衡量样本需要的平均编码长度多出的比特数</p>
-<p>$$<br>H(p||q) = H(p,q) - H(p) = \sum _{x \in X \sim p} p(x)\log \frac {p(x)}{q(x)}<br>$$</p>
-<p>当$p$已知时，$H(p)$是常数，相对熵和交叉熵等价。</p>
 
             </div>
 

@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/infoGAN/infoGAN_r.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >NIPS2016 infoGAN互信息生成对抗网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="http://arxiv.org/abs/1606.03657" target="_blank" rel="noopener">InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets</a></p>
+<p>通引入隐含编码的互信息，使用GAN在非监督学习中学习到可分解/可解释的表示。</p>
+<h2 id="1-隐含编码的互信息"><a href="#1-隐含编码的互信息" class="headerlink" title="1 隐含编码的互信息"></a>1 隐含编码的互信息</h2><p>在GAN中，生成器是如何使用噪声的，这点不明确、不可解释。噪声各维度和样本的语义特征是怎样对应的，也不清楚。但是很多问题都可以分解成可解释的语义特征。例如MNIST数据集可以分解成数字、笔画粗细、数字倾斜程度等等。</p>
+<p>因此，和单独的z输入相比，infoGAN采用了噪声z+隐含编码c的输入。隐含编码c就是为了表征数据中显著而结构化的语义特征。$c=\{c_1,…,c_L\},P(c_1,…,c_L)=\prod^L_{i=1}P(c_i)$。这样生成器就变成了$G(z,c)$。</p>
+<p>但是单纯引入隐含编码是很容易被忽略的，生成器可能很容易就达到了$P_G(x|c) = P_G(x)$。为了解决这个问题，引入互信息来保证c在结果中的存留。</p>
+<p>通过随机变量Y，从随机变量X中学习到的信息量I(X;Y)叫做互信息。当X,Y互相独立时，互信息为0。互信息用熵表示就是：</p>
+<p>$$<br>I(X;Y) = H(X)-H(X|Y) = H(Y)-H(Y|X)<br>$$</p>
+<p>保证c在结果中的存留，就要求$I(c;G(z,c))$尽可能大。于是infoGAN的最小最大博弈问题转化为：</p>
+<p>$$<br>\min_G \max_D V_I(D,G) = V(D,G)-\lambda I(c;G(z,c))<br>$$</p>
+<p>但是$I(c;G(z,c))$无法计算，因为$P(c|x)$并不清楚。作者构造一个变分分布$Q(c|x)$来估计$P(c|x)$，从而得到互信息的下界$L_I(G,D)$。文章采用了NIP’03中提出的IM算法（一种变分信息最大化方法）。具体细节和证明不再赘述。互信息的下界为：</p>
+<p>$$<br>I(c;G(z,c)) \ge  L_I(G,D) = E_{c\sim P(c),x \sim G(z,c)}[\log Q(c|x)]+H(c)<br>$$</p>
+<p>可见变分分布Q很像一个根据G的生成结果学习隐含编码c的判别器！引入Q之后的博弈变为：</p>
+<p>$$<br>\min_{G,Q} \max_D V_{\rm InfoGAN}(D,G,Q) = V(D,G) - \lambda L_1(G,Q)<br>$$</p>
+<h2 id="2-实现"><a href="#2-实现" class="headerlink" title="2 实现"></a>2 实现</h2><p>Q是一个神经网络，和D共享所有的卷积层，最后由一层fc输出条件分布$Q(c|x)$。额外的计算开销非常小。</p>
+<p>对于隐含编码c来说，如果是分类编码，就用softmax，如果是连续编码，可以采用高斯分布。超参数$\lambda$在分类编码中取1，连续编码中小一些。</p>
+<p>这个网络最终会学习到隐含编码和数据中某些语义关系的对应。改变隐含编码，就可以生成语义上有差异的结果。在MNIST数据集上生成的结果如下，可以看到数字类别（类别编码）、倾斜角度和粗细（连续编码）都通过隐含编码很好地控制了。仔细观察旋转的结果，不仅仅是姿态倾斜而已，连笔画都做了适应性的改变。</p>
+<p><img src="/img/infoGAN/infoGAN_r.png" alt="infoGAN通过隐含编码控制了结果的某些特征"></p>
+<p><a href="https://github.com/JonathanRaiman/tensorflow-infogan" target="_blank" rel="noopener">这里</a>有用tensorflow实现的infoGAN。从源码中可以得知，隐含编码是和噪声拼接到一起的。</p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>自然要和CGAN对比下。CGAN通过加入条件输入，实际上将GAN的学习过程变成了有监督的。但对于infoGAN来说，隐含编码不是给定的输入，而是引入Q学习得到，因此是无监督的。</p>
+<p>infoGAN的泛化能力如何呢？毕竟某些场合下，想要学习到的特征分解和模型学习到的未必恰好一致啊，而且和隐含编码的数量似乎还有关系。</p>
+<p>连续型的隐含编码很适合参数控制！我觉得单是这些连续型的隐含编码，就可以串起一个网络，从而建立一个非线性模型，映射更高层的语义和编码的关系，再通过infoGAN映射到图像结果。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

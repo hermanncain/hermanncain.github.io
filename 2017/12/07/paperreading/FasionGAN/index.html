@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/FashionGAN/FashionGAN_a.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >ICCV2017 FashionGAN时装生成</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>原文</p>
+<p><a href="http://arxiv.org/abs/1710.07346" target="_blank" rel="noopener">Be Your Own Prada: Fashion Synthesis with Structural Coherence</a></p>
+<p>根据文本对人物换装。首先对照片进行语义分割，作为隐含的空间排布约束。然后将语义分割的结果作为条件，使用CGAN生成最终换装结果。论文提出的方法保证了<strong>结构一致性</strong>：</p>
+<ul>
+<li>身体形状和姿态</li>
+<li>根据文本描述生成区域及对应的纹理</li>
+<li>增强身体各部分在视觉上的连贯性</li>
+</ul>
+<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1 概述"></a>1 概述</h2><p>数据处理：原始图像$I_0$，语义分割映射$S_0$包括头发、脸、上衣、裤子等等区域和形状。</p>
+<p>把输入图像的<strong>空间配置</strong>作为条件来生成目标。</p>
+<h3 id="保留信息"><a href="#保留信息" class="headerlink" title="保留信息"></a>保留信息</h3><p>2值编码的向量a来抽取着装者的详细信息，如性别、长短发、是否戴眼镜、是否带帽子等等，还有肤色的RGB均值、宽高比等等。a中所包含的信息是最后结果中需要保留的。</p>
+<p>设文本编码为d，设计编码定义为d=(a,v)。给定设计编码d和语义分割$S_0$，目标是生成图像$\tilde I$，符合v保留a。当然在训练过程中，$\tilde I = I_0$</p>
+<h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>整个过程可以概括为2个阶段：</p>
+<ul>
+<li>人体分割形状生成  $\tilde S \gets G_{\rm shape}(z_S,\downarrow m(S_0),d)$</li>
+<li>纹理渲染  $\tilde I \gets G_{\rm image}(z_I,\tilde S d)$</li>
+</ul>
+<p><img src="/img/FashionGAN/FashionGAN_a.png" alt="整体框架"></p>
+<p><strong>空间约束</strong>：第一阶段中，$\downarrow m(S_0)$是原始语义分割$S_0$的低分辨率表示，作为空间约束，来保证生成的分割形状$\tilde S$保留原图的形状和姿态。</p>
+<p><strong>组合映射</strong>：在第二个阶段中，每个分割部分都是独立生成的，然后组合到一起呈现出最终的结果。</p>
+<h2 id="2-分割映射生成-G-rm-shape"><a href="#2-分割映射生成-G-rm-shape" class="headerlink" title="2 分割映射生成$G_{\rm shape}$"></a>2 分割映射生成$G_{\rm shape}$</h2><p>$$\tilde S \gets G_{\rm shape}(z_S,\downarrow m(S_0),d)$$</p>
+<p>以空间约束$\downarrow m(S_0)$为条件，生成语义分割映射$\tilde S$。高斯噪声$z_S \in \mathbb R^{100}$，初始图像$I_0 \in \mathbb R^{m \times n \times 3}$。</p>
+<p>初始的语义分割映射$S_0$是像素级的独热编码$S_0 \in \{0,1\}^{m \times n \times L}$，L是标签的数量，文中取7：背景、头发、脸、上衣、裤子、腿、胳膊。</p>
+<h3 id="2-1-空间约束"><a href="#2-1-空间约束" class="headerlink" title="2.1 空间约束"></a>2.1 空间约束</h3><p>空间约束$\downarrow m(S_0) \in [0,1]^{m^\prime \times n^\prime \times L^\prime}$由$S_0$下采样得到。这里的类别缩减了，$L^\prime=4$：背景、头发、脸、其他。</p>
+<blockquote>
+<p>为什么要这个粗略的空间约束呢？因为$S_0$和d可能冲突，比如$S_0$是短裤，d中的描述是长裙。这种冲突会导致生成的结果很差。</p>
+</blockquote>
+<p><img src="/img/FashionGAN/FashionGAN_dr.png" alt="冲突带来的恶化结果"></p>
+<blockquote>
+<p>这点细细想来很有意思。假设人工换装，换成“长裙”的话，上衣和裤子都需要被换掉。$\downarrow m(S_0)$将上衣和裤子都归入了“其他”类，这样和长裙才能对应起来。如果衣服没有这么多款式，比如做纯衬衫的生成，就不存在冲突，也就不需要这步了。</p>
+</blockquote>
+<h3 id="2-2-形状生成"><a href="#2-2-形状生成" class="headerlink" title="2.2 形状生成"></a>2.2 形状生成</h3><p>$\tilde S \in [0,1]^{m \times n \times L}$，和$S_0$姿态一样，但各分块符合d中的描述。因为生成的是语义分割映射，所以每个生成的像素点也都是7个标签的softmax编码。</p>
+<p><img src="/img/FashionGAN/FashionGAN_sm.png" alt="相同S0、不同d生成的不同形状结果"></p>
+<h2 id="3-纹理渲染-G-rm-image"><a href="#3-纹理渲染-G-rm-image" class="headerlink" title="3 纹理渲染$G_{\rm image}$"></a>3 纹理渲染$G_{\rm image}$</h2><h3 id="3-1-合成映射"><a href="#3-1-合成映射" class="headerlink" title="3.1 合成映射"></a>3.1 合成映射</h3><p>比以往的GAN多了合成映射层compositional mapping layer。对每个类别训练一个通道，将属于第l类的像素点集记为$P_l$，最终图像$\tilde I$中的第p个像素记为$(\tilde I)_p$，则：</p>
+<p>$$(\tilde I)_p = \sum ^L_{l=1}\mathbf l_{p \in P_l} \cdot (\tilde I_l)_p$$</p>
+<p>$\tilde I_l$是第l类的通道（即所有的$\tilde I_l$构成合成映射层），$\mathbf l_{(.)}$是示性函数，即</p>
+<p>$$<br>\mathbf l =<br>\begin{cases}<br>1, &amp; p \in P_l \\<br>0, &amp; p \notin P_l<br>\end{cases}<br>$$</p>
+<p>$(\tilde I)_p$实际上是在像素级别上，以是否属于各类别为权重（0或1）的网络输出加权和。</p>
+<h3 id="3-2-图像生成"><a href="#3-2-图像生成" class="headerlink" title="3.2 图像生成"></a>3.2 图像生成</h3><p>因为多了一层合并映射，所以tanh是在这层之前的。</p>
+<h2 id="4-网络细节和训练"><a href="#4-网络细节和训练" class="headerlink" title="4 网络细节和训练"></a>4 网络细节和训练</h2><p>两个阶段分开训练。</p>
+<p>设计编码d是50维，其中10维是人的参数：性别、长/短发、戴/不戴帽子、带/不带眼镜一共4维。皮肤RGBY值4维，高、宽2维。剩下40维是句子的嵌入编码。输出128*128的图像。</p>
+<p>$S_0$经过双三次下采样得到8*8的$\downarrow m(S_0)$。头发和脸区域在生成图像中直接使用原图替换。</p>
+<p>数据集是DeepFashion，人工打上标题描述着装。语义分割的数据是用ATR数据集训练的VGG先分割一遍再人工修正的。</p>
+<h2 id="5-结果"><a href="#5-结果" class="headerlink" title="5 结果"></a>5 结果</h2><p>常规结果</p>
+<p><img src="/img/FashionGAN/FashionGAN_ga.png" alt="结果"></p>
+<p>结果矩阵。行：相同的输入图片；列：相同的文字描述</p>
+<p><img src="/img/FashionGAN/FashionGAN_rmatrix.png" alt="矩阵"></p>
+<p>插值渐变</p>
+<p><img src="/img/FashionGAN/FashionGAN_i.png" alt="插值"></p>
+<p><a href="http://mmlab.ie.cuhk.edu.hk/projects/FashionGAN/" target="_blank" rel="noopener">项目主页</a>，论文、代码和数据集都在里边了。</p>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>SSGAN是先从均匀分布的噪声生成法线图像，然后将法线图像作为条件，再从均匀分布的噪声生成照片级图像。</p>
+<p>FashionGAN是先进行语义分割作为条件，再生成符合图像和文本描述的形状蒙版。</p>
+<p>可以看到，自LAPGAN以来，将CGAN嵌入到复杂过程中似乎是一个趋势。就看怎么处理数据能够喂入GAN生成结果了。</p>
+<p>CGAN多模态的威力真的很强大，这几篇文献给出了很好的例子。场景过程、信息编码以及结果处理，是将CGAN应用到各领域的三大关键部分。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
