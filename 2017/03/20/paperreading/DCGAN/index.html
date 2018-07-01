@@ -521,7 +521,13 @@ win_unicode_console<span class="token punctuation">.</span>enable<span class="to
 <p>在DCGAN的初始化函数里，会有个判断<code>self.data</code>的长度是否比batch-size小的逻辑，但是在用mnist测试时，self.data是没有的，所以直接跑就会报错。应该把这句放到判断数据集的条件分支中，要么就注释或者try掉。（看代码其他部分各种if或try以兼容三类数据集和tf版本，还是很严谨的，怎么这里就忽略了呢……）</p>
 <p>前面提到CGAN每层都拼接条件的到底有什么作用，这里做了几个实验对比下：</p>
 <p><img src="/img/DCGAN/DCGAN_experiment_with_c.png" alt="拼接条件对比试验"></p>
-<p>可见和原始的1相比，2在图像边缘有较多噪声；3在文字边缘有少许噪声；4在文字笔画内有较多噪声（有点像棋盘效应的效果），背景有少许噪声。各实验的训练速度和最终收敛情况看不出太大差别。结合非条件DCGAN的结果可以推断，如果只是在输入层拼接条件，会引入噪声。但是G每层拼接条件就有助于消除前景噪声，D每层拼接条件有助于消除背景噪声。</p>
+<p>可见和原始的1相比，2在图像边缘有较多噪声；3在文字边缘有少许噪声；4在文字笔画内有较多噪声（有点像棋盘效应的效果），背景有少许噪声。各实验的训练速度和最终收敛情况看不出太大差别。结合非条件DCGAN的结果，给出以下猜想，没大量实验过，不一定对：</p>
+<ul>
+<li>只是在输入层拼接条件，会引入噪声</li>
+<li>G每层拼接条件就有助于消除前景噪声</li>
+<li>D每层拼接条件有助于消除背景噪声</li>
+</ul>
+<p>前文说过，基于Tensorlayer实现的DCGAN没有CGAN，我在它基础上实现了一个<a href="https://github.com/hermanncain/dcgan" target="_blank" rel="noopener">CGAN的版本</a>。不得不说Tensorflow版的DCGAN真的写的很好，模块性啊做的很赞。Tensorlayer实现起来并没有减少多少代码，而且感觉训练部分的代码稍微有些凌乱。</p>
 
             </div>
 

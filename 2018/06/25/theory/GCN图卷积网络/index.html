@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/GCN/GCN_a.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >GCN图卷积网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-非欧数据"><a href="#1-非欧数据" class="headerlink" title="1 非欧数据"></a>1 非欧数据</h2><p>欧几里得数据：具有规则空间结构的数据，如一维的语音序列，二维的点阵图像，三维体素模型等。</p>
+<p>CNN非常擅长处理欧几里得数据，卷积核扫到底，根据误差的反向传播优化卷积核的系数，实现特征提取。但CNN对非欧几里得数据很难处理。非欧数据，顾名思义，数据不是分布在欧式空间上的，自然也不满足一些欧式变换的不变性，如平移不变性——卷积核可就没法好好扫了。</p>
+<p>非欧几里得数据：不具有规则空间结构的数据，如社交网络，知识图谱。</p>
+<p>上述非欧几里得数据实际上是拓扑图。为了能够对这种数据也进行特征提取/卷积运算，图卷积诞生。</p>
+<h2 id="2-图卷积"><a href="#2-图卷积" class="headerlink" title="2 图卷积"></a>2 图卷积</h2><h3 id="2-1-图的拉普拉斯矩阵"><a href="#2-1-图的拉普拉斯矩阵" class="headerlink" title="2.1 图的拉普拉斯矩阵"></a>2.1 图的拉普拉斯矩阵</h3><p>图G=(V,E)，邻接矩阵A描述了各顶点两两之间的连接情况，度矩阵D描述了各顶点所连接的边数。拉普拉斯矩阵L有若干种定义：</p>
+<ul>
+<li>$L = D - A$</li>
+<li>$L^{sys} = D^{-1/2}AD^{-1/2}$</li>
+<li>$L^{rw} = D^{-1}A$</li>
+</ul>
+<p>L是对称阵，可以进行特征分解：<br>$L=U{\rm diag}(\lambda_1,…,\lambda_n)U^{-1}$。$U=(u_1,…,.u_n)$是以列向量为特征向量的正交阵。因为U是正交阵，转置和逆相同，所以L的特征分解也可以写为$L=U{\rm diag}(\lambda_1,…,\lambda_n)U^{T}$</p>
+<h3 id="2-2-傅里叶变换"><a href="#2-2-傅里叶变换" class="headerlink" title="2.2 傅里叶变换"></a>2.2 傅里叶变换</h3><p>在信号处理中，傅里叶变换是采用不同频率的正弦波的线性组合表示一个信号，从而将时域信号在频域上表示。想想傅里叶变换是怎么表达的：$F(\omega)=\mathcal F(f(t))=\int f(t)e^{-i\omega t}dt$。对拉普拉斯算子$\Delta$而言，基函数$e^{-i\omega t}$实际上就是它的特征函数。离散的拉普拉斯算子就是拉普拉斯矩阵，因此图上的傅里叶变换就可以表示为$F(\lambda) = \sum^N_{i=1}f(i)u^*_l(i)$。这个u正好是拉普拉斯矩阵特征分解中U的特征向量，所以进一步可以表示为$F=\mathcal F_G(f)=U^Tf$。同样可以推出图的傅里叶逆变换为$f=\mathcal F_G^{-1}(f)=UF$</p>
+<h3 id="2-3-卷积"><a href="#2-3-卷积" class="headerlink" title="2.3 卷积"></a>2.3 卷积</h3><p>傅里叶变换和卷积关系密切，两个时域上函数的卷积可以表示为频域乘积的傅里叶逆变换：$f*h=\mathcal F^{-1}(F(w)H(w))$。那么推广到图，$(f*h)_G=\mathcal F_G^{-1}(FH)=U(U^Th \cdot U^Tf)=U{\rm diag}(H(\lambda_1),…,H(\lambda_n))U^Tf$</p>
+<h2 id="3-深度学习中的图卷积"><a href="#3-深度学习中的图卷积" class="headerlink" title="3 深度学习中的图卷积"></a>3 深度学习中的图卷积</h2><h3 id="3-1-图卷积的演进"><a href="#3-1-图卷积的演进" class="headerlink" title="3.1 图卷积的演进"></a>3.1 图卷积的演进</h3><p>和深度学习中的卷积一样，图卷积也并不是和理论定义完全一致的。最初DL中的图卷积就是直接将${\rm diag}(H(\lambda_1),…,H(\lambda_n))$作为卷积参数，即$y=\sigma(U\Theta U^Tx)$。但显然，此种图卷积方法在反向传播时要计算$U\Theta U^T$，且卷积核和整个图一样大，计算效率很低。</p>
+<p>后来出了改进版本，也是最常用的版本：$y=\sigma(\sum^K_{j=0} \alpha_j L^jx)$。K是卷积核大小，$\alpha$是卷积核参数，L是拉普拉斯矩阵。这样一来，连特征分解都不需要了。</p>
+<p>改进版本还有个特点就是有很好的空间定位性——可以保证每次卷积，都是对顶点K深度的相邻顶点以$\alpha$为权重加权求和。</p>
+<h3 id="3-2-图卷积网络"><a href="#3-2-图卷积网络" class="headerlink" title="3.2 图卷积网络"></a>3.2 图卷积网络</h3><p>将上述内容整理下，图卷积网络定义如下：</p>
+<ul>
+<li>总输入为图G=(V,E)，特征矩阵X和邻接矩阵A。这里的特征矩阵不是特征分解的矩阵，而是每个节点的特征所构成的矩阵，即$X \in \mathbb R_{N \times D}$，N是输入节点的数量，D是每个节点的特征数量。</li>
+<li>图卷积一般公式$H^{(l+1)} = f(Z,A)$。Z是第L层的输出$Z=H^{(l)}\in \mathbb R_{N \times F}$，F是输出的特征的维度。f是非线性函数，如$f(H^{(l)},A) = \sigma (A^{(l)}H^{(l)}W^{(l)})$。可以看出，图卷积层在运算过程中将节点周围N个节点的特征进行了加权。</li>
+<li>对第一层，令$H^0=X$</li>
+</ul>
+<p>不过对于$f(H^l,A) = \sigma (A^lH^lW^l)$而言还是有一些小问题的：</p>
+<ul>
+<li>邻接矩阵A的结构注定导致计算中不会算上节点自己的特征。解决方法：加上个单位阵I，即用$\hat A = A+I$代替A</li>
+<li>$\hat A$不是标准化的，相乘以后特征的尺度就会被改变了。怎么办？求$\hat A$的对角化度矩阵$\hat D$，然后上拉普拉斯矩阵$L^{sys} = \hat D^{-1/2}\hat A \hat D^{-1/2}$</li>
+</ul>
+<p>经过以上trick，图卷积层的公式就变为</p>
+<p>$$<br>H^{(l+1)} = \sigma (\hat D^{-1/2}\hat A \hat D^{-1/2}H^{(l)}W^{(l)})<br>$$</p>
+<p>写成向量化表示，就是</p>
+<p>$$<br>h_{v_i}^{(l+1)}=\sigma(\sum_j \frac{1}{c_{ij}} h^{(l)}_{v_j}W^{(l)})<br>$$</p>
+<p>$c_{ij}$就是从$\hat D^{-1/2}\hat A \hat D^{-1/2}$计算得到的系数。这个式子和3.1中的改进版本是一样的。</p>
+<h3 id="3-3-GCN代码"><a href="#3-3-GCN代码" class="headerlink" title="3.3 GCN代码"></a>3.3 GCN代码</h3><p>有了上述基础，就可以着手构建图卷积神经网络GCN。先把$\hat D^{-1/2}\hat A \hat D^{-1/2}$搞定：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> scipy<span class="token punctuation">.</span>sparse <span class="token keyword">as</span> sp
+
+<span class="token comment" spellcheck="true"># 将稀疏矩阵转化为数组</span>
+<span class="token keyword">def</span> <span class="token function">sparse_to_tuple</span><span class="token punctuation">(</span>sparse_mx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># The zeroth element of the tuple contains the cell location of each</span>
+    <span class="token comment" spellcheck="true"># non-zero value in the sparse matrix</span>
+    <span class="token comment" spellcheck="true"># The first element of the tuple contains the value at each cell location</span>
+    <span class="token comment" spellcheck="true"># in the sparse matrix</span>
+    <span class="token comment" spellcheck="true"># The second element of the tuple contains the full shape of the sparse</span>
+    <span class="token comment" spellcheck="true"># matrix</span>
+    <span class="token keyword">def</span> <span class="token function">to_tuple</span><span class="token punctuation">(</span>mx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> <span class="token operator">not</span> sp<span class="token punctuation">.</span>isspmatrix_coo<span class="token punctuation">(</span>mx<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            mx <span class="token operator">=</span> mx<span class="token punctuation">.</span>tocoo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        coords <span class="token operator">=</span> np<span class="token punctuation">.</span>vstack<span class="token punctuation">(</span><span class="token punctuation">(</span>mx<span class="token punctuation">.</span>row<span class="token punctuation">,</span> mx<span class="token punctuation">.</span>col<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>transpose<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        values <span class="token operator">=</span> mx<span class="token punctuation">.</span>data
+        shape <span class="token operator">=</span> mx<span class="token punctuation">.</span>shape
+        <span class="token keyword">return</span> coords<span class="token punctuation">,</span> values<span class="token punctuation">,</span> shape
+
+    <span class="token keyword">if</span> isinstance<span class="token punctuation">(</span>sparse_mx<span class="token punctuation">,</span> list<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>sparse_mx<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            sparse_mx<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> to_tuple<span class="token punctuation">(</span>sparse_mx<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        sparse_mx <span class="token operator">=</span> to_tuple<span class="token punctuation">(</span>sparse_mx<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> sparse_mx
+
+<span class="token comment" spellcheck="true"># 行标准化特征矩阵并转化为数组</span>
+<span class="token keyword">def</span> <span class="token function">preprocess_features</span><span class="token punctuation">(</span>features<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    rowsum <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>features<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    r_inv <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>rowsum<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    r_inv<span class="token punctuation">[</span>np<span class="token punctuation">.</span>isinf<span class="token punctuation">(</span>r_inv<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">.</span>
+    r_mat_inv <span class="token operator">=</span> sp<span class="token punctuation">.</span>diags<span class="token punctuation">(</span>r_inv<span class="token punctuation">)</span>
+    features <span class="token operator">=</span> r_mat_inv<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>features<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> sparse_to_tuple<span class="token punctuation">(</span>features<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 对称标准化邻接矩阵，即计算拉普拉斯矩阵 L_sys</span>
+<span class="token keyword">def</span> <span class="token function">normalize_adj</span><span class="token punctuation">(</span>adj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    adj <span class="token operator">=</span> sp<span class="token punctuation">.</span>coo_matrix<span class="token punctuation">(</span>adj<span class="token punctuation">)</span>
+    rowsum <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>adj<span class="token punctuation">.</span>sum<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    d_inv_sqrt <span class="token operator">=</span> np<span class="token punctuation">.</span>power<span class="token punctuation">(</span>rowsum<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">.</span>flatten<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    d_inv_sqrt<span class="token punctuation">[</span>np<span class="token punctuation">.</span>isinf<span class="token punctuation">(</span>d_inv_sqrt<span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">.</span>
+    d_mat_inv_sqrt <span class="token operator">=</span> sp<span class="token punctuation">.</span>diags<span class="token punctuation">(</span>d_inv_sqrt<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> adj<span class="token punctuation">.</span>dot<span class="token punctuation">(</span>d_mat_inv_sqrt<span class="token punctuation">)</span><span class="token punctuation">.</span>transpose<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>dot<span class="token punctuation">(</span>d_mat_inv_sqrt<span class="token punctuation">)</span><span class="token punctuation">.</span>tocoo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">preprocess_adj</span><span class="token punctuation">(</span>adj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    adj_normalized <span class="token operator">=</span> normalize_adj<span class="token punctuation">(</span>adj <span class="token operator">+</span> sp<span class="token punctuation">.</span>eye<span class="token punctuation">(</span>adj<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> sparse_to_tuple<span class="token punctuation">(</span>adj_normalized<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>因为图的矩阵常是稀疏矩阵，所以需要考虑稀疏矩阵的运算。先定义乘法：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">_dot</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> sparse<span class="token punctuation">:</span>
+        <span class="token keyword">return</span> tf<span class="token punctuation">.</span>sparse_tensor_dense_matmul<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后可以着手定义图卷积层：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">GraphConvLayer</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> input_dim<span class="token punctuation">,</span> output_dim<span class="token punctuation">,</span>
+                 name<span class="token punctuation">,</span> act<span class="token operator">=</span>tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>relu<span class="token punctuation">,</span> bias<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>input_dim <span class="token operator">=</span> input_dim
+        self<span class="token punctuation">.</span>output_dim <span class="token operator">=</span> output_dim
+        self<span class="token punctuation">.</span>act <span class="token operator">=</span> act
+        self<span class="token punctuation">.</span>bias <span class="token operator">=</span> bias
+
+        <span class="token comment" spellcheck="true"># 实验表明xavier初始化比较能保证训练稳定</span>
+        <span class="token keyword">with</span> tf<span class="token punctuation">.</span>variable_scope<span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">'weights'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>w <span class="token operator">=</span> tf<span class="token punctuation">.</span>get_variable<span class="token punctuation">(</span>
+                    name<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span>
+                    shape<span class="token operator">=</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>input_dim<span class="token punctuation">,</span> self<span class="token punctuation">.</span>output_dim<span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    initializer<span class="token operator">=</span>tf<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>layers<span class="token punctuation">.</span>xavier_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>bias<span class="token punctuation">:</span>
+                <span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">'biases'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>b <span class="token operator">=</span> tf<span class="token punctuation">.</span>get_variable<span class="token punctuation">(</span>
+                        name<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span>
+                        initializer<span class="token operator">=</span>tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">,</span> shape<span class="token operator">=</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>output_dim<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">call</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> adj_norm<span class="token punctuation">,</span> x<span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        hw <span class="token operator">=</span> _dot<span class="token punctuation">(</span>x<span class="token operator">=</span>x<span class="token punctuation">,</span> y<span class="token operator">=</span>self<span class="token punctuation">.</span>w<span class="token punctuation">,</span> sparse<span class="token operator">=</span>sparse<span class="token punctuation">)</span>
+        ahw <span class="token operator">=</span> _dot<span class="token punctuation">(</span>x<span class="token operator">=</span>adj_norm<span class="token punctuation">,</span> y<span class="token operator">=</span>hw<span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> <span class="token operator">not</span> self<span class="token punctuation">.</span>bias<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>act<span class="token punctuation">(</span>ahw<span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>act<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>add<span class="token punctuation">(</span>ahw<span class="token punctuation">,</span> self<span class="token punctuation">.</span>bias<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>call<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>3层ReLU图卷积的网络就可以如下实现：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 因为是稀疏矩阵，所以要用tf.sparse_placeholder</span>
+ph <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'adj_norm'</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>sparse_placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"adj_mat"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token string">'x'</span><span class="token punctuation">:</span> tf<span class="token punctuation">.</span>sparse_placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span> name<span class="token operator">=</span><span class="token string">"x"</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+
+l_sizes <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
+
+o_fc1 <span class="token operator">=</span> lg<span class="token punctuation">.</span>GraphConvLayer<span class="token punctuation">(</span>input_dim<span class="token operator">=</span>feat_x<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          output_dim<span class="token operator">=</span>l_sizes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          name<span class="token operator">=</span><span class="token string">'fc1'</span><span class="token punctuation">,</span>
+                          act<span class="token operator">=</span>tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>relu<span class="token punctuation">)</span><span class="token punctuation">(</span>adj_norm<span class="token operator">=</span>ph<span class="token punctuation">[</span><span class="token string">'adj_norm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                                          x<span class="token operator">=</span>ph<span class="token punctuation">[</span><span class="token string">'x'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sparse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+o_fc2 <span class="token operator">=</span> lg<span class="token punctuation">.</span>GraphConvLayer<span class="token punctuation">(</span>input_dim<span class="token operator">=</span>l_sizes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          output_dim<span class="token operator">=</span>l_sizes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          name<span class="token operator">=</span><span class="token string">'fc2'</span><span class="token punctuation">,</span>
+                          act<span class="token operator">=</span>tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>relu<span class="token punctuation">)</span><span class="token punctuation">(</span>adj_norm<span class="token operator">=</span>ph<span class="token punctuation">[</span><span class="token string">'adj_norm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x<span class="token operator">=</span>o_fc1<span class="token punctuation">)</span>
+
+o_fc3 <span class="token operator">=</span> lg<span class="token punctuation">.</span>GraphConvLayer<span class="token punctuation">(</span>input_dim<span class="token operator">=</span>l_sizes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          output_dim<span class="token operator">=</span>l_sizes<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                          name<span class="token operator">=</span><span class="token string">'fc3'</span><span class="token punctuation">,</span>
+                          act<span class="token operator">=</span>tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>relu<span class="token punctuation">)</span><span class="token punctuation">(</span>adj_norm<span class="token operator">=</span>ph<span class="token punctuation">[</span><span class="token string">'adj_norm'</span><span class="token punctuation">]</span><span class="token punctuation">,</span> x<span class="token operator">=</span>o_fc2<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<hr>
+<h2 id="体会"><a href="#体会" class="headerlink" title="体会"></a>体会</h2><p>GCN和CNN本质上并没有不同，都是在给定结构下，对结构内的元素进行加权平均的过程，只不过后者的结构会缩小，前者不变。假设将GCN用到GAN中，图的拓扑结构也是贯穿始终的“容器”，而生成的内容只不过是各个节点中的特征而已。在某些领域，比如机构学，拓扑结构才是王道。显然，无法对拓扑结构进行改变的GCN是无法应用在这种类型的场景中的。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>GCN半监督学习对图的顶点进行分类：<a href="https://github.com/tkipf/gcn" target="_blank" rel="noopener">https://github.com/tkipf/gcn</a> （没有可视化的代码）</p>
+<p>GCN无监督/半监督图顶点聚类教程：<a href="https://github.com/dbusbridge/gcn_tutorial" target="_blank" rel="noopener">https://github.com/dbusbridge/gcn_tutorial</a> （依赖包nomkl已不可用，代码没法跑）</p>
+<p>（知乎superbrother的回答）如何理解图卷积：<a href="https://www.zhihu.com/question/54504471" target="_blank" rel="noopener">https://www.zhihu.com/question/54504471</a></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
