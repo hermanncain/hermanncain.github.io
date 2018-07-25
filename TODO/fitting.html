@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="/css/dropdownMenu.css" />
     <meta name="keywords" content="hermann" />
     
-    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
     <noscript>
         <link rel="stylesheet" href="/css/noscript.css" />
     </noscript>
@@ -107,6 +105,12 @@
 		        <!-- Pages 自定义   -->
 		        
 		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
 		            <a href="/tag/" title="标签">
 		                标签
 		            </a>
@@ -117,6 +121,8 @@
             </ul>
             <!-- icons 图标   -->
 			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
 		            
 		            
 		            
@@ -130,7 +136,24 @@
             </div>
             <!-- Post -->
             <div class="typo" style="padding: 3rem;">
-                <h1 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h1><p><a href="https://arxiv.org/abs/1406.2661" target="_blank" rel="noopener">https://arxiv.org/abs/1406.2661</a></p>
+                <p>underfitting &amp; overfitting</p>
+<h2 id="1-欠拟合"><a href="#1-欠拟合" class="headerlink" title="1 欠拟合"></a>1 欠拟合</h2><p>对train的loss就很高，没有学习充分</p>
+<p>此时又叫做高偏差high bias</p>
+<ul>
+<li>换损失函数，如CrossEntropy</li>
+<li>换激活函数，如ReLU，避免BP过程中梯度消失</li>
+<li>mini-bacth，这样所有样本跑过一代之后参数已经更新了batch次</li>
+<li>自适应学习率，这样学习率会随训练接近最优逐渐变小</li>
+<li>换优化方法，RMSProp，Adam，动量梯度下降等</li>
+</ul>
+<h2 id="2-过拟合"><a href="#2-过拟合" class="headerlink" title="2 过拟合"></a>2 过拟合</h2><p>对train的loss很低，但是对test的loss很高，说明学习过度，降低了泛化能力</p>
+<p>此时又叫高方差high variance</p>
+<ul>
+<li>数据增强，能的话首选咯<br>= Early stopping，Validation多少代以内不再达到最优就停止</li>
+<li>dropout</li>
+<li>正则化</li>
+<li>换网络结构</li>
+</ul>
 
             </div>
 
@@ -145,7 +168,7 @@
                 <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
             </ul>
             
-            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
 			
         </div>
     </div>

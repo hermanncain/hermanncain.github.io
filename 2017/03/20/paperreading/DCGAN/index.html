@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="/css/dropdownMenu.css" />
     <meta name="keywords" content="hermann" />
     
-    	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	 
     <noscript>
         <link rel="stylesheet" href="/css/noscript.css" />
     </noscript>
@@ -107,6 +105,12 @@
 		        <!-- Pages 自定义   -->
 		        
 		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
 		            <a href="/tag/" title="标签">
 		                标签
 		            </a>
@@ -117,6 +121,8 @@
             </ul>
             <!-- icons 图标   -->
 			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
 		            
 		            
 		            
@@ -222,7 +228,7 @@
         <span class="token keyword">return</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>input_<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span> <span class="token operator">+</span> bias
 
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>显然在D中，<code>linear</code>的传入参数<code>output_size = 1</code>，才能将4维张量转化为1维序列输入输入sigmoi；而在G中，<code>linear</code>的使用和D是对称的——将z转化为4维张量作为反卷积栈的开始。</p>
+<p>显然在D中，<code>linear</code>的传入参数<code>output_size = 1</code>，才能将4维张量转化为1维序列输入输入sigmoid；而在G中，<code>linear</code>的使用和D是对称的——将z转化为4维张量作为反卷积栈的开始。</p>
 <h2 id="2-DCGAN基本参数"><a href="#2-DCGAN基本参数" class="headerlink" title="2 DCGAN基本参数"></a>2 DCGAN基本参数</h2><p>DCGAN模型的代码在<code>model.py</code>中。</p>
 <pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">DCGAN</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> 
@@ -542,7 +548,7 @@ win_unicode_console<span class="token punctuation">.</span>enable<span class="to
                 <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
             </ul>
             
-            	<span id="busuanzi_container_site_pv">2018总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
 			
         </div>
     </div>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >从朴素贝叶斯分到逻辑回归</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-朴素贝叶斯分类"><a href="#1-朴素贝叶斯分类" class="headerlink" title="1 朴素贝叶斯分类"></a>1 朴素贝叶斯分类</h2><p>两个类C1和C2，其先验概率分别为P(C1)和P(C2)。给定x，其特征彼此独立，C1类条件下x的概率为P(x|C1)，C2类条件下x的概率为P(x|C2)。那么根据贝叶斯公式，可以得到x属于C1的后验概率为</p>
+<p>$$<br>P(C_1|x)=\frac{P(C_1,x)}{P(x)}=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}<br>$$</p>
+<p>x的分布用全概率公式展开，所以，如果想要计算x属于某类的后验概率，需要学习先验概率P(C1)，P(C1)，类条件概率P(x|C1)和P(x|C2)。</p>
+<p>假设数据满足高斯分布，那么要学习的参数实际上就变成了各类别高斯分布的参数$\mu$和$\Sigma$。为了减少参数数量（为什么，见第3节），各类别的高斯分布共用同一个$\Sigma$，取值为原来两个方差的加权平均，权重为先验概率。</p>
+<p>对于模型最后输出的后验概率，使用极大似然${\rm argmax}P(C_i|x)$判断x到底属于哪一类。</p>
+<h2 id="2-朴素贝叶斯分类扩展"><a href="#2-朴素贝叶斯分类扩展" class="headerlink" title="2 朴素贝叶斯分类扩展"></a>2 朴素贝叶斯分类扩展</h2><p>将朴素贝叶斯分类器的后验概率公式进行一些运算：</p>
+<p>$$<br>\begin{aligned}<br>P(C_1|x)&amp;=\frac{P(x|C_1)P(C_1)}{P(x|C_1)P(C_1)+P(x|C_2)P(C_2)}\\<br>&amp;=\frac{1}{1+\frac{P(x|C_2)P(C_2)}{P(x|C_1)P(C_1)}}<br>\end{aligned}<br>$$</p>
+<p>令</p>
+<p>$$<br>z = \ln \frac{P(x|C_1)P(C_1)}{P(x|C_2)P(C_2)}<br>$$</p>
+<p>则后验概率可以写为</p>
+<p>$$<br>P(C_1|x)=\frac{1}{1+e^{-z}}=\sigma(z)<br>$$</p>
+<p>得到了sigmoid函数。显然，不论对概率分布做何种假设，都会得到sigmoid函数</p>
+<p>继续对z进行计算：</p>
+<p>$$<br>\begin{aligned}<br>z&amp;=\ln \frac{P(x|C_1)}{P(x|C_2)}+\ln \frac{P(C_1)}{P(C_2)}\\<br>&amp;=\ln \frac{1/(2\pi)^{D/2}\cdot 1/|\Sigma^1|^{1/2}\exp[-1/2(x-\mu^1)^T(\Sigma^1)^{-1}(x-\mu^1)]}{1/(2\pi)^{D/2}\cdot 1/|\Sigma^2|^{1/2}\exp[-1/2(x-\mu^2)^T(\Sigma^2)^{-1}(x-\mu^2)]}+\ln\frac{N_1}{N_2}\\<br>\end{aligned}<br>$$</p>
+<p>如果令$\Sigma^1=\Sigma^2$，继续对z进行计算、化简，可以得到：</p>
+<p>$$<br>\begin{aligned}<br>z&amp;=\left\{(\mu^1-\mu^2)^T\Sigma^{-1}\right\} x+\left\{-1/2(\mu^1)^T\Sigma^{-1}\mu^1+1/2(\mu^2)^T\Sigma^{-1}\mu^2+\ln\frac{N_1}{N_2}\right\}\\<br>&amp;=wx+b<br>\end{aligned}<br>$$</p>
+<p>于是$P(C_1|x)=\sigma(wx+b)$，得到了logistic regression。所以令$\Sigma^1=\Sigma^2$以后，将高斯分布的大量参数转化为了wx+b，极大简化了模型。</p>
+<p>假设数据是从满足后验概率的分布中产生的，即令$f_{w,b}(x)=P(C_1|x)$，则给定w,b，对于2分类练数据(xj,Cj)(xk,Ck)，生成所有训练数据概率就是</p>
+<p>$$<br>L(w,b)=\Pi f_{w,b}(x^j)\Pi(1-f_{w,b}(x^k))<br>$$</p>
+<p>最大化似然，目标就是$w,b=arg \max_{w,b}L(w,b)$。为了将乘法转化为加法方便计算，对其取对数，变成$w,b=arg \min_{w,b} -\ln L(w,b)$。对$-\ln L(w,b)$进行计算：</p>
+<p>$$<br>-\ln L(w,b) = \sum [-\ln f_{w,b}(x^j)]\sum [-\ln (1-f_{w,b}(x^k))]<br>$$</p>
+<p>将2分类数据的标签从Cj,Ck变成y=1,y=0，则上式可写为</p>
+<p>$$<br>-\ln L(w,b) = \sum_i -[y^i\ln f_{w,b}(x^i)+(1-y^i)\ln(1-f_{w,b}(x^i))]<br>$$</p>
+<p>得到了逻辑回归的损失函数</p>
+<p>上面的损失函数实际上就是2个伯努利分布y和f_{w,b}(x)的交叉熵cross entropy。回顾下交叉熵的定义$H(p,q)=-\sum_x p(x)\ln q(x)$，两个伯努利分布分别为</p>
+<p>$$<br>\begin{aligned}<br>p(x=1)&amp;=y^i\\<br>p(x=0)&amp;=1-y^i<br>\end{aligned}<br>$$</p>
+<p>$$<br>\begin{aligned}<br>q(x=1)&amp;=f_{w,b}(x^i)\\<br>q(x=0)&amp;=1-f_{w,b}(x^i)<br>\end{aligned}<br>$$</p>
+<p>于是他们的交叉熵就是$-[y^i\ln f_{w,b}(x^i)+(1-y^i)\ln(1-f_{w,b}(x^i))]$，越小，两个分布越接近。</p>
+<p>我们知道，在线性回归中，损失函数是$L=1/2||f(x)-y||_2$，梯度$\partial L / \partial w_i = (f(x)-y)x$。但是逻辑回归中，损失函数并没有使用MSE，而是交叉熵。但是计算可以发现，其梯度和线性回归是一样的。</p>
+<p>逻辑回归的损失函数不用MSE是有原因的。因为sigmoid函数的特性，除了接近目标之外，在远离目标时梯度也非常小，这时优化会很慢。</p>
+<h2 id="3-判别模型vs生成模型"><a href="#3-判别模型vs生成模型" class="headerlink" title="3 判别模型vs生成模型"></a>3 判别模型vs生成模型</h2><p>回顾后验概率的贝叶斯公式：</p>
+<p>$$<br>P(y|x)=\frac{P(y,x)}{P(x)}=\frac{P(x|y)P(y)}{P(x)}<br>$$</p>
+<p>P(x)不随类别变化，所以朴素贝叶斯相当于是求解联合概率分布P(x,y)来预测类别标签。这种预测模型叫生成模型</p>
+<p>生成模型学习联合概率分布P(y,x)=P(x|y)P(y)，再从这个分布中预测采样x的类别。常用的生成模型有朴素贝叶斯、隐马尔科夫模型、受限玻尔兹曼机、自编码器、生成对抗网络等。</p>
+<p>判别模型学习的是条件概率分布P(y|x)。对于给定的样本x，判别模型直接预测其标签y的概率P(y|x)，而对产生该样本的分布并不关心。常用的判别模型有逻辑回归，SVM，K近邻，感知机，决策树等。</p>
+<p>生成模型由于学习的是联合概率分布，因此一般来说比判别模型更“宽泛”一些，在一些任务中表现差于判别模型，但是具有判别模型所没有的“脑补”能力，也更加抗噪声干扰。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

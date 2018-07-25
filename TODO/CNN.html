@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>为什么图像领域使用CNN？</p>
+<ul>
+<li>传统的FC每一层都是全部的输入。但是在图像作业中，只要知道局部的特征就足够进行一些判断了</li>
+<li>一些局部特征会重复出现在不同图像的不同位置（平移不变性），虽然位置不同，但这种特征识别仍然是重复性的工作，最好使用相同的神经元来完成<blockquote>
+<p>CNN的卷积实现了以上两点</p>
+</blockquote>
+</li>
+<li>适当的下采样不影响图像所传达的含义，但像素少了，参数也就少了，网络更简单了<blockquote>
+<p>CNN的最大池化支持了这一点</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="1-卷积"><a href="#1-卷积" class="headerlink" title="1 卷积"></a>1 卷积</h2><h3 id="1-1-卷积核"><a href="#1-1-卷积核" class="headerlink" title="1.1 卷积核"></a>1.1 卷积核</h3><p>卷积核Filter/Kernel是一个矩阵，里边的参数是学习到的。卷积核实际上是一个小图像，通过对整张图像的卷积，来寻找整张图里和这张小图像一样的部分。</p>
+<p>卷积会带来两个问题</p>
+<ul>
+<li>图像变小</li>
+<li>边缘利用率低</li>
+</ul>
+<p>为了解决以上两个问题，可以对边缘进行填充padding，这也是卷积过程中的一个重要参数p。padding=valid时，不填充p=0，图像会变小；padding=same是，填充到和卷积之前一样大小，p=(k-1)/2。</p>
+<p>卷积核size=k*k*#channel，步长stride s，填充padding p，输入图像尺寸i*i，经过卷积之后，输出大小o*o为</p>
+<p>$$<br>o= \lfloor \frac{i+2p-k}{s}+1 \rfloor<br>$$</p>
+<h3 id="1-2-多通道卷积"><a href="#1-2-多通道卷积" class="headerlink" title="1.2 多通道卷积"></a>1.2 多通道卷积</h3><p>在多通道中，每个通道被1个卷积核卷完之后加起来，得到通道只有1的feature map。</p>
+<p>一般来说会使用多个卷积核。那么每个卷积核都能卷出一个feature map，在通道方向上拼接起来，于是将一个2维图像平面卷积成长方体。</p>
+<p>一般都是image-conv-pool-conv-pool-…-fc-…-fc-softmax这样的架构，一张图像经过一系列conv-pool之后展成1个vector，喂入fc。卷积核一般随着层越深数量越多，feature map也越卷尺寸越小通道越大。</p>
+<h3 id="1-3-1-1卷积核"><a href="#1-3-1-1卷积核" class="headerlink" title="1.3 1*1卷积核"></a>1.3 1*1卷积核</h3><p>很多网络中都出现了1*1的卷积核，作用就是在不改变尺寸的条件下改变通道数。1*1的卷积核实际上就是FC，卷积核数量就是改变之后的通道数。</p>
+<h3 id="1-4-CNN和FC的关系"><a href="#1-4-CNN和FC的关系" class="headerlink" title="1.4 CNN和FC的关系"></a>1.4 CNN和FC的关系</h3><p>一张图像image经过一个卷积核filter卷积一次之后得到了一张更小的feature map。feature map的每一个点就是神经元，每个神经元的输入就是得到该点的那次卷积所卷过的image的像素。这样看来，每个神经元的输入不是image的所有像素，而是filter大小数量的像素——所以，CNN是稀疏连接版的FC。此外，由于filter是同一个，所以feature map中神经元的参数是共用的，进一步减少了参数数量。</p>
+<h2 id="2-池化pooling"><a href="#2-池化pooling" class="headerlink" title="2 池化pooling"></a>2 池化pooling</h2><p>池化做的事情就是下采样。池化有max pooling（更常用）和average pooling，以步长进行扫略，计算池化size区域内的值，所以也有2个参数步长s和尺寸k。</p>
+<blockquote>
+<p>池化会提供一些旋转不变性，这点很容易理解</p>
+</blockquote>
+<p>但是是否需要池化要好好考虑。比如Alpha Go就不应该使用，下采样丢了很多信息在围棋中可不是好事。</p>
+<p>随机池化SP的思想是，将区域内的元素池化为为区域内某个元素的值，元素值大的被选中的概率更大。</p>
+<p>一般池化区域是不重叠的，即s=k，除了一般池化外，还有其他类型的池化。</p>
+<h3 id="空间金字塔池化SPP"><a href="#空间金字塔池化SPP" class="headerlink" title="空间金字塔池化SPP"></a>空间金字塔池化SPP</h3><p>空间金字塔池化SPP能够支持任意输入大小的图像。网络确定之后，受限于FC的输入维度，对图像尺寸是有要求的，不满足就要进行裁剪crop或者拉伸wrap，破坏了图像的信息。但使用金字塔结构来进行池化，就可以把feature map按照金字塔不同层i的尺度$(w/n_i,h/n_i)$固定提取出$\sum n_i$个特征，组成特征向量喂入fc。</p>
+<h3 id="全局池化GP"><a href="#全局池化GP" class="headerlink" title="全局池化GP"></a>全局池化GP</h3><p>全局池化的池化区域和整个feature map的尺寸一样大，这样w*h*c的feature map就会被转化为1*1*c的向量输出。</p>
+<p>在CNN的最后一般有fc，输入是将上一层的所有feature map展成vector拼接起来，所以fc的参数仍然很多，降低训练速度，容易过拟合。如果使用全局池化代替fc，比如全局平均池化GAP，池化后直接将c维向量喂入softmax，就极大减少了参数。</p>
+<p>从网络结构上考虑，全局平均池化实际上就是一种正则化方法，避免网络过拟合。</p>
+<p>GAP拿掉了FC，任意尺寸的输入也被支持了，并且操作简单，应用越来越广泛。</p>
+<h2 id="3-可视化"><a href="#3-可视化" class="headerlink" title="3 可视化"></a>3 可视化</h2><p>把低层的filter可视化可以看到它们在识别一些低维特征，如某些方向的边缘、色彩等。</p>
+<p>高层的filter可以这样可视化：将filter参数固定，设第k个filter的输出为矩阵$a_{ij}$，定义激活函数为$a^k=\sum \sum a^k_{ij}$将输入图片的像素值随机初始化，找到输入图片$x^*=arg \max_x a^k$。</p>
+<p>FC也可以通过这种方式可视化。不过最后一层可视化可能会是噪声——机器对图像理解的编码和人类还是不同的，这也为对抗攻击提供了可能。加上正则化的话可能能够可视化出稍微可辨识些的结果。</p>
+<h2 id="4-网络赏析"><a href="#4-网络赏析" class="headerlink" title="4 网络赏析"></a>4 网络赏析</h2><p>本部分基于Tensorflow对下面部分我电脑上能跑得动的经典网络进行了复现，代码见<a href="">这里</a>。接下来具体介绍网络架构。</p>
+<h3 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h3><p>CNN开山经典之作。最经典的CNN网络架构(conv–pooling–non-linear)^n-fc就是由此而起。</p>
+<p>3个卷积层，2个平均池化层，1层fc，高斯连接层输出。</p>
+<p><img src="/img/cnn/cnn_LeNet.png" alt="LeNet"></p>
+<h3 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h3><p>更宽更深的LeNet，并且采用了ReLU、Dropout、数据增强、多GPU、LRN。奠定了DL在CV中的地位。</p>
+<p>局部响应归一化LRN将生物中被激活的神经元抑制相邻神经元的机制（侧抑制）应用到人工神经网络中，将大的值变得更大，小的更小，不过后来被VGG指出并没有什么卵用……所以这里就不做深入。</p>
+<p>5个卷积层，3个最大池化层，3个fc，softmax层输出。</p>
+<p><img src="/img/cnn/cnn_AlexNet.png" alt="AlexNet"></p>
+<h3 id="VGG-Net"><a href="#VGG-Net" class="headerlink" title="VGG-Net"></a>VGG-Net</h3><p>VGG层数更多（11-19层），更小的卷积核尺寸（全部使用3*3卷积核），并且经常出现好几层卷积核叠加的情况，这很好地体现了“深度”网络的设计，更深比更广的参数更少、表现更好。例如2层3*3卷积相当于1层5*5卷积，但参数却是18：25，训练起来更快。并且前者ReLU用了2次，后者才用了1次。这也带来更强的非线性，学习能力更强。</p>
+<p><img src="/img/cnn/cnn_VGG.png" alt="VGG"></p>
+<h3 id="InceptionNet"><a href="#InceptionNet" class="headerlink" title="InceptionNet"></a>InceptionNet</h3><p>Inception V1有22层，但参数只有500万，是AlexNet的1/12。和前人相比，它的创新之处一是用GAP替换含有大量参数的fc，二是Inception模块。</p>
+<p><img src="/img/cnn/cnn_Inception.png" alt="Inception"></p>
+<p>Inception模块的思想是</p>
+<p>可以看到用了很多尺寸为1的卷积核。因为同样位置、不同通道的节点相关性最高，因此用1的卷积核可以有效将这些节点连接在一起。</p>
+<p>V2借鉴了VGG的深&gt;广的思路，使用3*3卷积代替5*5卷积。最大的贡献是提出了BN。有了BN强大的正则化能力，droput就可以去掉并减小L2正则，学习速率提升，学习衰减速率增加。</p>
+<p>V3的改进一是使用卷及分解。将二维卷积拆分成2个一维卷积，又极大减少了一波参数、增加了一次非线性。改进二就是对Inception模块进行了改进。</p>
+<p><img src="/img/cnn/cnn_iInception.png" alt="改进的Inception模块"></p>
+<p>V4结合了下文的ResNet</p>
+<h3 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h3><p>ResNet可以将网络层数堆叠到相当多的程度。我们知道网络太深容易出现梯度消失，此时的问题是还没达到足够小的误差就已经因为梯度趋近于0导致无法再继续训练，而不是参数多引起过拟合。</p>
+<p>残差块则是允许前面层的网络输出跳过中间几层，直接输入到后面的层里。论文里提出了2中类型的残差块。</p>
+<p><img src="/img/cnn/cnn_ResNet.png" alt="Residual Unit"></p>
+<p>这种skip connection的传递方式，保证了信息的完整性，同时也让网络只需要学习输入输出的残差，简化了学习。</p>
+<p>V2改进了残差块的结构</p>
+<p><img src="/img/cnn/cnn_ResNetV2.png" alt="Residual Unit V2"></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

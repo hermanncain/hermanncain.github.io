@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/理论/">理论</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >CV/CG数据集整理</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>最近工作有点缺数据集，借此机会搜索、整理一波。</p>
+<h2 id="2D位图"><a href="#2D位图" class="headerlink" title="2D位图"></a>2D位图</h2><h3 id="书画"><a href="#书画" class="headerlink" title="书画"></a>书画</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>尺度</th>
+<th>结构</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://yann.lecun.com/exdb/mnist/" target="_blank" rel="noopener">MNIST</a></td>
+<td>手写数字分类</td>
+<td>11M</td>
+<td>60000：10000</td>
+<td>28*28</td>
+<td>单通道图片；标签</td>
+<td>-</td>
+</tr>
+<tr>
+<td><a href="https://www.kaggle.com/c/painter-by-numbers" target="_blank" rel="noopener">Painter by Numbers</a></td>
+<td>WikiArt作品，画家年代流派等标注很丰富</td>
+<td>-</td>
+<td>20k+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id="服饰"><a href="#服饰" class="headerlink" title="服饰"></a>服饰</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>尺度</th>
+<th>结构</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.kaggle.com/zalando-research/fashionmnist" target="_blank" rel="noopener">Fashion MNIST</a></td>
+<td>时装分类</td>
+<td>69M</td>
+<td>60000：10000</td>
+<td>28*28</td>
+<td>单通道图片；标签</td>
+<td><img src="/img/datasets_FashionMNIST.png" alt="Fashion MNIST"></td>
+</tr>
+<tr>
+<td><a href="https://www.kaggle.com/olgabelitskaya/traditional-decor-patterns/home" target="_blank" rel="noopener">Traditional Decor Patterns</a></td>
+<td>图案分类</td>
+<td>50M</td>
+<td>485</td>
+<td>150x150x3</td>
+<td>png</td>
+<td><img src="/img/datasets_FashionMNIST.png" alt="Decor Patterns"></td>
+</tr>
+<tr>
+<td><a href="http://mmlab.ie.cuhk.edu.hk/projects/DeepFashion.html" target="_blank" rel="noopener">DeepFashion</a></td>
+<td>时装分类、检索、标注</td>
+<td>-</td>
+<td>800k图片，每张图片50类和1k属性标注</td>
+<td>-</td>
+<td>-</td>
+<td><img src="/img/datasets_DeepFashion.png" alt="DeepFashion"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="室内"><a href="#室内" class="headerlink" title="室内"></a>室内</h3><h3 id="生物"><a href="#生物" class="headerlink" title="生物"></a>生物</h3><h3 id="自然"><a href="#自然" class="headerlink" title="自然"></a>自然</h3><h3 id="物体"><a href="#物体" class="headerlink" title="物体"></a>物体</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>尺度</th>
+<th>结构</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.cs.toronto.edu/~kriz/cifar.html" target="_blank" rel="noopener">CIFAR-10/100</a></td>
+<td>分类</td>
+<td>200M-</td>
+<td>6000张*10类/600张*100类</td>
+<td>32*32</td>
+<td>-</td>
+<td><img src="/img/datasets_CIFAR.png" alt="CIFAR"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>尺度</th>
+<th>结构</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.kaggle.com/danhendrycks/icons50/home" target="_blank" rel="noopener">Icons-50</a></td>
+<td>分类</td>
+<td>200M-</td>
+<td>10k张，50类</td>
+<td>120*120</td>
+<td>png</td>
+<td><img src="/img/datasets_ICON.png" alt="Icons-50"></td>
+</tr>
+<tr>
+<td><a href="https://data.vision.ee.ethz.ch/sagea/lld/" target="_blank" rel="noopener">LLD</a></td>
+<td>-</td>
+<td>1G~13G</td>
+<td>600k+</td>
+<td>32*32</td>
+<td>-</td>
+<td><img src="/img/datasets_ICON.png" alt="LLD"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="2D矢量"><a href="#2D矢量" class="headerlink" title="2D矢量"></a>2D矢量</h2><h2 id="3D网格"><a href="#3D网格" class="headerlink" title="3D网格"></a>3D网格</h2><h3 id="物品"><a href="#物品" class="headerlink" title="物品"></a>物品</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>尺度</th>
+<th>结构</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.shapenet.org/" target="_blank" rel="noopener">ShapeNet</a></td>
+<td>三维模型，多视图，标注</td>
+<td>-</td>
+<td>三种规模9639/4045/696 PASCAL 3D+也包含在内</td>
+<td>-</td>
+<td>skp; jpg</td>
+<td><img src="/img/datasets_ShapeNet.png" alt="ShapeNet"></td>
+</tr>
+<tr>
+<td><a href="http://ikea.csail.mit.edu/" target="_blank" rel="noopener">IKEA</a></td>
+<td>3D-2D对齐</td>
+<td>600M-</td>
+<td>219个3维模型，759张图像</td>
+<td>图像大小337*210</td>
+<td>obj/skp; jpg</td>
+<td><img src="/img/datasets_IKEA.png" alt="ikea"></td>
+</tr>
+<tr>
+<td><a href="http://pix3d.csail.mit.edu/" target="_blank" rel="noopener">Pix3D</a></td>
+<td>3D-2D对齐</td>
+<td>3.6/5.8G</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td><img src="/img/datasets_Pix3D.png" alt="Pix3D"></td>
+</tr>
+<tr>
+<td><a href="http://cvgl.stanford.edu/projects/objectnet3d/" target="_blank" rel="noopener">ObjectNet3D</a></td>
+<td>物体识别</td>
+<td>8G-</td>
+<td>90k个图像; 201k个物体; 44k个3D模型</td>
+<td>-</td>
+<td>-</td>
+<td><img src="/img/datasets_ObjectNet3D.png" alt="ObjectNet3D"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="室内-1"><a href="#室内-1" class="headerlink" title="室内"></a>室内</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://buildingparser.stanford.edu/dataset.html" target="_blank" rel="noopener">Stanford 2D-3D-Semantics</a></td>
+<td>全景RGBD/Normal，点云，网格，语义分割</td>
+<td>766G</td>
+<td>70k+</td>
+<td><img src="/img/datasets_2D3DS.png" alt="2D3DS"></td>
+</tr>
+<tr>
+<td><a href="http://www.scan-net.org/" target="_blank" rel="noopener">ScanNet</a></td>
+<td>视频，实例分割，表面重建</td>
+<td>-</td>
+<td>2.5m视角</td>
+<td><img src="/img/datasets_ScanNet.png" alt="ScanNet"></td>
+</tr>
+<tr>
+<td><a href="https://niessner.github.io/Matterport/" target="_blank" rel="noopener">Matterport3D</a></td>
+<td>全景RGBD，语义分割，表面重建</td>
+<td>-</td>
+<td>10.8k个全景</td>
+<td><img src="/img/datasets_Matterport3D.png" alt="Matterport3D"></td>
+</tr>
+<tr>
+<td><a href="http://suncg.cs.princeton.edu/#" target="_blank" rel="noopener">SUNCG</a></td>
+<td>RGBD，Mesh，体素</td>
+<td>-</td>
+<td>-</td>
+<td><img src="/img/datasets_SUNCG.png" alt="SUNCG"></td>
+</tr>
+<tr>
+<td><a href="https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html" target="_blank" rel="noopener">NYUv2</a></td>
+<td>Kinect采集RGBD，标签</td>
+<td>-</td>
+<td>1449</td>
+<td><img src="/img/datasets_NYUv2.png" alt="NYUv2"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3D点云"><a href="#3D点云" class="headerlink" title="3D点云"></a>3D点云</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>用途</th>
+<th>大小</th>
+<th>数量</th>
+<th>尺度</th>
+<th>结构</th>
+<th>预览</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.kaggle.com/daavoo/grid-of-voxels-to-train-linear-model/data" target="_blank" rel="noopener">3D-MNIST</a></td>
+<td>3维点云版MINST</td>
+<td>200M-</td>
+<td>-</td>
+<td>-</td>
+<td>h5</td>
+<td><img src="/img/datasets_3DMNIST.png" alt="3DMNIST"></td>
+</tr>
+<tr>
+<td><a href="http://sun3d.cs.princeton.edu/" target="_blank" rel="noopener">SUN3D</a></td>
+<td>室内RGBD视频，3维点云</td>
+<td>200M-</td>
+<td>-</td>
+<td>-</td>
+<td>ply; mat</td>
+<td><img src="/img/datasets_3DMNIST.png" alt="3DMNIST"></td>
+</tr>
+<tr>
+<td><a href="http://modelnet.cs.princeton.edu/" target="_blank" rel="noopener">ModelNet10/40</a></td>
+<td>纯点云物体模型</td>
+<td>451M/1.9G</td>
+<td>127,915个模型，10/40类</td>
+<td>-</td>
+<td>off</td>
+<td><img src="/img/datasets_ModelNet.png" alt="ModelNet"></td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
