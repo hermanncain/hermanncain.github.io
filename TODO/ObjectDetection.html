@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >目标检测了解下</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>传统的图像分类任务只需要输入一张图片，输出类别即可。但对于一些更复杂的场景，需要检测出图像中对象的类别和位置。这就是计算机视觉的另一大场景：目标检测。输入图像，输出物体的包围框和类别。</p>
+<p>包围框(x,y,w,h)如果在整张图像上通过回归求得是非常慢的，转化成分类问题会如何呢？比如用<strong>滑窗</strong>扫过画面，对滑窗内的图像进行分类。除非要检测的物体就是某些固定的宽高比，否则要不同大小的滑窗全部扫一遍，太暴力。多目标检测消耗就更暴力了。</p>
+<h2 id="1-区域建议法"><a href="#1-区域建议法" class="headerlink" title="1 区域建议法"></a>1 区域建议法</h2><p><strong>区域建议法</strong>的大概意思是通过分割找到“前景”物体，然后做分类，找到合适的那一个。<strong>选择搜索算法</strong>是最常用的一种区域建议法，能够合并一些过分割的区域，得到较好的选择框。</p>
+<h3 id="1-1-R-CNN"><a href="#1-1-R-CNN" class="headerlink" title="1.1 R-CNN"></a>1.1 R-CNN</h3><p>对选择搜索算法得到的各个小图像（2k个）进行归一化并保存到本地，输入到pre-trained CNN，这个CNN用来提取和编码特征，一般去掉或修改最后一层fc。AlexNet或者VGG等都是比较好的。</p>
+<p>使用SVM对CNN输出的特征进行分类。然后每类再训练一个线性回归模型去微调选框的位置。</p>
+<p>整个流程为：</p>
+<ul>
+<li>获取区域</li>
+<li>区域归一化送入CNN提特征</li>
+<li>特征输入SVM分类</li>
+<li>回归模型调整区域框</li>
+</ul>
+<p>可以看出，整个训练过程是隔断的：SVM，回归都是独自训练。很多小图像比较占磁盘空间。而且不同尺寸的小图像归一化可能会导致信息丢失（这个问题可以用支持任意输入的CNN解决，比如使用了空间金字塔池化的SPPNet、Inception等）。其实最浪费的一点是小图像会有很多重复区域，但都要扔到CNN提取特征，这很浪费时间。</p>
+<h3 id="1-2-SPP-Net"><a href="#1-2-SPP-Net" class="headerlink" title="1.2 SPP-Net"></a>1.2 SPP-Net</h3><h3 id="1-3-Fast-R-CNN"><a href="#1-3-Fast-R-CNN" class="headerlink" title="1.3 Fast R-CNN"></a>1.3 Fast R-CNN</h3><p>RCNN步骤复杂，并不算快。于是有了Fast RCNN。Fast RCNN提出了一种相当于只有一层SPP的新型池化层ROI pooling，将池化结果维度统一了，因此省去了归一化的步骤。除此之外，CNN的输入也不再是所有的小图片，而是直接输入一次原图。将前面的2k个选框映射到特征图中形成ROI，进行ROI池化，输入fc</p>
+<p>对于分类和回归则进行了合并。前面的fc的输出在这里兵分两路，分类任务时则使用softmax，框回归使用BBOX回归。</p>
+<p>整个流程为：</p>
+<ul>
+<li>获取区域</li>
+<li>整张图输入CNN，区域映射为ROI</li>
+<li>ROI池化，经过fc（2k个ROI导致fc计算量大，用SVD加速）</li>
+<li>fc输出兵分两路，各自再经过fc后计算分类+回归loss作为总loss</li>
+</ul>
+<p>Fast RCNN除了获取区域以外其他流程都是连续并且在一个网络内完成的，速度提升了不少。进入CNN以后，所有的通路都可以反向传播。</p>
+<h3 id="1-4-Faster-RCNN"><a href="#1-4-Faster-RCNN" class="headerlink" title="1.4 Faster RCNN"></a>1.4 Faster RCNN</h3><p>获取区域成了Fast RCNN速度的瓶颈。因此Faster RCNN提出了区域建议网络RPN，将这一步骤也交给NN来做。整张图片经过CNN后得到特征图输入RPN得到选框（300个）的特征，然后分类和回归，实现了端到端的检测。引入RPN后就多2个loss，分类loss判断前景/背景，回归loss调整选框参数。</p>
+<p>RPN是Faster RCNN的精髓。因为经过CNN的特征图比较小，所以可以直接上滑窗检测。使用9个滑窗(anchor)为一组滑窗，分类任务根据IoU检测各anchor内是否有目标（即前景/背景分类），回归任务BBOX回归。在分类中，规定了一些规则：IoU&gt;0.7或最大，正样本；IoU&lt;0.3，负样本。其他的anchor不训练</p>
+<h3 id="1-5-R-FCN"><a href="#1-5-R-FCN" class="headerlink" title="1.5 R-FCN"></a>1.5 R-FCN</h3><h2 id="2-回归方法"><a href="#2-回归方法" class="headerlink" title="2 回归方法"></a>2 回归方法</h2><h3 id="2-1-YOLO"><a href="#2-1-YOLO" class="headerlink" title="2.1 YOLO"></a>2.1 YOLO</h3><p>和RCNN系列的方法不同，YOLO将整个问题转化为了回归问题：框和分类概率。YOLO没有使用区域建议框，而是直接将图像划分为网格，每个网格只预测中心落在这个网格上的物体的位置（预测什么物体是训练学习到的，这个网格在测试阶段就负责预测该类别的物体），预测2个BBOX（x,y,w,h,[p]），所以速度非常快。</p>
+<p>因为网格划分的机制，YOLO对小物体、中心靠的近的物体的检测效果不佳，并且容易产生定位错误。此外精度也不如Faster RCNN。</p>
+<p>后来YOLO+Faster RCNN的anchor构造了SSD。只不过在Fastern RCNN中，anchor是通过滑窗进行的，而在SSD中，每个网格设置anchor。在此基础上，YOLOv2进行了更细的网格划分，使用全卷积代替fc，使用BN，使用darknet-19作为基础网络，并使用多尺度训练，进一步提升了速度准确率。经作者测试，每网格5个anchor是比较好的数量。针对小物体检测，则使用了ResNet的skip connection结构。此外还有能检测9000多类物体的YOLO9000。</p>
+<p>YOLOv3则不再使用softmax而使用了逻辑回归，因为目标的标签可能不止一个。基础网络使用了更接近ResNet的架构，</p>
+<p>和RCNN系相比，YOLO系流程更简单，速度更快，但是准确率略低。</p>
+<h3 id="2-2-SSD"><a href="#2-2-SSD" class="headerlink" title="2.2 SSD"></a>2.2 SSD</h3><p>s</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

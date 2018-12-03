@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >浅入理解Batch Normalization</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-BN快速了解一下"><a href="#1-BN快速了解一下" class="headerlink" title="1 BN快速了解一下"></a>1 BN快速了解一下</h2><p>BN有什么用：</p>
+<ul>
+<li>防止梯度消失/爆炸</li>
+<li>加快训练速度</li>
+<li>弱化初始化的影响</li>
+<li>还有一定的正则化作用</li>
+</ul>
+<p>BN都做了啥：</p>
+<ul>
+<li>将所在层输入的线性变换结果z=wa+b标准化为0均值、单位方差的正态分布$\hat z$</li>
+<li>将$\hat z$进行一定的调整$\tilde z = \gamma \hat z + \beta$</li>
+</ul>
+<p>但是BN到底是什么原理，在看似统一的解释背后却有不少争议。</p>
+<h2 id="2-梯度问题"><a href="#2-梯度问题" class="headerlink" title="2 梯度问题"></a>2 梯度问题</h2><p>我们都知道，在反向传播时，网络深度的增加会让累乘的梯度造成严重后果：消失或爆炸。非线性激活函数虽然赋予了NN强大的表达能力，但是训练过程的目标是良好分类，于是参数的不断调整使得激活函数的输入会慢慢跑到极端。例如sigmoid和tanh，输入会向左右两侧跑，梯度接近0，传播几次就消失了。</p>
+<p>对于ReLU而言，虽然ReLU一定程度上解决了梯度消失问题、简化了梯度计算、提供了一定的稀疏连接避免过拟合，但是在稀疏连接这一点上又有了问题：大梯度反向传播导致更新后梯度为0，“杀死”神经元。适量的杀死神经元相当于dropout起到了正则化作用，但是太多的神经元被杀死就降低了模型的表达能力。</p>
+<p>一个朴素的想法就是，如果能让输入分布在非线性激活函数接近线性的位置，梯度就能很好地传播下去。于是对每一层，在线性变换之后、激活函数之前，加上一层BN。对于mini-batch中的样本，上一层的输出a即本层的输入，经线性变换后为z=wa+b，设z的均值为$\mu$，方差为$\sigma$，则将其变换到均值为0、单位方差的正态分布的过程为：</p>
+<p>$$<br>\hat z = \frac{z-\mu}{\sqrt {(\sigma+\epsilon)}}<br>$$</p>
+<p>这一步，就是BN做的第一件事。此时$\hat z$可以保证分布在sigmoid中间区域了，但几乎是线性的，又导致新的问题——非线性不够，模型表达能力不强。所以BN要做第二件事，把上述正态分布再进行反标准化：</p>
+<p>$$<br>\tilde z = \gamma \hat z+\beta<br>$$</p>
+<p>注意到如果$\gamma = \mu,\beta=\sigma$，$\tilde z$就回到了z。但是E(z)和D(z)是受数据影响的，而$\gamma,\beta$是独立的参数，是学习得到的。于是这一步的意义就是根据标准化对结果的影响来调整标准化的程度。</p>
+<p>既然多了参数要学习，计算量其实增加了。但是有了BN之后梯度比较好，收敛速度快了很多（深层网络，通常浅层网络用BN起不到什么效果）。</p>
+<h2 id="3-Internal-Coviarate-Shift"><a href="#3-Internal-Coviarate-Shift" class="headerlink" title="3 Internal Coviarate Shift"></a>3 Internal Coviarate Shift</h2><p>梯度的解释是最常见的BN原理的解释，也是最直观的。在提出BN的<a href="https://arxiv.org/abs/1502.03167" target="_blank" rel="noopener">这篇文章</a>里，挖得更深了些——BN解决了Internal Coviarate Shift（ICS）。</p>
+<p>ICS是不一致分布导致的问题。因为一层的参数总是在变化，导致这一层的输出分布发生变化。虽然输入样本会做标准化，但是在隐层是没有标准化操作的，那么在每个mini-batch在隐层中进入下一层的时候分布都是不同的。从这个角度来说，不同的分布导致了不同的优化方向，这样在训练的时候走的路就比较曲折。</p>
+<p>每个隐层加BN，就实现了每层标准化。很多人在这里会和数据白化作对比，说BN就是简化改进版的白化加到了隐层。</p>
+<h2 id="4-平滑（2018年7月更新）"><a href="#4-平滑（2018年7月更新）" class="headerlink" title="4 平滑（2018年7月更新）"></a>4 平滑（2018年7月更新）</h2><p>在一篇2018年5月份的MIT的<a href="http://export.arxiv.org/abs/1805.11604" target="_blank" rel="noopener">论文</a>中，研究者却认为BN的成功和减少ICS并没有明确的关系（甚至ICS和训练的表现关系都是不确定的），并提出，BN的原理实际上是将优化问题的解空间变得更加平滑，改善了损失函数和梯度的Lipschitzness从而让梯度更稳定，可以使用大的学习速率。</p>
+<p>研究者特意在BN后边加了随机噪声提高ICS，但训练仍然比无BN的好，由此证明BN带来的有效性和ICS没关系。</p>
+<p>改善Lipschitzness让损失函数的变化速率变小了，梯度的变化幅值也变小了。这一点理论挺深，我的直观理解是，BN实施的多次变换就像人穿衣服一样，没穿衣服的时候身体形态暴露无遗，一件之后变得平缓，多件衣服足以遮盖一些体态上的问题（这里的体态问题可以理解为解空间中一些不好的区域，比如梯度消失的鞍点、梯度爆炸尖角等）。</p>
+<p>文章做了一些实验证实，BN确实降低了参数的灵敏度，也就提高了loss的鲁棒性。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

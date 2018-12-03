@@ -1,0 +1,229 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >游戏主程序和外观模式</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-子系统整合"><a href="#1-子系统整合" class="headerlink" title="1 子系统整合"></a>1 子系统整合</h2><p>游戏一般都会分成多个子系统，如关卡、事件、成就等等，这些系统会互相调用彼此的功能，传递信息。有些子系统还需要初始化和释放资源。初始化放在哪里合适呢？一个朴素的思想是某个状态类涉及了哪些子系统，就在这个状态类中初始化。</p>
+<pre><code>我的世界场景类: 场景状态类
+{
+    游戏事件系统
+    时间系统
+    聊天系统
+    物品系统
+    ...
+
+    构造函数(拥有者): base(拥有者){
+        赋状态名
+        初始化子系统
+    }
+    初始化子系统(){
+        游戏事件系统实例化
+        时间系统实例化
+        ...
+        游戏事件系统初始化
+        时间系统初始化
+        ...
+    }
+    更新子系统(){
+        游戏事件系统更新
+        时间系统更新
+        ...
+    }
+
+}
+
+</code></pre><p>上述方式虽然简单，但有一些缺点：</p>
+<ul>
+<li>该状态负责了太多功能，本来应该是管理该状态的，不应该负责初始化子系统，违反了单一职责原则</li>
+<li>难以重用。因为包含了太多的子系统初始化，关联了太多子系统，必须删掉才能重用</li>
+</ul>
+<h2 id="2-外观模式Facade"><a href="#2-外观模式Facade" class="headerlink" title="2 外观模式Facade"></a>2 外观模式Facade</h2><p>GoF对外观模式的定义是</p>
+<blockquote>
+<p><strong>为子系统定义一组统一的接口，这个高级的接口会让子系统更容易被使用</strong></p>
+</blockquote>
+<p>以车为例类比外观模式，方向盘、踏板、仪表盘等就是汽车引擎系统、悬挂系统、传动系统等的“高级接口”。司机只需要通过这些高级接口就可以开车。外观模式的重点就是隐藏系统内部互动细节，并提供简单方便的接口。</p>
+<p>对应到程序中，就是一个整合所有子系统，负责子系统初始化、更新、释放的接口类。这个类是游戏主程序，提供了界面让客户端使用。因为对于其他子系统的开发人员来说，只需要了解主程序即可，其他子系统的具体流程不用深入了解，因此外观模式有助于协作开发。</p>
+<p>这个接口类在状态模式的文章中已经出现过，在那篇文章里用“游戏逻辑“代替了。当时在“我的世界场景”中通过调用游戏逻辑的初始化、更新方法来操作系统运行，实现解耦。这里详细说明</p>
+<pre><code>我的世界游戏逻辑
+{
+    //子系统声明
+    时间系统
+    事件系统
+    物品系统
+    怪物系统
+
+    //我的世界场景调用下述方法实现场景初始化和更新，实现解耦
+    初始化(){
+        事件系统实例化
+        时间系统实例化
+        ...
+    }
+    更新(){
+        事件系统更新
+        时间系统更新
+        ...
+    }
+}
+</code></pre><h2 id="3-补充"><a href="#3-补充" class="headerlink" title="3 补充"></a>3 补充</h2><p>解耦是外观模式最大的优点。缺点就是子系统太多会导致外观模式的接口类庞大难以维护。这时候需要整合子系统，或者结合其他设计模式。</p>
+<p>其他应用场景：</p>
+<ul>
+<li>网络引擎将各种连线、事件等子系统通过外观模式整合管理</li>
+<li>数据库引擎也通过外观模式封装数据表的操作供其他没有数据库背景的开发人员使用</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

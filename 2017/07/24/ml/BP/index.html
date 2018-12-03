@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >反向传播推导</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>神经网络如今能够得以广泛应用，就是在于反向传播算法使得求梯度变得简单而快速，大量参数才能够快速更新。</p>
+<p>这里手推一下NN的BP过程。首先定义网络各表达式：</p>
+<ul>
+<li>设损失函数为J(W,b)</li>
+<li>第l层输入为第l-1层的输出，即$A^{l-1}$</li>
+<li>经过线性运算后为$Z^l=W^lA^{l-1}+b^l$</li>
+<li>经过激活函数后输出为$A^l=\sigma(Z^l)$</li>
+</ul>
+<p>根据链式求导法则，损失函数对第l层的参数$W^l$梯度为（b同理，略）</p>
+<p>$$<br>\frac{\partial J}{\partial W^l}=\frac{\partial J}{\partial Z^l}\frac{\partial Z^l}{\partial W^l}<br>$$</p>
+<p>根据开始的定义，易得$\frac{\partial Z^l}{\partial W^l}=A^{l-1}$。就是前一层的输出。这是正向传播的过程。</p>
+<p>那么对于$\frac{\partial J}{\partial Z^l}$继续进行链式求导：</p>
+<p>$$<br>\frac{\partial J}{\partial Z^l}=\frac{\partial J}{\partial A^l}\frac{\partial A^l}{\partial Z^l}=\frac{\partial J}{\partial A^l}\sigma^\prime (Z^l)<br>$$</p>
+<p>对于$\frac{\partial J}{\partial A^l}$而言，因为$A^l$会输入到之后的网络层最终影响J，所以之后所有层也都要考虑。例如对l+1层，根据链式求导可以继续推导为：</p>
+<p>$$<br>\frac{\partial J}{\partial A^l} = \frac{\partial J}{\partial Z^{l+1}} \frac{\partial Z^{l+1}}{\partial A^1}<br>$$</p>
+<p>同样根据开始的定义，易得$\frac{\partial Z^{l+1}}{\partial A^l}=W^{l+1}$。</p>
+<p>综合以上式子，得到一个递推公式：</p>
+<p>$$<br>\frac{\partial J}{\partial Z^l}=\frac{\partial J}{\partial Z^{l+1}}W^{l+1}\sigma^\prime (Z^l)<br>$$</p>
+<p>将损失对第l层非线性变换前的偏导称为该层的误差$\delta ^l = \frac{\partial J}{\partial Z^l}$，则式子可以简化写成</p>
+<p>$$<br>\delta ^l = \delta ^{l+1}W^{l+1}\sigma^\prime (Z^l)<br>$$</p>
+<p>这个式子可以这么理解：第l+1层的节点误差$\delta ^{l+1}=\frac{\partial J}{\partial Z^{l+1}}$经由参数为$W^{l+1}\sigma^\prime (Z^l)$的线性变换得到第l层的节点误差$\delta ^l=\frac{\partial J}{\partial Z^l}$。于是发现，<strong>这个式子也代表了一个神经网络，和原网络路径相同，方向相反，并且原网络参数得到了重复使用——这就是反向传播</strong>。</p>
+<p>于是，反向传播梯度下降的过程就是：</p>
+<ul>
+<li>正向传播，计算所有层输入输出</li>
+</ul>
+<p>$$<br>Z^l=W^lA^{l-1}+b^l<br>$$</p>
+<p>$$<br>A^l=\sigma(Z^l)<br>$$</p>
+<ul>
+<li>计算输出层的损失</li>
+</ul>
+<p>$$<br>\delta ^L = \frac{\partial J}{\partial Z^L}<br>$$</p>
+<ul>
+<li>每层损失反向传播，计算梯度</li>
+</ul>
+<p>$$<br>\delta ^l = \delta ^{l+1}W^{l+1}\sigma^\prime (Z^l)<br>$$</p>
+<p>$$<br>\frac{\partial J}{\partial W^l}=\delta ^l A^{l-1}<br>$$</p>
+<p>$$<br>\frac{\partial J}{\partial b^l}=\delta ^l<br>$$</p>
+<ul>
+<li>每层用梯度下降法更新参数</li>
+</ul>
+<p>$$<br>W^l \to W^l-\alpha \frac{\partial J}{\partial W^l}<br>$$</p>
+<p>$$<br>b^l \to b^l-\alpha \frac{\partial J}{\partial b^l}<br>$$</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

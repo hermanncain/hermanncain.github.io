@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >欠拟合和过拟合分析</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-基本概念"><a href="#1-基本概念" class="headerlink" title="1 基本概念"></a>1 基本概念</h2><p>training, validition, testing set：一般将数据分为训练集、验证集和测试集。小数据6:3:1，大数据98:1:1。验证集的意义是指导炼丹方向。测试集用来评价模型。不应该根据测试集来指导模型优化。</p>
+<p>泛化误差包括偏差和方差</p>
+<ul>
+<li>偏差：所有训练数据集训练出的模型输出的结果和真实结果的差异。可以用loss的均值衡量</li>
+<li>方差：不同训练数据集训练出的模型输出的结果之间的差异。用loss的方差衡量</li>
+</ul>
+<h2 id="2-欠拟合"><a href="#2-欠拟合" class="headerlink" title="2 欠拟合"></a>2 欠拟合</h2><p>欠拟合时，没有学习充分，所以训练及验证集的loss都比较高，此时会出现高偏差high bias，低方差low variance，因为没充分所以不同训练集带来的结果不会有太大不同。根据可能的原因就可以得出可能的改进方法：</p>
+<ul>
+<li>数据的特征不够明显，学不到什么东西：增加数据的特征，尤其是优质特征。这属于特征工程的工作</li>
+<li>模型不够复杂：增加模型复杂度，以及减小正则化项的系数</li>
+<li>梯度更新速度太慢，还没收敛到合适程度就跑完了：<ul>
+<li>增加训练次数。除了粗暴增大epoch之外，也可以用mini-batch，这样所有样本跑过一个epoch之后参数已经更新了很多次（这个几乎已经是默认设置了）</li>
+<li>遇到了局部最小、鞍点等：换优化方法，如RMSProp，Adam，动量梯度下降等</li>
+<li>学习率太大导致在最低点附近震荡：降低学习率或使用自适应学习率</li>
+<li>遇到了梯度消失/爆炸，低层没学到，高层瞎学。不过梯度问题和震荡一样，很容易就会表现出来，一般不会在找欠拟合原因的时候才看到。<ul>
+<li>换激活函数，如ReLU，Maxout</li>
+<li>BN（然而BN还有一点点正则化作用）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-过拟合"><a href="#3-过拟合" class="headerlink" title="3 过拟合"></a>3 过拟合</h2><p>对训练集的loss很低，但是对验证集的loss高，说明学习过度，降低了泛化能力</p>
+<p>此时会出现高偏差high bias和高方差high variance</p>
+<ul>
+<li>最朴素的思想——训练到一定程度其实就可以了，但继续迭代优化导致过度训练：Early stopping。可是什么时候停才合适呢？可以监测验证集的loss，设置多少代以内不再降低时就停止</li>
+<li>模型比较复杂，而数据量不够：简化模型、扩充数据。搜集更多数据或者使用数据增强，能的话这个方法是首选的</li>
+<li>还是模型复杂，不换结构的话：<ul>
+<li>表现在神经网络上，就是神经元、连接太多：使用dropout。此方法可以构造多种稀疏连接最后再组合（其实相当于换结构）</li>
+<li>更通用的方法：正则化。通过给损失函数增加正则化项抑制参数的取值。L1正则会造成稀疏，L2更平滑</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

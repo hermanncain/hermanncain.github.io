@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >语言模型</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>N元模型（N元语法）是最常用的语言模型。设句子是单词序列[w1,w2,w3,…]，则语言模型就是句子的概率分布：P(w1,w2,w3,…)。</p>
+<p>N元模型认为，第n个词出现与前n-1个词相关，而与其他任何词不相关。因此N元模型可以表示为P(w1,w2,w3,…) = P(w1)P(w2|w1)P(w3|w1w2)…通过统计语料中的频数计算各条件概率。</p>
+<p>但这个式子也不容易计算，越往后越难以统计，因此进一步简化：</p>
+<p>2元模型只考虑前一个单词：P(w1,w2,w3,…) = P(w1)P(w2|w1)P(w3|w2)…如果考虑更多，就形成了3元，4元模型……不过还是2元和3元最常用，也被称为2阶、3阶马尔科夫链。为了保证概率和为1，一般还要把句首、句尾作为两个标记\&lt;BOS>,\&lt;EOS>考虑在内。</p>
+<p>例如2元模型，设$w_{i-1}w_i$在训练语料中出现的次数为$c(w_{i-1}w_i)$，则使用极大似然估计计算$P(w_i|w_{i-1})$：</p>
+<p>$$<br>P(w_i|w_{i-1})=\frac{c(w_{i-1}w_i)}{\sum_{w_i} c(w_{i-1}w_i)}<br>$$</p>
+<p>但是N元模型有个问题，就是如果分子为0，那么即使一个句子没毛病，最后概率也是0。为了避免这个问题，需要对数据进行<strong>平滑</strong>。一种简单的平滑方法就是每个频数+1。数据平滑是语言模型中的核心问题。更多的平滑方法以后再分析。</p>
+<p>输入法预测、搜索词补全、文本生成等领域都用到了N元模型。除了计算句子的概率外，N元模型还可以用在特征工程上：将各个条件概率作为新的特征。</p>
+<blockquote>
+<p>N-gram距离：字符串相似度</p>
+</blockquote>
+<blockquote>
+<p>这里插一个衡量字符串相似度的N-gram距离：公共子串数量。如2元模型将2个字符串分词形成2组2字符的子串，统计2组子串间相同子串的数量，就得到2-gram距离。但这个距离定义无法区分一个字符串被另一个字符串包含时，两字符串的差异。因此可以用另一种方式计算距离：子串数量和-2*公共子串数量。</p>
+</blockquote>
+<blockquote>
+<p>由于本篇专门讲语言模型，因此对字符串相似度这个问题，以后在专门的文章中分析，这里就先不表。</p>
+</blockquote>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

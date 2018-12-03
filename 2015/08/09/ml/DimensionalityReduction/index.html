@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >感性工学</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="因子分析FA"><a href="#因子分析FA" class="headerlink" title="因子分析FA"></a>因子分析FA</h2><p>用少数几个因子去描述许多指标或因素之间的联系。将相关比较密切的几个变量归在同一类中，每一类变量就成为一个因子（不可观测量），以较少的几个因子反映原资料的大部分信息。举个例子，偏科各门成绩是可以观测的变量，但背后的因子如逻辑思维强就是不可观测的量。可见因子分析看重的是协方差。</p>
+<p>不是所有的数据都可以做因子分析。这里需要先用KMO检验和Bartllet检验判断数据是否适合做因子分析。KMO比较变量的<strong>简单相关系数</strong>和<strong>偏相关系数</strong>。显然，变量越相关才越有做因子分析的必要。体现在数值上，KMO越大越适合做因子分析，&lt;0.5则不适合。简单相关系数衡量了线性相关程度。Bartllet检验通过检验相关矩阵是否为单位阵来判断变量间是否独立。p值&lt;0.05则适合做因子分析。</p>
+<p>下面来说因子分析。既然M个变量$X_{M\times 1}$可以用N个因子$F_{N\times 1}$表示（N&lt;M），那么X就可以写成F的函数$X=FA+E$。A称为因子载荷矩阵，从行上考虑，A衡量了每个变量在各因子上的投影；从列的角度来考虑，A衡量了每个因子对各变量的贡献。E称为特殊因子。F内部、E内部以及F和E都是不相关的，其中F中各因子方差均为1。因子分析就是求解A的过程。</p>
+<p>定义A的列中各元素的平方和为因子对变量的贡献，实际上该值也是协方差矩阵的特征根之一。那么只要选择贡献度靠前的几个因子（一般选择累积贡献度&gt;60%的几个因子），就可以完成初步的降维。</p>
+<p>因子分析中还要通过因子旋转来增强解释性，即尽量使每个变量只在一个因子上有较大载荷，在其他因子上有较小载荷，这样该因子的含义就更容易明确。sklearn则通过<code>from sklearn.decomposition import FactorAnalysis</code>使用因子分析，但因子数量需要人为指定。因此如果想要用累积贡献度的方法选择因子，需要查看因子和贡献度，手动筛选靠前的。SPSS中可以更好地完成因子分析，通过<code>降维-因子分析</code>，并在<code>旋转</code>中设置旋转方法，直接求得因子数量（默认累积贡献度&gt;60%）和因子载荷矩阵。</p>
+<h2 id="主成分分析PCA"><a href="#主成分分析PCA" class="headerlink" title="主成分分析PCA"></a>主成分分析PCA</h2><p>和因子分析追求解释性不同，主成分分析着重考虑方差，且不关注解释性。具体来说，PCA是找到一个数据尽量有最大方差的低维映射。实现这个目的的思路还是比较容易想的：</p>
+<ul>
+<li>数据标准化</li>
+<li>求协方差矩阵</li>
+<li>求协方差矩阵的特征值和特征向量</li>
+<li>选择最大的几个特征值对应的特征向量（就是最大方差）</li>
+<li>数据降维到选择出的特征向量所构造的空间中</li>
+</ul>
+<p>为什么要最大方差呢？实际上PCA做的事情是找正交的主轴。比如一堆分布成椭圆形的点PCA降到1维，主轴就是椭圆的长轴。显然，数据点在椭圆长轴上的投影方差最大，数据点到椭圆长轴的均方误差最小（有点直线拟合的意思，只不过对误差的度量方法不太一样），这两个考量得到的结果是一致的。</p>
+<p>在sklearn中通过引入<code>from sklearn.decomposition import PCA</code>类、<code>fit_transform()</code>方法使用PCA。主成分的数量可以通过<code>PCA(n_component=...)</code>指定，一般可以传入float值而不是int值，这样就不需要考虑具体数量，只需要考虑降维后信息保留的百分比即可。但sklearn的因子分析不能这样设置，只能指定因子数量。</p>
+<h2 id="线性判别分析LDA"><a href="#线性判别分析LDA" class="headerlink" title="线性判别分析LDA"></a>线性判别分析LDA</h2><p>和PCA不同，线性判别分析LDA是一种有监督的降维方法。PCA其实不尽完美。比如两堆数据分别分布在两个长轴平行的椭圆区域内，如果长轴足够大，PCA给出的可能还是长轴方向，这样一投影，两度数据就不可分了。这时候LDA能找到它们的短轴方向。</p>
+<p>因为数据带了标签，所以LDA的目标是：分类效果最好——降维后同类数据尽量近，不同类数据尽量远。为了实现这个目标，流程如下：</p>
+<ul>
+<li>计算样本类间散度矩阵$S_b$</li>
+<li>计算样本类内散度矩阵$S_w$</li>
+<li>计算$S_w^{-1}S_b$的特征值和特征向量</li>
+<li>取最大的几个特征值对应的特征向量</li>
+<li>数据降维到选择出的特征向量所构造的空间中</li>
+</ul>
+<p>LDA最多只能将数据降维到类别-1维。skearn中通过<code>from sklearn.discriminant_analysis import LinearDiscriminantAnalysis</code>使用LDA降维。LDA也可以直接用于分类，通过<code>from sklearn.lda import LDA</code>使用LDA分类。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

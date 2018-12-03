@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/Entropy/Entropy_title.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >理解熵及交叉熵损失</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-熵"><a href="#1-熵" class="headerlink" title="1 熵"></a>1 熵</h2><p>$X \sim p(x)$，用分布p表示X时的平均编码长度，也是香农信息量$-\log p$的期望。</p>
+<p>$$<br>H(X) = -\sum p(x)\log p(x)<br>$$</p>
+<h2 id="2-交叉熵"><a href="#2-交叉熵" class="headerlink" title="2 交叉熵"></a>2 交叉熵</h2><p>$X \sim p(x)$，采用另一个概率分布q(x)来描述X，需要的平均编码长度。</p>
+<p>$$<br>H(X,q) = -\sum p(x) \log q(x)<br>$$</p>
+<h2 id="3-相对熵（KL散度、KL距离）"><a href="#3-相对熵（KL散度、KL距离）" class="headerlink" title="3 相对熵（KL散度、KL距离）"></a>3 相对熵（KL散度、KL距离）</h2><p>$X \sim p(x)$，采用另一个概率分布q(x)来描述X，额外的编码长度。</p>
+<p>$$<br>H(X||q) = H(X,q) - H(X) = \sum p(x)\log \frac{p(x)}{q(x)}<br>$$</p>
+<p>当$p$已知时，$H(p)$是常数，相对熵和交叉熵等价。</p>
+<h2 id="4-条件熵"><a href="#4-条件熵" class="headerlink" title="4 条件熵"></a>4 条件熵</h2><p>$X|Y \sim p(x|y)$</p>
+<p>$$<br>H(X|Y) = -\sum p(x,y) \log \frac{p(x,y)}{p(y)}<br>$$</p>
+<p>若X,Y独立，则$H(X|Y)=H(X)$</p>
+<h2 id="5-联合熵"><a href="#5-联合熵" class="headerlink" title="5 联合熵"></a>5 联合熵</h2><p>$X,Y \sim p(x,y)$</p>
+<p>$$<br>\begin{aligned}<br>H(X,Y) &amp; = -\sum \sum p(x,y)\log p(x,y) \\<br>&amp; =H(X|Y)+H(Y) \\<br>&amp; = H(Y|X)+H(X)<br>\end{aligned}<br>$$</p>
+<h2 id="6-互信息"><a href="#6-互信息" class="headerlink" title="6 互信息"></a>6 互信息</h2><p>$X,Y \sim p(x,y)$两个变量的相关性。</p>
+<p>$$<br>\begin{aligned}<br>I(X;Y) &amp; = -\sum \sum p(x,y) \log \frac{p(x)p(y)}{p(x,y)} \\<br>&amp; = H(X)+H(Y)-H(X,Y) \\<br>&amp; = H(X)-H(X|Y) \\<br>&amp; = H(Y)-H(Y|X) \\<br>&amp; = H(X,Y) - H(X|Y) - H(Y|X) \\<br>&amp; = H(p(x,y)||p(x)p(y))<br>\end{aligned}<br>$$</p>
+<p>从等式的最后一行可以看出，互信息还是联合分布p(x,y)和边缘分布p(x)p(y)的相对熵。</p>
+<p>$H(X;X) = H(X)$，因此熵也叫自信息。</p>
+<h2 id="7-关系"><a href="#7-关系" class="headerlink" title="7 关系"></a>7 关系</h2><p><img src="/img/Entropy/Entropy_relation.png" alt="Venn图"></p>
+<h2 id="8-机器学习中的熵损失"><a href="#8-机器学习中的熵损失" class="headerlink" title="8 机器学习中的熵损失"></a>8 机器学习中的熵损失</h2><p>在机器学习中，常用sigmoid函数作为激活函数</p>
+<p>$$<br>a = \sigma (z) = \frac{1}{1+e^{-z}} = \frac{1}{1+e^{-(w^{\rm T} x+b)}}<br>$$</p>
+<p>其导数可以用自身表示：</p>
+<p>$$<br>\sigma ^\prime(z) = \sigma (z) (1-\sigma (z))<br>$$</p>
+<p>均方误差MSE是一种常用的损失函数</p>
+<p>$$<br>L = (y-a)^2/2<br>$$</p>
+<p>反向传播时，梯度$\nabla z$为</p>
+<p>$$<br>\frac{\partial L}{\partial w} = (a-y)\sigma ^\prime(z)x<br>$$<br>$$<br>\frac{\partial L}{\partial b} = (a-y)\sigma ^\prime(z)<br>$$</p>
+<p>可以看到，因为当越接近真实分布时，激活函数的梯度越小，所以w和b的梯度也很小，这会降低学习速率。因此最好能够去掉$\sigma ^\prime(z)$。考察变量的梯度公式:</p>
+<p>$$<br>\begin{aligned}<br>\nabla L &amp;= \frac{\partial L}{\partial a}\frac{\partial a}{\partial z} \nabla z \\<br>&amp; = \frac{\partial L}{\partial a} a (1-a) \nabla z<br>\end{aligned}<br>$$</p>
+<p>将$\nabla z$中的$\sigma ^\prime(z)$拿掉就能避免上述问题了，以$\partial L/\partial b$为例，有</p>
+<p>$$<br>\frac{\partial L}{\partial a} a (1-a) = a-y<br>$$</p>
+<p>求积分，略去常数项，有</p>
+<p>$$<br>\begin{aligned}<br>L &amp; = -[y\log a + (1-y)\log(1-a)] \\<br> &amp; = \begin{cases}<br>\log \frac {1}{1-a}, &amp;  y = 0 \\<br>\log \frac {1}{a}, &amp;  y = 1<br>\end{cases}<br>\end{aligned}<br>$$</p>
+<p>对比信息论中交叉熵的定义可以发现，上式恰好是y和a的交叉熵！在机器学习中实际上是用a的分布来衡量y的分布，这进一步解释了交叉熵的意义。</p>
+<p>因为交叉熵损失的梯度消除了$\sigma ^\prime(z)$，只受到误差a-y的影响，因此在机器学习中，常用交叉熵损失代替均方误差损失：</p>
+<p>$$<br>L = - \frac {1}{n} \sum [y\log a + (1-y)\log(1-a)]<br>$$</p>
+<p>softmax和sigmoid类似</p>
+<p>$$<br>\begin{aligned}<br>s_i &amp;= \frac{e^{a_i}}{\sum e^{a_k}} \\<br>\frac{\partial s_i}{\partial a_i}  &amp; = s_i(1-s_i) \\<br>L &amp;= -\log s_i \\<br>\frac{\partial L}{\partial a_i} &amp;= s_i-1<br>\end{aligned}<br>$$</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

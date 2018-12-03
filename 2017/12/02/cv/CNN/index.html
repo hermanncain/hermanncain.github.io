@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >CNN卷积神经网络</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>为什么图像领域使用CNN？</p>
+<ul>
+<li>传统的FC每一层都是全部的输入。但是在图像作业中，只要知道局部的特征就足够进行一些判断了</li>
+<li>一些局部特征会重复出现在不同图像的不同位置（平移不变性），虽然位置不同，但这种特征识别仍然是重复性的工作，最好使用相同的神经元来完成<blockquote>
+<p>CNN的卷积实现了以上两点</p>
+</blockquote>
+</li>
+<li>适当的下采样不影响图像所传达的含义，但像素少了，参数也就少了，网络更简单了，还减轻了过拟合<blockquote>
+<p>CNN的最大池化支持了这一点</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="1-卷积"><a href="#1-卷积" class="headerlink" title="1 卷积"></a>1 卷积</h2><h3 id="1-1-卷积核"><a href="#1-1-卷积核" class="headerlink" title="1.1 卷积核"></a>1.1 卷积核</h3><p>卷积核Filter/Kernel是一个矩阵，里边的参数是学习到的。卷积核实际上是一个小图像，通过对整张图像的卷积，来寻找整张图里和这张小图像一样的部分。卷积核在扫过整个图像的过程中，步长记为stride s。</p>
+<p>但有时候卷积核移动一个步长之后超过了图像边缘，此时是没法计算的，只能另起一行或者结束。这时候可以对边缘进行填充padding，这也是卷积过程中的一个重要参数p。padding=valid时，不填充，p=0，该怎么样还是怎么样；padding=same时，就从图像边缘往外补0，使得卷积核可以扫略完，此时p=(k-1)/2，k为卷积核大小。</p>
+<p>给定卷积核size=k x k x #channel，步长stride s，填充padding p，输入图像尺寸i x i，经过卷积之后，输出大小o x o为</p>
+<p>$$<br>o= \lfloor \frac{i+2p-k}{s}+1 \rfloor<br>$$</p>
+<p>上述公式比较通用，具体可以根据padding用以下公式快速计算：</p>
+<ul>
+<li>padding = valid：$o = \lceil (i-k+1)/s \rceil$</li>
+<li>padding = same：$o = \lceil i/s \rceil$</li>
+</ul>
+<h4 id="tensorflow中的卷积"><a href="#tensorflow中的卷积" class="headerlink" title="tensorflow中的卷积"></a>tensorflow中的卷积</h4><p>最常用的2维卷积<code>tf.nn.conv2d</code>，4个主要参数，输入，卷积核，步长，填充。</p>
+<pre class="line-numbers language-python"><code class="language-python">tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>conv2d<span class="token punctuation">(</span>
+    input<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 4D tensor (batch, h, w, #channels)</span>
+    filter<span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 4D tensor (h, w, #in_channels, #out_channels)</span>
+    strides<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># 4 length list (1,s,s,1)</span>
+    padding<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># string 'VALID' or 'SAME'</span>
+    use_cudnn_on_gpu<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
+    data_format<span class="token operator">=</span><span class="token string">'NHWC'</span><span class="token punctuation">,</span>
+    dilations<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    name<span class="token operator">=</span>None
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在处理一些序列时，可能会用到1维卷积<code>tf.nn.conv1d</code>:</p>
+<pre class="line-numbers language-python"><code class="language-python">tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>conv1d<span class="token punctuation">(</span>
+    value<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 3D tensor (batch, w, #channels)</span>
+    filters<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># 3D tensor (w, #in_channels, #out_channels) </span>
+    stride<span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># integer</span>
+    padding<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># string 'VALID' or 'SAME'</span>
+    use_cudnn_on_gpu<span class="token operator">=</span>None<span class="token punctuation">,</span>
+    data_format<span class="token operator">=</span>None<span class="token punctuation">,</span>
+    name<span class="token operator">=</span>None
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>处理三维体素时，可能会用到3维卷积<code>tf.nn.conv2d</code>。和1维2维类似，不再赘述。</p>
+<h3 id="1-2-多通道中的卷积"><a href="#1-2-多通道中的卷积" class="headerlink" title="1.2 多通道中的卷积"></a>1.2 多通道中的卷积</h3><p>在多通道中，每个通道被1个卷积核卷完之后，将结果沿着通道方向加起来，得到通道只有1的feature map。</p>
+<p>一般来说会使用多个卷积核。那么每个卷积核都能卷出一个feature map，在通道方向上拼接起来，于是将一个2维图像平面卷积成长方体。</p>
+<p>一般都是image-conv-pool-conv-pool-…-fc-…-fc-softmax这样的架构，一张图像经过一系列conv-pool之后展成1个vector，喂入fc。卷积核一般随着层越深数量越多，feature map也越卷尺寸越小、通道越大。</p>
+<h3 id="1-3-1x1卷积核"><a href="#1-3-1x1卷积核" class="headerlink" title="1.3 1x1卷积核"></a>1.3 1x1卷积核</h3><p>很多网络中都出现了1x1的卷积核，作用就是在不改变尺寸的条件下改变通道数。1x1的卷积核实际上就是FC，卷积核数量就是改变之后的通道数。</p>
+<h3 id="1-4-全卷积"><a href="#1-4-全卷积" class="headerlink" title="1.4 全卷积"></a>1.4 全卷积</h3><p>卷积核尺寸就是feature map尺寸，则卷积结果为1x1x卷积核数量维的向量，一般用来代替fc实现支持任意尺寸的输入。</p>
+<h3 id="1-5-分解卷积"><a href="#1-5-分解卷积" class="headerlink" title="1.5 分解卷积"></a>1.5 分解卷积</h3><p>用两个1维卷积实现一个2维卷积的效果。比如采用3x1和1x3的两次卷积相当于3x3的卷积的效果，但是参数却是6:9，节省资源，而且多了一层非线性。</p>
+<h3 id="1-6-空洞卷积"><a href="#1-6-空洞卷积" class="headerlink" title="1.6 空洞卷积"></a>1.6 空洞卷积</h3><p>卷积核是有空洞的，这样使用较少的参数就可以获得较大的感受野，还可以去掉池化层避免信息丢失。空洞卷积又叫膨胀卷积/暗黑卷积（什么鬼名字）。tensorflow中的空洞卷积步长固定为1，而空洞则由参数rate控制:</p>
+<pre class="line-numbers language-python"><code class="language-python">tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>atrous_conv2d<span class="token punctuation">(</span>
+    value<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 4D tensor (batch, h, w, #channels)</span>
+    filters<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># 4D tensor (h, w, #in_channels, #out_channels)</span>
+    rate<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true"># + int32。rate-1为空洞的大小</span>
+    padding<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># string 'VALID' or 'SAME'</span>
+    name<span class="token operator">=</span>None
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-7-转置卷积"><a href="#1-7-转置卷积" class="headerlink" title="1.7 转置卷积"></a>1.7 转置卷积</h3><p>上采样常用的操作，虽然和反卷积不一样，但也常被叫做反卷积。GAN中经常用到。</p>
+<pre class="line-numbers language-python"><code class="language-python">tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>conv2d_transpose<span class="token punctuation">(</span>
+    value<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 4D tensor (batch, h, w, #channels)</span>
+    filter<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true"># 4D tensor (h, w, #in_channels, #out_channels)</span>
+    output_shape<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true"># 1D tensor</span>
+    strides<span class="token punctuation">,</span> <span class="token comment" spellcheck="true"># 4 length list (1,s,s,1)</span>
+    padding<span class="token operator">=</span><span class="token string">'SAME'</span><span class="token punctuation">,</span>
+    data_format<span class="token operator">=</span><span class="token string">'NHWC'</span><span class="token punctuation">,</span>
+    name<span class="token operator">=</span>None
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-8-CNN和FC的关系"><a href="#1-8-CNN和FC的关系" class="headerlink" title="1.8 CNN和FC的关系"></a>1.8 CNN和FC的关系</h3><p>一张图像image经过一个卷积核filter卷积一次之后得到了一张更小的feature map。feature map的每一个点就是神经元输出，每个神经元的输入就是得到该点的那次卷积所卷过的image的像素。这样看来，每个神经元的输入不是image的所有像素，而是filter大小数量的像素——所以，CNN是稀疏连接版的FC。此外，由于filter是同一个，所以feature map中神经元的参数是共用的，和fc相比极大减少了参数数量。</p>
+<h2 id="2-池化pooling"><a href="#2-池化pooling" class="headerlink" title="2 池化pooling"></a>2 池化pooling</h2><p>池化做的事情就是下采样。池化有max pooling（更常用）和average pooling，以步长进行扫略，计算池化size区域内的值，所以也有2个参数步长s和尺寸k。</p>
+<blockquote>
+<p>池化会提供一些旋转不变性，这点很容易理解</p>
+</blockquote>
+<p>但是是否需要池化要好好考虑。比如Alpha Go就不应该使用，下采样丢了很多信息在围棋中可不是好事。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 平均池化</span>
+tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>avg_pool<span class="token punctuation">(</span>
+    value<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 4D tensor (batch, h, w, #channels)</span>
+    ksize<span class="token punctuation">,</span>  <span class="token comment" spellcheck="true"># 4 length list (1,s,s,1)</span>
+    strides<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># 4 length list (1,s,s,1)</span>
+    padding<span class="token punctuation">,</span>    <span class="token comment" spellcheck="true"># string 'VALID' or 'SAME'</span>
+    data_format<span class="token operator">=</span><span class="token string">'NHWC'</span><span class="token punctuation">,</span>
+    name<span class="token operator">=</span>None
+<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 最大池化tf.nn.avg_pool</span>
+<span class="token comment" spellcheck="true"># 参数和平均池化相同</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>随机池化SP的思想是，将区域内的元素池化为为区域内某个元素的值，元素值大的被选中的概率更大。</p>
+<p>一般池化区域是不重叠的，即s=k，除了一般池化外，还有其他类型的池化。</p>
+<h3 id="空间金字塔池化SPP"><a href="#空间金字塔池化SPP" class="headerlink" title="空间金字塔池化SPP"></a>空间金字塔池化SPP</h3><p>空间金字塔池化SPP能够支持任意输入大小的图像。网络确定之后，受限于FC的输入维度，对图像尺寸是有要求的，不满足就要进行裁剪crop或者拉伸wrap，破坏了图像的信息。但使用金字塔结构来进行池化，就可以把feature map按照金字塔不同层i的尺度$(w/n_i,h/n_i)$固定提取出$\sum n_i$个特征，组成特征向量喂入fc。</p>
+<h3 id="全局池化GP"><a href="#全局池化GP" class="headerlink" title="全局池化GP"></a>全局池化GP</h3><p>全局池化的池化区域和整个feature map的尺寸一样大，这样w*h*c的feature map就会被转化为1*1*c的向量输出。</p>
+<p>在CNN的最后一般有fc，输入是将上一层的所有feature map展成vector拼接起来，所以fc的参数仍然很多，降低训练速度，容易过拟合。如果使用全局池化代替fc，比如全局平均池化GAP，池化后reshape直接将c维向量喂入softmax，就极大减少了参数。</p>
+<p>从网络结构上考虑，全局平均池化实际上就是一种正则化方法，避免网络过拟合。</p>
+<p>GAP拿掉了FC，任意尺寸的输入也被支持了，并且操作简单，应用越来越广泛。</p>
+<h2 id="3-CNN中的反向传播"><a href="#3-CNN中的反向传播" class="headerlink" title="3 CNN中的反向传播"></a>3 CNN中的反向传播</h2><p>又到麻烦的环节了。手推BP是必须的。先回顾下DNN的BP：</p>
+<p>$$<br>\begin{aligned}<br>\delta ^L &amp;= \frac{\partial J}{\partial Z^L}\\<br>\delta ^l &amp;= \delta ^{l+1} W^{l+1}\sigma ^\prime (Z^l)\\<br>\frac{\partial J}{\partial W} &amp;= \delta ^l A^{l-1}\\<br>\frac{\partial J}{\partial b} &amp;= \delta ^l<br>\end{aligned}<br>$$</p>
+<p>CNN除了维度不同外，还有一些特点：</p>
+<ul>
+<li>池化层因为没有激活函数和参数，所以不用考虑激活函数和参数的求导，只需要考虑BP到上一层，这一点倒是很方便</li>
+<li>池化层进行了下采样，它BP到上一层就和DNN很不同</li>
+<li>卷积层的特性导致对该层的W,b以及BP到上一层的方法和DNN都不同</li>
+</ul>
+<p>于是分开考虑：</p>
+<h3 id="3-1-池化层BP"><a href="#3-1-池化层BP" class="headerlink" title="3.1 池化层BP"></a>3.1 池化层BP</h3><p>不论是什么类型的池化，都需要先把误差上采样upsample之后才能继续反向传播。上采样的方法当然和池化方法有关，思路是很简单的，这里不再赘述。设池化层误差为$\delta ^l$，则BP为</p>
+<p>$$<br>\delta ^{l-1} = upsample(\delta ^l)\sigma ^\prime (z^{l-1})<br>$$</p>
+<h3 id="3-2-卷积层BP"><a href="#3-2-卷积层BP" class="headerlink" title="3.2 卷积层BP"></a>3.2 卷积层BP</h3><p>卷积层FP为</p>
+<p>$$<br>a^l = \sigma (z^l)=\sigma(a^{l-1}*W^l+b^l)<br>$$</p>
+<p>BP其实和DNN也是很像的：</p>
+<p>$$<br>\delta ^{l-1} = \frac{\partial J}{\partial z^l}\frac{\partial z^l}{\partial z^{l-1}} = </p>
+<p>\delta ^l * rot180(W^l)\sigma ^\prime (z^{l-1})\\<br>$$</p>
+<p>这里rot180操作是将原卷积核各参数倒序排列构成新卷积核，原因可以拿个卷积核推导试试，就不赘述了。</p>
+<h3 id="3-3-卷积层求本层参数梯度"><a href="#3-3-卷积层求本层参数梯度" class="headerlink" title="3.3 卷积层求本层参数梯度"></a>3.3 卷积层求本层参数梯度</h3><p>w的梯度直接算，非常简单：</p>
+<p>$$<br>\frac{\partial J}{\partial W^l} = \frac{\partial J}{\partial z^l} \frac{\partial z^l}{\partial W^l} = a^{l-1} * \delta ^l<br>$$</p>
+<p>b因为是1维向量，所以算法是求和。</p>
+<h2 id="4-可视化"><a href="#4-可视化" class="headerlink" title="4 可视化"></a>4 可视化</h2><p>把低层的filter可视化可以看到它们在识别一些低维特征，如某些方向的边缘、色彩等。</p>
+<p>高层的filter可以这样可视化：将filter参数固定，设第k个filter的输出为矩阵$a_{ij}$，定义激活函数为$a^k=\sum \sum a^k_{ij}$将输入图片的像素值随机初始化，找到输入图片$x^*=arg \max_x a^k$。</p>
+<p>FC也可以通过这种方式可视化。不过最后一层可视化可能会是噪声——机器对图像理解的编码和人类还是不同的，这也为对抗攻击提供了可能。加上正则化的话可能能够可视化出稍微可辨识些的结果。</p>
+<h2 id="5-网络赏析"><a href="#5-网络赏析" class="headerlink" title="5 网络赏析"></a>5 网络赏析</h2><p>本部分基于Tensorflow对前3个经典网络（LeNet, AlexNet, VGG-16）进行了复现，代码见<a href="https://github.com/hermanncain/ClassicalCNNs" target="_blank" rel="noopener">这里</a>。使用mnist和cifar-10数据集进行实验。Inception Net和ResNet搭建比较耗时，只学习了源码。</p>
+<h3 id="5-1-LeNet"><a href="#5-1-LeNet" class="headerlink" title="5.1 LeNet"></a>5.1 LeNet</h3><p>现代CNN开山经典之作（不是最早）。最经典的CNN网络架构(conv–pooling–non-linear)^n-fc就是由此而起。</p>
+<p>3个卷积层，2个平均池化层，1层fc，输出层高斯连接(RBF网络，但softmax更好，所以不做深入）。</p>
+<blockquote>
+<p>在实验代码中，用fc代替rbf，然后算<code>tf.nn.softmax_cross_entropy_with_logits</code>作为loss，并且加上了dropout<br>结果受初始化影响比较大，用<code>tf.truncated_normal_initializer</code>的话，有时候精度在5、60就上不去了，有时候可以到90+，并且不加dropout的话很容易陷入局部最优。GAN难训练有目共睹，于是我从DCGAN中把<code>tf.contrib.layers.xavier_initializer</code>引入了这里，效果完美，准确率97+。(后来发现slim.conv2d默认的就是这个初始化器)</p>
+</blockquote>
+<p><img src="/img/CNN/CNN_LeNet.png" alt="LeNet"></p>
+<h3 id="5-2-AlexNet"><a href="#5-2-AlexNet" class="headerlink" title="5.2 AlexNet"></a>5.2 AlexNet</h3><p>更宽更深的LeNet，并且采用了ReLU、Dropout、数据增强、多GPU、LRN。奠定了DL在CV中的地位。</p>
+<p>局部响应归一化LRN是RBF径向基神经网络层，将生物中被激活的神经元抑制相邻神经元的机制（侧抑制）应用到人工神经网络中，将大的值变得更大，小的更小，不过后来被VGG指出并没有什么卵用……所以这里就不做深入。</p>
+<p>5个卷积层，3个最大池化层，3个fc，softmax输出。在实际搭建过程中，为了适应MNIST的尺寸，自行调整了所有层的参数。</p>
+<blockquote>
+<p>AlexNet参数多真不是盖的，为了跑MNIST参数已经改得比原网络少了很多了，单1080卡跑起来还是略吃力，而且最后test的时候内存会不够（这还只是MNIST啊，只能忍痛割测试集了）。和LeNet一样，<code>xavier_initializer</code>和relu更配哦~</p>
+</blockquote>
+<p><img src="/img/CNN/CNN_AlexNet.png" alt="AlexNet"></p>
+<h3 id="5-3-VGG-Net"><a href="#5-3-VGG-Net" class="headerlink" title="5.3 VGG-Net"></a>5.3 VGG-Net</h3><p>VGG层数更多（11-19层），更小的卷积核尺寸（全部使用3*3卷积核），并且经常出现好几层卷积核叠加的情况，这很好地体现了“深度”网络的设计，更深比更广的参数更少、表现更好。例如2层3*3卷积相当于1层5*5卷积，但参数却是18：25，训练起来更快。并且前者ReLU用了2次，后者才用了1次。这也带来更强的非线性，学习能力更强。</p>
+<p><img src="/img/CNN/CNN_VGG.png" alt="VGG"></p>
+<p>VGG还是一个泛用性很强的模型，识别、风格化等很多任务都选择用训练好的VGG来提取和编码图像或迁移学习。MNIST在VGG的架构上到后面是没办法继续卷积的，我采用了CIFAR-10数据集进行试验。除了把最后一层fc换成10维之外其他未作变动。</p>
+<blockquote>
+<p>用<code>slim</code>的<code>arg_scope</code>和<code>repeat</code>搭建VGG这种局部高重复性的网略简直太爽。</p>
+</blockquote>
+<p>至于训练那必然比跑MNIST的AlexNet慢多了，实验搭建了VGG-16跑CIFAR-10数据集。一开始用了和AlexNet一样的1e-4的学习率不收敛，毕竟网络深，调小了学习率（1e-5)之后终于有了收敛的迹象，吃完饭回来之后跑了70个epoch，达到了90左右的准确率。这里直接粗暴地用了理论最强优化器<code>AdamOptimizer</code>，但是在很多CV领域，SGD+Momentum（<code>tf.train.MomentumOptimizer</code>）的表现要优于自适应学习率的优化方法。AdamOptimizer在最终100个epoch的时候，准确率也只有93左右。</p>
+<p>当然，slim有内置的vgg可以直接调用<code>slim.nets.vgg</code>来构建vggnets。实际训练中可以先训练层数少的VGG，再逐步增加层数，参数复用，就能训练出比较深的VGG。</p>
+<h3 id="5-4-InceptionNet"><a href="#5-4-InceptionNet" class="headerlink" title="5.4 InceptionNet"></a>5.4 InceptionNet</h3><h4 id="Inception-Module"><a href="#Inception-Module" class="headerlink" title="Inception Module"></a>Inception Module</h4><p>VGG这种堆叠架构虽然可以通过不断卷积而提取到不同尺度的特征，但因为池化层的存在，还是多多少少有信息损失。那么如果在一次卷积过程中分别用不同尺寸的卷积核进行卷积并把各结果和直接池化的结果拼接起来并传入下一层，是不是就能减少池化的信息丢失呢？同时还能拥有多种尺寸的感受野。Inception模块就是基于这个天马行空的理念。</p>
+<p><img src="/img/CNN/CNN_NaiveInceptionModule.png" alt="Naive Inception Module"></p>
+<h4 id="Inception-V1"><a href="#Inception-V1" class="headerlink" title="Inception V1"></a>Inception V1</h4><p>但是5*5的卷积核以及拼接得很深的feature map带来的计算量还是略大，于是有了Inception V1，它用了很多尺寸为1的卷积核来减少feature map的channel，并且用GAP替换含有大量参数的fc。Inception V1有22层，但参数只有500万，是AlexNet的1/12。</p>
+<p><img src="/img/CNN/CNN_InceptionV1Module.png" alt="InceptionV1 Module"></p>
+<ul>
+<li>V1的底层用的还是传统的CNN结构，再深才用的Inception Module</li>
+<li>实际代码中在GAP之后还是用了一层1024维的ReLU FC用于泛化到其他数据集以及炼丹……而且即使去掉了FC，dropout还是有用的（设为70%的dropout概率。能带来0.6%的Top-1准确率提升）</li>
+<li>网络比较深，容易遇到梯度消失问题，所以在中间过程用了两个额外分类器AC（都是softmax），以0.3加权的方式将低层的梯度加到从末端传回来的梯度上。当然在test过程中这两个AC就不需要了</li>
+</ul>
+<p><img src="/img/CNN/CNN_InceptionV1.png" alt="InceptionV1架构"></p>
+<p>在训练中，采用了以下数据增强手段：</p>
+<ul>
+<li>8%~100% crop，宽高比4/3或3/4</li>
+<li>变光照</li>
+<li>在后期使用各种随机插值来resize（但他们表示没法明确分辨是否有用）</li>
+</ul>
+<p>学习率每8步减少4%，优化器使用带0.9动量的ASGD（这个异步随机梯度下降就不做深入了解了，好像是和服务器并行计算有关）</p>
+<h4 id="Inception-V2"><a href="#Inception-V2" class="headerlink" title="Inception V2"></a>Inception V2</h4><p>Inception V2借鉴了VGG的深&gt;广的思路，使用堆叠的2个3*3卷积代替5*5卷积。其最大的贡献是提出了如今广泛使用的BN。有了BN强大的正则化能力，因此可以去掉droput并减小L2正则，学习速率提升，学习衰减速率增加。去掉了Incetion模块间的池化层，常规卷积之后直接是Inception模块堆叠。</p>
+<h4 id="Inception-V3"><a href="#Inception-V3" class="headerlink" title="Inception V3"></a>Inception V3</h4><p>Inception V3使用了卷积分解，将二维卷积拆分成2个一维卷积，又极大减少了一波参数、增加了一次非线性。<strong>不过卷积分解不适合用在比较靠前的层里</strong>。另外也对Inception模块进行了改进，设计了3种Inception模块，并且在AC分支上的FC也加了BN。</p>
+<p><img src="/img/CNN/CNN_InceptionV3.png" alt="Inception V3"></p>
+<h4 id="Inception-V4"><a href="#Inception-V4" class="headerlink" title="Inception V4"></a>Inception V4</h4><p>Inception V4对V3进行了更深和更优化的设计，废话不多说，一图胜千言</p>
+<p><img src="/img/CNN/CNN_InceptionV4.png" alt="Inception V4"></p>
+<h4 id="Inception-ResNet"><a href="#Inception-ResNet" class="headerlink" title="Inception-ResNet"></a>Inception-ResNet</h4><p>和Inception V4同时提出来的还有Inception-ResNet V1/V2，借鉴了ResNet的残差块结构。最终各Inception网络对比下来，Inception-ResNet V2准确率最高，Top-5 error只有4.9%</p>
+<h3 id="5-5-ResNet"><a href="#5-5-ResNet" class="headerlink" title="5.5 ResNet"></a>5.5 ResNet</h3><p>ResNet可以将网络层数堆叠到相当多的程度。我们知道网络太深容易出现梯度消失，此时的问题是还没达到足够小的误差就已经因为梯度趋近于0导致无法再继续训练，而不是参数多引起过拟合。</p>
+<p>ResNet的BottleNeck结构允许前面层的网络输出跳过中间几层，直接输入到后面的层里。直接传递到后边的部分是idendity，中间的几层是residual。论文里提出了2种类型的bottleneck：</p>
+<p><img src="/img/CNN/CNN_ResNet.png" alt="BottleNeck"></p>
+<p>这种skip connection的传递方式，保证了信息的完整性，同时也让网络只需要学习输入输出的残差，简化了学习。第一种常规的BottleNeck用于浅层网络的搭建，第二种BottleNeck使用了1*1卷积先降低维度，经过常规卷积之后又用1*1卷积恢复维度，减少了参数数量，用于深层网络中。</p>
+<p>BottleNeck用公式表示为：</p>
+<p>$$<br>z^l = h(x^l)+F(x^l),x^{l+1}=f(z^l)<br>$$</p>
+<p>其中$h(x^l)=x^l$或$h(x^l)=Wx^l$，根据卷积后的尺寸是否一致而定。</p>
+<p>在细节上，以浅层BottleNeck举例:</p>
+<p><img src="/img/CNN/CNN_BottleNeckV1.png" alt="BottleNeckV1"></p>
+<p>注意residual最后没有relu，不然residual的输出总是非负的，“残差”的效果实际上没了。</p>
+<p>V2改进了BottleNeck的结构:</p>
+<p><img src="/img/CNN/CNN_BottleNeckV2.png" alt="BottleNeckV2"></p>
+<p>V2的设计遵循了这样的准则：add之后不改变分布。所以relu移到了residual内，保证identity一条线下来只有+residual。但是V1中提到过，redisual的最后不能是relu，因此V2的residual中使用的是bn-relu-conv的堆叠方式，在ResNet里表现比conv-bn-relu要好。（我感觉V2的结构才更贴近传统的conv-bn-relu，只是bn的输入是上一个residual的最后一个conv加上了identity。V1在conv之前加了identity，但没bn，不够充分）</p>
+<p><code>slim.nets.resnet</code>为官方实现。大概说一下代码结构：</p>
+<ul>
+<li><code>nets/resnet_utils.py</code>定义了<code>Block</code>类<ul>
+<li>块内的下采样使用1x1的最大池化实现</li>
+<li>将stride=1 SAME卷积和下采样封装成了<code>conv2d_same</code></li>
+<li><code>stack_block_dense</code>将一个Block对象转化为网络。这里使用了带孔的卷积，可以扩大感受野而不会使卷积结果尺寸变小。</li>
+</ul>
+</li>
+<li><code>resnet.py</code>定义了<code>bottleneck</code>类，实现了残差块的深度瓶颈结构。</li>
+<li>定义一个Block序列，使用<code>resnet_v1/v2</code>转化为整个网络。不同层数的ResNet只需要修改该Block序列就可以。</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

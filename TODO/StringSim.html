@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >序列相似度</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>最近项目需要衡量树相似度，将树转化为字符串再衡量字符串相似度是一种比较可行的办法，因此对若干典型的序列相似度进行了学习。规定X,Y是两个待衡量相似度的序列。本文的各算法python实现在<a href="">这里</a>，其中还包含了一份js实现，都可以作为模块在项目中调用。</p>
+<h2 id="1-最长公共子序列LCS"><a href="#1-最长公共子序列LCS" class="headerlink" title="1 最长公共子序列LCS"></a>1 最长公共子序列LCS</h2><p>子序列和子串不同，子串连续，子序列可以不连续。两个序列越相似，显然就拥有越长的公共子序列。一般将公共子序列的长度作为两字符串相似性的度量。</p>
+<p>LCS问题是基础而经典的问题，也是《算法导论》动态规划部分讲到的问题。暴力求解LCS的话，子串数量是指数的，对这样大量的元素进行匹配，时间复杂度非常高，不可取。</p>
+<blockquote>
+<p>一个冷梗：LCS = Longest Common Subsequence = Life Continue(Costing) Strongly，暴力求解LCS问题不可取，暴力膜蛤也不可取啊！</p>
+</blockquote>
+<h3 id="1-1-最优子结构"><a href="#1-1-最优子结构" class="headerlink" title="1.1 最优子结构"></a>1.1 最优子结构</h3><p>首先定义前缀的概念：X = [x1,x2,…,xm]，则X的第i前缀定义为Xi = [x1,x2,…,xi]。</p>
+<p>于是找到LCS问题的最优子结构：如果Z是X和Y的一个LCS，则有以下的特征：</p>
+<ul>
+<li>如果X和Y末尾元素相同 $\Rightarrow$ Z的末尾元素和它们也相同，并且$Z_{k-1}$也是$X_{m-1}$和$Y_{n-1}$的LCS</li>
+<li>如果X和Y末尾字符不同<ul>
+<li>Z末尾元素和X末尾元素不同 $\Rightarrow$ Z是$X_{m-1}$和Y的LCS</li>
+<li>Z末尾元素和Y末尾元素不同 $\Rightarrow$ Z是X和$Y_{n-1}$的LCS</li>
+</ul>
+</li>
+</ul>
+<p>用一句话概括上述最优子结构就是：两序列的LCS包含两序列前缀的LCS。</p>
+<h3 id="1-2-递归求解"><a href="#1-2-递归求解" class="headerlink" title="1.2 递归求解"></a>1.2 递归求解</h3><p>定义一个矩阵c[i,j]记录Xi，Yi的LCS长度，则动态规划方程为</p>
+<p>$$<br>c[i,j] =<br>\begin{cases}<br>0, &amp; i=0 \text{ or } j=0 \\<br>c[i-1,j-1]+1, &amp; i,j&gt;0 \text{ and } x_i=y_j \\<br>max(c[i,j-1],c[i-1,j]), &amp; i,j&gt;0 \text{ and } x_i\neq y_j<br>\end{cases}<br>$$</p>
+<h3 id="1-3-编程实现"><a href="#1-3-编程实现" class="headerlink" title="1.3 编程实现"></a>1.3 编程实现</h3><p>有了动态规划方程，就可以着手实现c的构建。同时用一个矩阵b来记录c是如何构建的，用于回溯构建LCS。时间复杂度O(MN)，空间复杂度O(MN)。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">lcs</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    m <span class="token operator">=</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> m<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">or</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token comment" spellcheck="true"># m行n列的c</span>
+    c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    b <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">==</span> y<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+                b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'leftup'</span>
+            <span class="token keyword">elif</span> c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">>=</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'up'</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+                b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'left'</span>
+
+    <span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+    z <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token comment" spellcheck="true"># 回溯构建LCS</span>
+    <span class="token keyword">while</span> i<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'leftup'</span><span class="token punctuation">:</span>
+            z<span class="token operator">+=</span>x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span>
+            i<span class="token operator">-=</span><span class="token number">1</span>
+            j<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">elif</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'up'</span><span class="token punctuation">:</span>
+            i<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">elif</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'left'</span><span class="token punctuation">:</span>
+            j<span class="token operator">-=</span><span class="token number">1</span>
+    <span class="token keyword">return</span> z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="1-4-讨论"><a href="#1-4-讨论" class="headerlink" title="1.4 讨论"></a>1.4 讨论</h3><p>上述实现有一些问题没有考虑到：</p>
+<ul>
+<li>空间复杂度</li>
+<li>LCS的多解性</li>
+</ul>
+<p>先来看复杂度。b是用来记录c是如何构建的，从而作为根据c构造LCS的参考。但是反正要在c上游走构建LCS，不妨直接把构建c时用到的那三个条件判断直接拿下来，这样b就可以去掉，节省mxn的空间。b去掉之后，c构建的代码条件分支部分可以更精简</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">lcs_opt</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    m <span class="token operator">=</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> m<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">or</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token number">0</span>
+    <span class="token comment" spellcheck="true"># 构建c</span>
+    c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">==</span> y<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">)</span>
+    z <span class="token operator">=</span> <span class="token string">''</span>
+    <span class="token comment" spellcheck="true"># 回溯构建LCS</span>
+    <span class="token keyword">while</span> i<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> j<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">==</span>y<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            z<span class="token operator">+=</span>x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span>
+            i<span class="token operator">-=</span><span class="token number">1</span>
+            j<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">elif</span> c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">>=</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            i<span class="token operator">-=</span><span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            j<span class="token operator">-=</span><span class="token number">1</span>
+    <span class="token keyword">return</span> z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>还有更省空间的方法，每次只记录c[i-1][j]和c[i][0:j-1]，因为c[i][j]只和左、上、左上元素有关，每次更新即可。这里不再赘述。</p>
+<p>用LCS衡量元素相似度不需要给出具体的LCS，只需要长度即可。但对于要返回所有LCS的场景，多解问题就出现了。而且LCS的数量以及具体的LCS是否可以用来进一步构造相似度衡量呢？这个话题留在以后探讨，先关注多解本身。</p>
+<p>关于多解性，以字符串举例，对<code>BDCABA</code>和<code>ABCBDAB</code>两个字符串，LCS可以是<code>BCBA</code>，也可以是<code>BCAB</code>，还可以是<code>BDAB</code>。多解性是如何产生的呢？考察c的计算方法可以发现，在max运算时如果<code>c[i-1][j]=c[i][j-1]</code>，回溯时就有2个方向，产生了多解。因此在回溯时应该把<code>c[i-1][j]=c[i][j-1]</code>的分支情况都考虑到。这里最好构造一个类来实现:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">LCS</span><span class="token punctuation">:</span>
+
+    <span class="token comment" spellcheck="true"># 返回所有LCS</span>
+    <span class="token keyword">def</span> <span class="token function">get_lcs</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>x <span class="token operator">=</span> x
+        self<span class="token punctuation">.</span>y <span class="token operator">=</span> y
+        self<span class="token punctuation">.</span>r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        m <span class="token operator">=</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        n <span class="token operator">=</span> len<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> m<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">or</span> n<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>r
+        <span class="token comment" spellcheck="true"># 构建c</span>
+        self<span class="token punctuation">.</span>c <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span> <span class="token operator">==</span> y<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> max<span class="token punctuation">(</span>self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>getAllLCS<span class="token punctuation">(</span>m<span class="token punctuation">,</span>n<span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>r
+
+    <span class="token comment" spellcheck="true"># 回溯</span>
+    <span class="token keyword">def</span> <span class="token function">getAllLCS</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>i<span class="token punctuation">,</span>j<span class="token punctuation">,</span>z<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> i<span class="token operator">==</span><span class="token number">0</span> <span class="token operator">or</span> j<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 去重</span>
+            <span class="token keyword">if</span> z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">not</span> <span class="token keyword">in</span> self<span class="token punctuation">.</span>r<span class="token punctuation">:</span>
+                self<span class="token punctuation">.</span>r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>z<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span>
+        <span class="token keyword">if</span> self<span class="token punctuation">.</span>x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">==</span>self<span class="token punctuation">.</span>y<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>getAllLCS<span class="token punctuation">(</span>i<span class="token number">-1</span><span class="token punctuation">,</span>j<span class="token number">-1</span><span class="token punctuation">,</span>z<span class="token operator">+</span>self<span class="token punctuation">.</span>x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>getAllLCS<span class="token punctuation">(</span>i<span class="token number">-1</span><span class="token punctuation">,</span>j<span class="token punctuation">,</span>z<span class="token punctuation">)</span>
+        <span class="token keyword">elif</span> self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">&lt;</span>self<span class="token punctuation">.</span>c<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>getAllLCS<span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token number">-1</span><span class="token punctuation">,</span>z<span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>getAllLCS<span class="token punctuation">(</span>i<span class="token number">-1</span><span class="token punctuation">,</span>j<span class="token punctuation">,</span>z<span class="token punctuation">)</span>
+            self<span class="token punctuation">.</span>getAllLCS<span class="token punctuation">(</span>i<span class="token punctuation">,</span>j<span class="token number">-1</span><span class="token punctuation">,</span>z<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>LCS好处显而易见，它能够处理序列中跳跃的相似性。但缺点也随之而来：跳跃导致了上下文不敏感。例如X和Y，X和Z求出的LCS可能是一样的，但LCS在Y中比较分散，在Z中比较集中，Y和Z应该是不同的，但LCS无法区分。</p>
+<h2 id="2-编辑距离"><a href="#2-编辑距离" class="headerlink" title="2 编辑距离"></a>2 编辑距离</h2><p>编辑距离也叫Levenshtein距离，衡量将一个序列转化到另一个序列时，对单个元素编辑操作（增加、删除、替换）的最少次数。编辑距离也是动态规划问题。</p>
+<h3 id="2-1-最优子结构"><a href="#2-1-最优子结构" class="headerlink" title="2.1 最优子结构"></a>2.1 最优子结构</h3><p>设edit[i,j]为序列X的0~i子串转化到序列Y的0~j子串的编辑距离，则有下面几种情况：</p>
+<ul>
+<li>如果$X_i,Y_j$都是空，则edit[i,j]=0</li>
+<li>如果$X_i,Y_j$其中一个为空另一个不为空，则编辑全为增加操作，edit[i,j]=非空序列长度</li>
+<li>如果$X_i,Y_j$都不为空，则和之前的转化情况有关，分以下几种情况考虑：<ul>
+<li>已将$X_{i-1}$转化到$Y_{j}$：删掉$x_i$即完成转化</li>
+<li>已将$X_i$转化到$Y_{j-1}$：在最后插入$y_j$即完成转化</li>
+<li>已将$X_{i-1}$转化到$Y_{j-1}$：如果$x_i=y_j$，则替换即完成转化；否则不需要任何操作即完成转化<br><h3 id="2-2-动规方程"><a href="#2-2-动规方程" class="headerlink" title="2.2 动规方程"></a>2.2 动规方程</h3></li>
+</ul>
+</li>
+</ul>
+<p>根据上述分析，写出求解编辑距离的动态规划方程：</p>
+<p>$$<br>{\rm edit}[i,j]=\\<br>\begin{cases}<br>0, \text{ if } i=j=0\\<br>i, \text{ if } j=0\\<br>j, \text{ if } i=0\\<br>\min<br>\begin{cases}<br>{\rm edit}[i-1,j]+1\\<br>{\rm edit}[i,j-1]+1\\<br>\begin{cases}<br>{\rm edit}[i-1,j-1], \text{ if } x_i=y_j\\<br>{\rm edit}[i-1,j-1]+1, \text{ if } x_i \neq y_j<br>\end{cases}<br>\end{cases}<br>\end{cases}<br>$$</p>
+<h3 id="2-3-编程实现"><a href="#2-3-编程实现" class="headerlink" title="2.3 编程实现"></a>2.3 编程实现</h3><p>时间复杂度O(MN)，空间复杂度O(MN)</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">editDistance</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    m <span class="token operator">=</span> len<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    n <span class="token operator">=</span> len<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 空串的情况先赋值，i>0,j>0会重新赋值，先不用管</span>
+    e <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>i<span class="token operator">+</span>j <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            a <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+            b <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+            <span class="token keyword">if</span> x<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">==</span>y<span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                c <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                c <span class="token operator">=</span> e<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token number">-1</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token number">1</span>
+            e<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">=</span>min<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> e<span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>编辑距离、LCS和序列相似度的相关关系是相反的。二者在计算时，除了+1的情形相反，i=0或j=0时LCS取0而编辑距离取j或i，LCS取最大而编辑距离取最小之外，其他都是一样的。</p>
+<h2 id="3-余弦相似度"><a href="#3-余弦相似度" class="headerlink" title="3 余弦相似度"></a>3 余弦相似度</h2><p>余弦相似度非常简单，就是余弦定理。衡量两向量的夹角，夹角越小，两向量越相似。限制就是向量的维度要一样。</p>
+<p>$$<br>\cos \theta = \frac{X \cdot Y}{||X||\cdot||Y||}<br>$$</p>
+<p>对于普通的数值型序列，直接带到上述公式计算即可。对于字符串，一种常用的方式是结合TF-IDF进行计算。具体来说，TF-IDF现将字符串进行分词，然后统计词频，然后将两字符串编码为词频向量X,Y，就可以计算余弦相似度了。这里只实现通用的向量余弦相似度，具体代码见文首的仓库，不再在此处列出。时间复杂度O(M+N)。</p>
+<h2 id="4-DICE系数"><a href="#4-DICE系数" class="headerlink" title="4 DICE系数"></a>4 DICE系数</h2><p>DICE系数在之前学习语言模型的时候提到过。这里给出计算公式：</p>
+<p>$$<br>{\rm DICE}(X,Y) = \frac{2\times |ngrams(X)\cap ngrams(Y)|}{|ngrams(X)|+|ngrams(Y)|}<br>$$</p>
+<p>其意义就是2倍公共子串数量比上子串数量和。越接近1，两字符串越相似。时间复杂度和空间复杂度都是O(M+N)。python实现如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">ngram</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    m <span class="token operator">=</span> len<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+    <span class="token keyword">assert</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span>m <span class="token operator">and</span> n<span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span>
+    r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>m<span class="token operator">-</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">:</span>i<span class="token operator">+</span>n<span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> r
+
+<span class="token keyword">def</span> <span class="token function">DICE</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>n<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    xs <span class="token operator">=</span> ngram<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+    ys <span class="token operator">=</span> ngram<span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+    i <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">for</span> k <span class="token keyword">in</span> xs<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> k <span class="token keyword">in</span> ys<span class="token punctuation">:</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> float<span class="token punctuation">(</span><span class="token number">2</span><span class="token operator">*</span>i<span class="token punctuation">)</span><span class="token operator">/</span>len<span class="token punctuation">(</span>xs<span class="token punctuation">)</span><span class="token operator">/</span>len<span class="token punctuation">(</span>ys<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>DICE系数考虑到了字符的上下文，但是也有一些问题：</p>
+<ul>
+<li>对顺序不敏感，这会导致并不相同的2序列也能算出1的DICE系数。如xanex和nexan的2-gram都是(xa,an,ne,ex)，不相同的两个字符串DICE系数却为1</li>
+<li>无法衡量跳跃相似性，如AbAcAd和AeAeAn，用LCS衡量必然是有一定的相似性的，但用DICE系数衡量结果为0</li>
+</ul>
+<h2 id="5-N-gram距离"><a href="#5-N-gram距离" class="headerlink" title="5 N-gram距离"></a>5 N-gram距离</h2><p>通常提到的N-gram距离有两种，第一种是最简单的，在语言模型一文中提到过：子串数量和-2*公共子串数量，这里称之为朴素N-gram距离，和DICE系数比，前者作差后者作商，基本一样，忽略不计。另一种则是从LCS和编辑距离发展而来的N-gram距离和相似度，在2005年的一篇文献中被提出。文中指出LCS（文中也将之称为unigram）和编辑距离都是N-gram距离的特殊情况。</p>
+<p>这里再对LCS进行分析。LCS在计算过程中是将序列分割成长度为1的子序列，记为$(\cdot )^1$。这就是1-gram，即unigram。在分析LCS问题最优子结构的时候推导出了动态规划方程，该方程还可以改写为1-gram的函数$c((X_i)^1,(Y_j)^1)=\max(c((X_{i-1})^1,(Y_j)^1),c((X_i)^1,(Y_{j-1})^1),c((X_{i-1})^1,(Y_{j-1})^1)+c(x_i,y_j)$。</p>
+<p>只要将1-gram扩充到n-gram，就得到n-gram相似度：$c((X_i)^n,(Y_j)^n)=\max(c((X_{i-1})^n,(Y_j)^n),c((X_i)^n,(Y_{j-1})^n),c((X_{i-1})^n,(Y_{j-1})^n)+c(x_{i-n,i},y_{j-n,j})$。同样，对编辑距离进行类似的推广，可以得到n-gram距离。为了强化首字符的重要性，在其前边补上n-1个特殊字符占位。最后还需要除以最长序列长度对结果进行标准化，保证在0~1之间。我只实现了n-gram距离，没有实现n-gram相似度，具体代码见文首仓库。</p>
+<h2 id="6-核方法"><a href="#6-核方法" class="headerlink" title="6 核方法"></a>6 核方法</h2><p>核方法是一种特殊的技巧，最有名的应用莫过于支持向量机SVM。一个计算把两个样例映射到高维空间后得到的内积的函数叫做核函数。原空间D，新空间F，映射$\phi:D\to F$把原空间D上的数据映射到新的空间F中，则计算新空间中数据的内积的函数$K(d_i,d_j)=&lt;\phi(d_i),\phi(d_j)&gt;$就是核函数。</p>
+<h3 id="6-1-基于子串的核方法"><a href="#6-1-基于子串的核方法" class="headerlink" title="6.1 基于子串的核方法"></a>6.1 基于子串的核方法</h3><p>一个简单的思路是可以通过计数的方法将序列用子串计数，实现在子串空间的嵌入表示。则此时核函数可以定义为加权内积$K(s_1,s_2) = \sum_{S\in F} num_S(s_1)num_S(s_2)w_S$。这里的$\sum$是求和，$num_S$统计子串S在序列中出现的次数，F是公共子串，即将序列转化到了公共子串空间。权重w常见的有3种取法：</p>
+<ul>
+<li>常数加权，取1，这种取法关注了所有子串</li>
+<li>k-频谱加权，即如果|S|=k则w取1，否则0。这种取法只关注特定长度的子串</li>
+<li>指数加权，$w_S=\lambda_{|S|}$，为每种长度的子串定义了一个衰减因子$0 \le \lambda\le 1$，考虑了不同长度子串重要性的不同。</li>
+</ul>
+<p>但上述方法是基于子串的，和DICE系数一样，对跳跃的相似性考虑不够。如果将F定义为更大的子序列空间，就有了另一种核方法。</p>
+<h3 id="6-2-基于子序列的核方法（2002）"><a href="#6-2-基于子序列的核方法（2002）" class="headerlink" title="6.2 基于子序列的核方法（2002）"></a>6.2 基于子序列的核方法（2002）</h3><p>为了让子串和子序列有区分度，首先定义一个衰减因子。对于字符串s，设u是子序列，i为u中字符的下标序列。例如s=’abcd’ u=’ac’, $i=(i_1,…,i_{|u|})=(1,3)$。记$l(i)=i_{|u|}-i_1+1$，即子序列u所在的子串的长度。定义一个衰减因子$\lambda^{l(i)}, (\lambda&lt;1)$来决定不同长度的子序列的权重，同时减少不连续的子序列的权重。那么映射就可以定义为$\phi_n(s)=\sum_{i:u=s[i]}\lambda^{l(i)}$。例如对于序列abcb，在2长度的子序列空间中的表示为</p>
+<table>
+<thead>
+<tr>
+<th>ab</th>
+<th>ac</th>
+<th>bc</th>
+<th>bb</th>
+<th>cb</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\lambda^2+\lambda^4$</td>
+<td>$\lambda^3$</td>
+<td>$\lambda^2$</td>
+<td>$\lambda^3$</td>
+<td>$\lambda^2$</td>
+</tr>
+</tbody>
+</table>
+<p>于是对于2个序列s,t，可以用公共子序列作为目标空间。核函数K(s,t)就定义为普通的内积。还可以再进行一步标准化减少序列本身长度的影响，即$\phi/|\phi|$。经过标准化的核函数为</p>
+<p>$$<br>\hat K(s,t)=\frac{K(s,t)}{\sqrt{K(s,s)K(t,t)}}<br>$$</p>
+<p>和前边的几种方法相比，这两种核方法计算都比较复杂。关于两种核方法的新空间，可以取固定长度的公共子串/子序列构造，也可以去不大于某个长度（如最小序列长）的所有公共子串/子序列构造，后者计算会更加复杂。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

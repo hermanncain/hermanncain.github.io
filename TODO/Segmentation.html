@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 ></h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>图像分割</p>
+<h2 id="1-语义分割"><a href="#1-语义分割" class="headerlink" title="1 语义分割"></a>1 语义分割</h2><p>语义分割的任务是对图像的每个像素进行类别标注。</p>
+<p>常用数据集：Pascal VOC，MSCOCO，Cityscapes</p>
+<h3 id="1-1-FCN"><a href="#1-1-FCN" class="headerlink" title="1.1 FCN"></a>1.1 FCN</h3><p>FCN的思路很朴素，直接对每个像素进行分类。主要有以下三个特点：</p>
+<ul>
+<li>使用CNN压缩图像，直接用经典CNN，如VGG，ResNet等，丢掉fc</li>
+<li>上采样。经过CNN的图像已经是尺寸较小的热力图（不叫feature map而叫heat map），使用反卷积进行上采样，就可以输出每个像素分类之后的图像。</li>
+<li>跳跃结构。因为反卷积的插值会导致模糊，所以将前面不同池化层的结果上采样之后也进行输出预测。</li>
+</ul>
+<p>后来还有SegNet和U-Net，都和FCN类似，使用了更规整的encoder-decoder结构，以及其他改进，不再赘述。</p>
+<h3 id="1-2-膨胀卷积（空洞卷积）"><a href="#1-2-膨胀卷积（空洞卷积）" class="headerlink" title="1.2 膨胀卷积（空洞卷积）"></a>1.2 膨胀卷积（空洞卷积）</h3><p>FCN因为池化和反卷积的存在，信息丢失。为了解决这个问题，膨胀卷积（DeepLab也叫它暗黑卷积，这哥特翻译没谁了）被提出。</p>
+<p><img src="/img/Segmentation/Segmentation_dilatedconv.gif" alt="膨胀卷积"></p>
+<p>丢掉池化层，膨胀卷积也能保证感受野。将FCN中的卷积换成膨胀卷积，可减少信息丢失，提升分割精度。DeepLab将膨胀卷积用在他们的模型中，并提出ASPP暗黑空间金字塔池化（就是用了膨胀卷积的SPP），融合不同尺度信息，同时使用CRF，获得了较好的效果。在DeppLabv3中将膨胀卷积应用在ResNet基础网络中。</p>
+<h3 id="1-3-条件随机场CRF"><a href="#1-3-条件随机场CRF" class="headerlink" title="1.3 条件随机场CRF"></a>1.3 条件随机场CRF</h3><p>将CRF用在图像处理中，每个像素就都看作是完全图中的节点。这样就可以将像素之间的关系考虑进来，利用语义关系指导分割。CRF已经广泛用在语义分割任务中。</p>
+<h2 id="2-实例分割"><a href="#2-实例分割" class="headerlink" title="2 实例分割"></a>2 实例分割</h2><p>实例分割的任务是不仅对每个像素分类，还要把同类中各个物体也要分割出来。所以是目标检测+语义分割综合的任务。</p>
+<h3 id="FCIS"><a href="#FCIS" class="headerlink" title="FCIS"></a>FCIS</h3><p>先卷积提取特征，然后兵分两路，一路经过RPN提取ROI，一路经过卷积生成</p>
+<h3 id="Mask-RCNN"><a href="#Mask-RCNN" class="headerlink" title="Mask RCNN"></a>Mask RCNN</h3><h3 id="PAN"><a href="#PAN" class="headerlink" title="PAN"></a>PAN</h3>
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

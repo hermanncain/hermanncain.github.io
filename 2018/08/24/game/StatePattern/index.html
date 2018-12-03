@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >游戏场景和状态模式</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>复杂的游戏是由多个场景组成的。例如经典游戏《我的世界》，就有主菜单场景、游戏设置场景、存档场景、载入场景、普通世界场景、地狱世界场景、末影世界场景等。场景的切换可以用状态图表示场景切换的条件和流程，这里不再赘述。</p>
+<p>场景划分的好处除了更好地管理和组织游戏各资源和逻辑外，还有一点就是便于复用。不同的游戏可能有一些相同的场景逻辑。</p>
+<h2 id="1-场景切换的简单实现"><a href="#1-场景切换的简单实现" class="headerlink" title="1 场景切换的简单实现"></a>1 场景切换的简单实现</h2><p>最简单实现场景管理的方法就在场景管理器中使用一个消息响应函数接收要切换为的场景id，使用switch判断从而切换到相应的场景。</p>
+<p>这种方式虽然简单，但是问题不少：</p>
+<ul>
+<li>扩展复杂。增加新场景就要改switch逻辑</li>
+<li>管理混乱。对象和多个场景有关，发生改变了，是哪个场景导致的？可能会混淆，难以调试。例如暗黑三悬赏任务多个玩家在不同场景跑任务，任务统计出错了，开发人员要找出是哪个场景里玩家跑任务出了bug。这时候如果系统是靠switch实现的场景切换，就难找了</li>
+<li>场景和多个类相关时，场景管理器类就会过度依赖那些类，对在其他游戏里复用造成了困难</li>
+</ul>
+<h2 id="2-状态模式"><a href="#2-状态模式" class="headerlink" title="2 状态模式"></a>2 状态模式</h2><p>GoF对状态模式的定义是：</p>
+<blockquote>
+<p><strong>让一个对象的行为随着内部状态的改变而变化，而该对象也像是换了类一样</strong></p>
+</blockquote>
+<p>用王者荣耀的英雄花木兰为例，该英雄有重剑和轻剑两种状态，每种状态对应着不同的技能，就像换了类一样。这种情况太广泛了，任何涉及到英雄变身的RPG都是这样。</p>
+<p>虽然对象的状态改变了，但客户端并不因为这种改变而改变对该对象的操作方法或者信息沟通的方式——状态改变都是在内部的。一般来说状态模式的结构如下</p>
+<p><img src="img/StatePattern/StatePattern_basic.jpg" alt=""></p>
+<ul>
+<li>状态拥有者Context，或称状态上下文。比如花木兰这个英雄类<ul>
+<li>状态是该类的一个属性</li>
+<li>可以定制接口让外界得知状态改变或通过操作改变状态</li>
+</ul>
+</li>
+<li>状态接口类State。定制状态接口，负责规范状态拥有者在特定状态下的行为</li>
+<li>具体状态类ConcreteState。如轻剑状态、重剑状态<ul>
+<li>继承自状态接口类</li>
+<li>实现状态拥有者在该状态下的行为。如英雄属性和技能的改变</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-花木兰大招"><a href="#3-花木兰大招" class="headerlink" title="3 花木兰大招"></a>3 花木兰大招</h2><p>就以农药花木兰为例，以简单写一点代码。</p>
+<h3 id="Context类"><a href="#Context类" class="headerlink" title="Context类"></a>Context类</h3><p>花木兰英雄类</p>
+<pre class="line-numbers language-C#"><code class="language-C#">public class Context
+{
+    State m_State = null;
+
+    // 外界通过此方法让花木兰呈现当前状态下的行为
+    public void Request(int Value) {
+        m_State.Handle(Value);
+    }
+
+    // 设置状态
+    public void SetState(State theState) {
+        m_State = theState;
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="State接口"><a href="#State接口" class="headerlink" title="State接口"></a>State接口</h3><p>State是一个抽象类，提供了一个抽象方法Handle作为状态切换的接口，供子类继承重载实现具体状态切换时的行为。</p>
+<pre class="line-numbers language-C#"><code class="language-C#">public abstract class State
+{
+    protected Context m_Context = null;
+    // State建立时就传入Context类对象，这样后续过程的状态切换全交由State负责，Context不再介入
+    public State(Context theContext) {
+        m_Context = theContext;
+    }
+    public abstract void Handle(int Value);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="ConcreteState类"><a href="#ConcreteState类" class="headerlink" title="ConcreteState类"></a>ConcreteState类</h3><pre class="line-numbers language-C#"><code class="language-C#">// 轻剑状态
+public class ConcreteStateSoftSword : State
+{
+    public ConcreteStateSoftSword(Context theContext):base(theContext)
+    {}
+
+    public override void Handle (int Value) {
+        // 改变技能
+        // ...
+        if (Value == 1)
+            m_Context.SetState(new ConcreteStateHeavySword(m_Context));
+    }
+}
+// 重剑状态
+public class ConcreteStateHeavySword : State
+{
+    public ConcreteStateHeavySword(Context theContext):base(theContext)
+    {}
+
+    public override void Handle (int Value) {
+        // 改变技能
+        // ...
+        if (Value == 0)
+            m_Context.SetState(new ConcreteStateSoftSword(m_Context));
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>这里用一个单元测试演示客户端是如何使用上述结构的。</p>
+<pre class="line-numbers language-C#"><code class="language-C#">void UnitTest () {
+    Context theContext = new Context();
+    theContext.SetState(new ConcreteStateSoftSword(theContext));
+
+    // 用户操纵花木兰放了大招
+    theContext.Request(1);
+    // 再次释放大招
+    theContext.Request(0);
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-使用状态模式实现场景切换"><a href="#4-使用状态模式实现场景切换" class="headerlink" title="4 使用状态模式实现场景切换"></a>4 使用状态模式实现场景切换</h2><p>以《我的世界》为例，这里给出一个简化版状态流程：</p>
+<ul>
+<li>登录界面场景，初始化游戏资源</li>
+<li>游戏资源初始化完毕后直接跳转到主界面场景</li>
+<li>点击主界面的开始游戏按钮直接进入我的世界场景</li>
+</ul>
+<p>使用状态模式实现场景切换的系统架构大概为</p>
+<ul>
+<li>场景状态类接口</li>
+<li>场景状态类接口的实体状态类，如登录场景、主界面场景、我的世界场景</li>
+<li>状态拥有者，也是和游戏主循环互动的接口</li>
+<li>游戏主循环，包括游戏初始化和定时更新</li>
+</ul>
+<pre><code>场景状态类
+{
+    状态名;
+    拥有者=null;
+    构造函数(拥有者){初始化拥有者};
+    开始();
+    结束();
+    更新();
+}
+
+登陆场景类: 场景状态类
+{
+    构造函数(拥有者):base(拥有者){
+        赋状态名
+    }
+    开始(){数据加载和初始化}
+    更新(){拥有者设置状态为主界面}
+}
+
+主界面场景类: 场景状态类
+{
+    构造函数(拥有者):base(拥有者){
+        赋状态名
+    }
+    开始(){UI初始化，如给主界面的按钮增加消息相应等}
+    按键响应(){拥有者设置状态为我的世界}
+}
+
+我的世界场景类: 场景状态类
+{
+    构造函数(拥有者):base(拥有者){
+        赋状态名
+    }
+    开始(){游戏逻辑初始化}
+    结束(){释放游戏逻辑资源}
+    更新(){
+        输入响应
+        游戏逻辑和更新
+        判断游戏主循环是否结束，是则{拥有者设置状态为主界面}
+    }
+}
+
+状态拥有者
+{
+    场景状态
+    设置状态(){
+        载入场景
+        结束前一个状态
+        设置状态
+    }
+    更新(){
+        新的状态开始
+        状态更新
+    }
+}
+
+游戏主循环: MonoBehavior
+{
+    状态拥有者初始化
+    void Awake(){
+        //场景转换不会被删除
+        GameObject.DontDesroyOnLoad(this.GameObject);
+    }
+    void Start(){
+        拥有者.设置状态(登陆场景(拥有者))
+    }
+    void Update(){
+        拥有者.更新()
+    }
+}
+</code></pre><h2 id="5-持续开发"><a href="#5-持续开发" class="headerlink" title="5 持续开发"></a>5 持续开发</h2><p>项目中后期可能会增加新的功能，对于无法在现有场景下实现的功能，需要新建场景。使用状态模式，开发工作就变得简单：</p>
+<ul>
+<li>新增场景</li>
+<li>加入新的场景状态类</li>
+<li>决定场景转换逻辑：从哪转过来，转到哪儿去</li>
+</ul>
+<h2 id="6-补充"><a href="#6-补充" class="headerlink" title="6 补充"></a>6 补充</h2><p>状态模式可能会面临产生太多种ConcreteState类的问题。但和switch相比维护仍然要方便很多。还有很多地方可以使用状态模式：</p>
+<ul>
+<li>游戏AI逻辑，这是一个有限状态机，很基础了</li>
+<li>游戏服务器连接。客户端和服务端的连线有多种状态，如开始连线、连线中、断线等，不同的状态有不同的封包信息处理方式</li>
+<li>关卡进行状态</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

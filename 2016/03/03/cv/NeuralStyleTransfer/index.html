@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >神经风格迁移</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>神经风格转移的第一篇文章是15年的<a href="https://arxiv.org/pdf/1508.06576.pdf" target="_blank" rel="noopener">A Neural Algorithm of Artistic Style</a></p>
+<h2 id="1-任务概述"><a href="#1-任务概述" class="headerlink" title="1 任务概述"></a>1 任务概述</h2><p>输入一张原图，一张风格图，得到一张内容是原图、风格是风格图的新图片</p>
+<p>或者说，用一张噪声图片去逼近原图的内容和风格图的风格</p>
+<h2 id="2-内容匹配"><a href="#2-内容匹配" class="headerlink" title="2 内容匹配"></a>2 内容匹配</h2><p>CNN各层的feature map实际上编码了图像的信息。那么2个图像经过CNN生成的2套feature map就可以用来做匹配</p>
+<p>假设第l层有N个feature map，每个feature map维度是M=hxw，则该层的feature map可以表示为$F \in R^{N\times M}$，对2个图像在该层的内容损失可以定义为</p>
+<p>$$\mathcal L^l_{content} = \frac{1}{2}\sum(F_{ij}-P_{ij})^2$$</p>
+<p>其中P是原图在该层的feature map，F是随机噪声图片在该层的feature map</p>
+<p>较高层的feature map比较适合作为内容匹配的选择</p>
+<h2 id="3-风格匹配"><a href="#3-风格匹配" class="headerlink" title="3 风格匹配"></a>3 风格匹配</h2><p>一组向量的格拉姆矩阵由该向量的内积定义，衡量了向量间的两两相关性。风格损失使用格拉姆矩阵构建。对噪声图片第l层N个feature map可以算出NxN维的格拉姆矩阵G，若风格图像在l层的格拉姆矩阵为A，则风格损失定义为：</p>
+<p>$$<br>\mathcal L^l_{style} = \frac{1}{4M^2N^2}(G_{ij}-A_{ij})^2<br>$$</p>
+<p>多层feature map每层加权就可以得到总体的风格损失</p>
+<p>所以总体损失$\mathcal L= \alpha \mathcal L_{content}+\beta \mathcal L_{style}$</p>
+<h2 id="4-模型"><a href="#4-模型" class="headerlink" title="4 模型"></a>4 模型</h2><p>网络使用预训练好的VGG19，参数是固定的，变化的是噪声图片。所以模型训练过程是更新噪声图片的像素点的值</p>
+<p>显然，这个过程是在线的，对不同的输入原图和风格图都必须重新训练模型才能得到结果。<a href="https://github.com/wenqiwenqi1/neural-style" target="_blank" rel="noopener">tensorflow版本实现</a>，512分辨率图片，GTX TITANX需要跑不到2分钟。</p>
+<p><a href="https://github.com/lengstrom/fast-style-transfer" target="_blank" rel="noopener">离线版</a>提出了图像转移网络+损失网络的架构，避免了重新训练，速度提升巨大，还能做超分辨率。</p>
+<p>神经风格迁移发展迅速，在线、离线、多风格、混合风格、内容保真、笔触大小等花样层出不穷。<a href="https://github.com/ycjing/Neural-Style-Transfer-Papers" target="_blank" rel="noopener">这里</a>是个一直在更新最新相关研究论文和代码的汇总仓库</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

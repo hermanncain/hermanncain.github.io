@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url(/img/PSG/PSG_r2.png);background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >形状文法和参数化形状文法</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <p>形状文法一开始是严格遵遵循乔姆斯基范式定义的，更确切地来说，是遵循短语结构语法，或上下文无关文法定义的。在后来几年的发展中，Stiny对形状及更多元素进行了更加详细的定义，完善了形状文法的理论基础。</p>
+<h2 id="1-形状"><a href="#1-形状" class="headerlink" title="1 形状"></a>1 形状</h2><p>长度为非0的线段组成的二维或三维图形。什么也没有的形状为空形状 $s_\varnothing$。</p>
+<h2 id="2-子形状"><a href="#2-子形状" class="headerlink" title="2 子形状"></a>2 子形状</h2><p>$s_1 \subseteq s_2$，$s_1$是$s_2$的一部分。</p>
+<h2 id="3-形状并"><a href="#3-形状并" class="headerlink" title="3 形状并"></a>3 形状并</h2><p>$s_1 \cup s_2$，两个形状构成的更复杂的形状。</p>
+<h2 id="4-形状差"><a href="#4-形状差" class="headerlink" title="4 形状差"></a>4 形状差</h2><p>$s_1 - s_2$，在$s_1$中去掉$s_2$后所剩下的形状。</p>
+<h2 id="5-欧几里得变换"><a href="#5-欧几里得变换" class="headerlink" title="5 欧几里得变换"></a>5 欧几里得变换</h2><p>平移、旋转、缩放、镜像及其有限组合。一个形状 $s$ 经过变换 $\tau$ 之后表示为 $\tau(s)$。</p>
+<h2 id="6-形状闭包"><a href="#6-形状闭包" class="headerlink" title="6 形状闭包"></a>6 形状闭包</h2><blockquote>
+<p>此处是形式语言的基础知识了</p>
+</blockquote>
+<p>$S^+$正闭包，表示形状集 $S$ 中出现的所有形状及组合构成的最小集合。如$S=\{ s_1,s_2 \}$，则</p>
+<p>$$<br>S^+ = \{ s_1 \} \cup \{ s_1 \cup s_1 \} \cup \dots \cup \{ s_2 \} \cup \{ s_2 \cup s_2 \} \cup \dots \cup \{ s_1 \cup s_2 \} \cup \dots<br>$$</p>
+<p>星闭包$S^* = S^+ \cup \{ s_\varnothing \}$</p>
+<h2 id="7-参数形状"><a href="#7-参数形状" class="headerlink" title="7 参数形状"></a>7 参数形状</h2><p>形状的点、线是参数化的，可以表达一个形状系列。对一个参数形状进行赋值操作$g$之后表示为 $g(s)$。</p>
+<h2 id="8-标记"><a href="#8-标记" class="headerlink" title="8 标记"></a>8 标记</h2><blockquote>
+<p>标记这个概念并未出现在形状文法最初的定义中，它的意义到底是什么，为什么后来的形状文法定义都少不了它，这里给出我的推测和思考。</p>
+</blockquote>
+<p>在形状文法最早的定义中，非终结形状 $V_M$ 只出现在生成过程中，并不出现在最终结果，只起到了一个桥梁的作用，所以有的时候是可有可无的。比如我想把一个30°直角三角形变成一个正方形，不需要非终结形状就可以完成。</p>
+<p>但对于一些具有对称特征的形状，必须使用 $s \in V_M$ 来将之变成非对称的，以方便子形状检测和计算欧几里得变换（比如一个规则是将正方形换成三角形，不通过非终结形状把正方形变成非对称的话，有四种可能情况，你怎么确定三角形头朝哪呢？）。于是原本由线段构成的非终结形状就退化为了由<strong>点+标签</strong>构成的标记：$l = (p:A)$，其中 $p$ 是点，$A$ 是点的标签。在处理非对称形状时，标记就是可有可无的。</p>
+<blockquote>
+<p>不过这里有个很重要的点就是使用标记来消除形状的对称性不能使用规则 $s \to (s,l)$ 来解决，不然同样会会面临 $\tau$ 的多解性问题。所以只能在制定规则阶段直接将右侧定义为标记形状来消除右侧形状的对称性。尤其当规则右侧会成为其他规则的左侧时，一定要注意。</p>
+</blockquote>
+<p>因为标记 $l$ 是从非终结形状 $s \in V_M$ 演化来，所以也和形状 $s$ 类似，拥有子标记、并、减、欧几里得变换、闭包、参数化标记等概念。</p>
+<h2 id="9-标记形状"><a href="#9-标记形状" class="headerlink" title="9 标记形状"></a>9 标记形状</h2><p>标记形状就是带标记的形状。$\sigma \in (S,L)^+$有3种：</p>
+<ul>
+<li>$\sigma \in (S^+ + L_\varnothing)$，纯形状</li>
+<li>$\sigma \in (S_\varnothing + L^+)$，纯标记</li>
+<li>$\sigma \in (S^+ + L^+)$，带标记的形状<blockquote>
+<p>显然，根据正闭包和星闭包的概念，当$(S,L)^+$再加上$(S_\varnothing, L_\varnothing)$时，就成了$(S,L)^*$</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="10-形状文法的新定义"><a href="#10-形状文法的新定义" class="headerlink" title="10 形状文法的新定义"></a>10 形状文法的新定义</h2><p>$SG=(S,L,R,I)$</p>
+<ul>
+<li>S是形状的有限集合；</li>
+<li>L是标记的有限集合；</li>
+<li>R是规则的有限集合，规则 $\alpha \to \beta$，其中$\alpha \in (S,L)^+$，$\beta \in (S,L)^*$即规则左侧必须是带标记的形状，右侧可以是空；</li>
+<li>I是初始形状， $I \in (S,L)^+$，即I是带标记的形状。</li>
+</ul>
+<p>Stiny在1977年的冰裂纹论文[1]中将形状文法变成了五元组，多了一个欧几里得变换集 $T$，这个集合在后来的定义[2]中都未再出现过。因为变换应该是计算得到的，预先定义确实意义不大。</p>
+<p>SG的冰裂纹规则</p>
+<p><img src="/img/PSG/PSG_r1.png" alt="SG的冰裂纹规则"></p>
+<p>SG生成冰裂纹过程</p>
+<p><img src="/img/PSG/PSG_g1.png" alt="SG生成冰裂纹"></p>
+<h2 id="11-参数化形状文法"><a href="#11-参数化形状文法" class="headerlink" title="11 参数化形状文法"></a>11 参数化形状文法</h2><p>当标记形状是参数化标记形状时，形状文法就变成了参数化形状文法PSG。由于标记形状是参数化的，因此在生成过程及结果中都可以随时对参数进行赋值，得到比非参数化形状文法复杂的多的结果。Stiny通过参数化形状文法生成了冰裂纹。</p>
+<blockquote>
+<p>一个槽点/巧合：SG参数化后变成了PSG，终于和短语结构语法的缩写同名了！</p>
+</blockquote>
+<p>PSG的冰裂纹规则</p>
+<p><img src="/img/PSG/PSG_r2.png" alt="PSG的冰裂纹规则"></p>
+<p>PSG生成冰裂纹过程</p>
+<p><img src="/img/PSG/PSG_g21.png" alt="PSG生成冰裂纹"></p>
+<p><img src="/img/PSG/PSG_g22.png" alt="PSG生成冰裂纹"></p>
+<h2 id="12-评价准则"><a href="#12-评价准则" class="headerlink" title="12 评价准则"></a>12 评价准则</h2><p>在一系列设计帕拉迪奥建筑风格的文章中[3]，Stiny给出了结果的评价准则。当然，只限于这类设计，不过为其他情境下评价准则的设计提供了参考方案。</p>
+<p>帕拉迪奥建筑的平面图</p>
+<p><img src="/img/PSG/PSG_Palladin.png" alt="帕拉迪奥建筑的平面图"></p>
+<h3 id="形状表"><a href="#形状表" class="headerlink" title="形状表"></a>形状表</h3><p>对形状进行编码，只有一个单元格的方形编码为00（类似于相对坐标），更复杂的形状可以将其他单元格做不同的两位数编码。如Villa Malcontenta的形状表为：</p>
+<p><img src="/img/PSG/PSG_shape_table.png" alt="Villa Malcontenta的形状表"></p>
+<h3 id="出现表"><a href="#出现表" class="headerlink" title="出现表"></a>出现表</h3><p>次数表由3列组成，第一列是非单元形状的代号，第二列是出现的坐标编码（以整体左下为00，形状左下的单元格处为局部原点），第三列是是否旋转</p>
+<p><img src="/img/PSG/PSG_occurence_table.png" alt="Villa Malcontenta的出现表"></p>
+<h3 id="准则"><a href="#准则" class="headerlink" title="准则"></a>准则</h3><ul>
+<li>描述长度：形状表中数字的数量+出现表中数字的数量。如上例中的描述长度为 14+12=26；</li>
+<li>信息长度：生成结果所需要的规则数量，包括重复。上例为9；</li>
+<li>美学数值：描述长度/信息长度。上例为 26/9=2.89。</li>
+</ul>
+<hr>
+<p>在创造了形状文法若干年后，Stiny对产生式系统与文法进行了一次归纳对比[4]。从最早Post提出的产生式系统，到乔姆斯基的短语结构语法、马尔科夫算法、L-系统、串文法、树文法、图文法、形状文法、参数化形状文法，一直到西蒙和纽厄尔提出的问题解决语法。此外，还对产生式系统相关的工作进行了概述，如图灵机、定理证明中的谓词演算、甚至Schenker的西方音乐音调理论。</p>
+<p>符号主义人工智能在当时可谓百花齐放。探究符号主义人工智能的确是一种享受，它以严格的定义、清晰的推理，将“智能”用可以推演的规则表示，和当今风头尽出的联结主义相比，在能够让人理解的层面解释了“智能”这一概念。虽然贾里尼克有一句非常尖刻而著名的话“每开除一个语言学家，语音识别系统的性能就会改善一些”，但我相信二者的结合才是人工智能发展的归途，或者至少说，是作为碳基生物的人类在不能突破自身限制时，将人工智能往前推进的不可摆脱的道路。</p>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] Stiny G. Ice-ray: a note on the generation of chinese lattice designs. Environment and Planning B: Planning and Design. 1977. 4(1): 89-98.</p>
+<p>[2] Stiny G. Introduction to shape and shape grammars. Environment and Planning B: Planning and Design. 1980. 7(3): 343-351.</p>
+<p>[3] Stiny G, Gips J. An evaluation of Palladian plans. Environment and Planning B: Planning and Design. 1978. 5(2): 199-206.</p>
+<p>[4] Stiny G, Gips J. Production systems and grammars: a uniform characterization. Environment and Planning B: Planning and Design. 1980. 7(4): 399-408.</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

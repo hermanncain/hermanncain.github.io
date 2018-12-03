@@ -1,0 +1,319 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >图像特征</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-SIFT"><a href="#1-SIFT" class="headerlink" title="1 SIFT"></a>1 SIFT</h2><p>图像纹理是一个非常重要的特征维度。SIFT对图像纹理进行计算，提取不同尺度的图像关键点并生成描述子。如角点、边缘点、强对比点。具有旋转、尺度、亮度不变性。</p>
+<p>大体步骤：</p>
+<ul>
+<li>使用高斯模糊+下采样，得到高斯金字塔。注意的是每次下采样都使用相同大小、不同参数的高斯模糊处理，因此高斯金字塔可以分为若干组，每组都有相同大小的若干层。<blockquote>
+<p>高斯模糊：使用归一化的高斯核对图像进行卷积（使用分解卷积的方法更快）</p>
+</blockquote>
+</li>
+<li>高斯金字塔的每组内相邻两层相减，得到高斯差分金字塔DoG</li>
+<li>极值检测，每个点和上下左右9+9+8+26个点比较，找到极值点，并清洗掉不好的特征点（如低对比度、不稳定边缘等）</li>
+<li>求关键点梯度，然后考察关键点邻域像素梯度和方向，构造梯度直方图，将360°分成每10°一个方向，每个方向一个直方，直方值是该梯度方向的幅值和。</li>
+<li>构建SIFT描述子。具体过程略，包括采样、旋转、直方图构建。每个关键点对4x4邻域采样，直方图考虑8个方向，于是可以用4x4x8=128维的SIFT特征矢量描述。</li>
+</ul>
+<p>简单的sift特征提取和匹配代码如下:</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true">### SIFT特征提取</span>
+<span class="token comment" spellcheck="true"># 1 将图片转为灰度图</span>
+gray<span class="token operator">=</span> cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>img<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>COLOR_BGR2GRAY<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2 创建sift特征</span>
+sift <span class="token operator">=</span> cv2<span class="token punctuation">.</span>SIFT<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 3 检测关键点</span>
+kps <span class="token operator">=</span> sift<span class="token punctuation">.</span>detect<span class="token punctuation">(</span>gray<span class="token punctuation">,</span>None<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4 计算每个关键点的sift特征</span>
+sift<span class="token punctuation">.</span>compute<span class="token punctuation">(</span>gray<span class="token punctuation">,</span>kps<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 5 在灰度图中画出这些关键点</span>
+img<span class="token operator">=</span>cv2<span class="token punctuation">.</span>drawKeypoints<span class="token punctuation">(</span>gray<span class="token punctuation">,</span>kps<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">### SIFT图像匹配</span>
+<span class="token comment" spellcheck="true"># 1 计算每个待匹配图像的关键点和sift特征</span>
+kp1<span class="token punctuation">,</span> des1 <span class="token operator">=</span> sift<span class="token punctuation">.</span>detectAndCompute<span class="token punctuation">(</span>img1<span class="token punctuation">,</span> None<span class="token punctuation">)</span>
+kp2<span class="token punctuation">,</span> des2 <span class="token operator">=</span> sift<span class="token punctuation">.</span>detectAndCompute<span class="token punctuation">(</span>img2<span class="token punctuation">,</span> None<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2 构建匹配器</span>
+bf <span class="token operator">=</span> cv2<span class="token punctuation">.</span>BFMatcher<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 3 匹配</span>
+matches <span class="token operator">=</span> bf<span class="token punctuation">.</span>knnMatch<span class="token punctuation">(</span>des1<span class="token punctuation">,</span> des2<span class="token punctuation">,</span> k<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4 获取能够匹配的关键点</span>
+good <span class="token operator">=</span> <span class="token punctuation">[</span>m <span class="token keyword">for</span> m<span class="token punctuation">,</span> n <span class="token keyword">in</span> matches <span class="token keyword">if</span> m<span class="token punctuation">.</span>distance <span class="token operator">&lt;</span> <span class="token number">0.5</span> <span class="token operator">*</span> n<span class="token punctuation">.</span>distance<span class="token punctuation">]</span>
+<span class="token comment" spellcheck="true"># 5 将待匹配的灰度图像、关键点、匹配结果画出来</span>
+img3 <span class="token operator">=</span> cv2<span class="token punctuation">.</span>drawMatchesKnn<span class="token punctuation">(</span>img1<span class="token punctuation">,</span> kp1<span class="token punctuation">,</span> img2<span class="token punctuation">,</span> kp2<span class="token punctuation">,</span> good<span class="token punctuation">,</span> None<span class="token punctuation">,</span> flags<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>SIFT计算还是比较复杂的，而且对平滑边缘比较无力。SURF特征对其进行了改进，计算速度大大提高。</p>
+<h2 id="2-轮廓"><a href="#2-轮廓" class="headerlink" title="2 轮廓"></a>2 轮廓</h2><h3 id="2-1-轮廓提取"><a href="#2-1-轮廓提取" class="headerlink" title="2.1 轮廓提取"></a>2.1 轮廓提取</h3><p>轮廓是另一个重要的图像特征。有很多方法来提取轮廓，canny是经典的边缘检测算法。</p>
+<ul>
+<li>高斯模糊</li>
+<li>使用边缘差分算子（如sobel)计算梯度，可以得到初步的边缘点</li>
+<li>非极大值抑制。上边计算出来的结果会得到很粗的边缘，这里进行处理，得到1个像素宽的边缘</li>
+<li>双阈值对点进行标记，然后计算梯度小的点周围有没有梯度大的，没有则认为是噪声，过滤掉</li>
+</ul>
+<p>opencv中一般直接用findcontours提取轮廓。一般流程如下：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 1 将图像进行高斯模糊去除噪声（模糊后一些轮廓可能连到一起，具体问题具体分析）</span>
+dst<span class="token operator">=</span>cv2<span class="token punctuation">.</span>GaussianBlur<span class="token punctuation">(</span>img<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 2 转化为灰度图像</span>
+gray<span class="token operator">=</span>cv2<span class="token punctuation">.</span>cvtColor<span class="token punctuation">(</span>dst<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>COLOR_RGB2GRAY<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 3 二值化</span>
+<span class="token comment" spellcheck="true"># 这里cv2.THRESH_OTSU是采用大津法的二值化方法，和自适应阈值有点像，一般比纯粹的cv2.THRESH_BINARY效果更好</span>
+ret<span class="token punctuation">,</span>binary<span class="token operator">=</span>cv2<span class="token punctuation">.</span>threshold<span class="token punctuation">(</span>gray<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">255</span><span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>THRESH_BINARY<span class="token operator">|</span>cv2<span class="token punctuation">.</span>THRESH_OTSU<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 4 提取轮廓cv2.findContours</span>
+<span class="token comment" spellcheck="true"># @params</span>
+<span class="token comment" spellcheck="true">#   image：输入的二值图像，提取完轮廓后会改变，所以如果后边还要用到输入图像的话就传进来拷贝</span>
+<span class="token comment" spellcheck="true">#   mode：轮廓的提取模式</span>
+<span class="token comment" spellcheck="true">#       cv2.RETR_EXTERNAL：只提取外轮廓，孔洞的轮廓不计，没有层级</span>
+<span class="token comment" spellcheck="true">#       cv2.RETR_CCOMP：外轮廓一个层级，内轮廓一个层级</span>
+<span class="token comment" spellcheck="true">#       cv2.RETR_LIST：提取所有轮廓，没有层级</span>
+<span class="token comment" spellcheck="true">#       cv2.RETR_TREE：提取所有轮廓，并建立轮廓的树状层级结构</span>
+<span class="token comment" spellcheck="true">#   method：轮廓的近似方法</span>
+<span class="token comment" spellcheck="true">#       cv2.CHAIN_APPROX_NONE：存储所有点</span>
+<span class="token comment" spellcheck="true">#       cv2.CHAIN_APPROX_SIMPLE：存储关键点</span>
+<span class="token comment" spellcheck="true">#       cv2.CHAIN_APPROX_TC89_L1，CV_CHAIN_APPROX_TC89_KCOS：也是关键点，采样方法和SIMPLE不同</span>
+<span class="token comment" spellcheck="true"># @returns</span>
+<span class="token comment" spellcheck="true">#   image：处理过的二值图像</span>
+<span class="token comment" spellcheck="true">#   contours：提取出来的轮廓list</span>
+<span class="token comment" spellcheck="true">#   hierarchy：轮廓的层次，每个轮廓都有4个值：contours[i]-->hierachy[i][0~4]，分别是前一个轮廓、后一个轮廓、父轮廓、内轮廓的索引，没有就是负值</span>
+bimg<span class="token punctuation">,</span>contours<span class="token punctuation">,</span>hieriachy <span class="token operator">=</span> cv2<span class="token punctuation">.</span>findContours<span class="token punctuation">(</span>binary<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>RETR_EXTERNAL<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>CHAIN_APPROX_SIMPLE<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 绘制轮廓（注意只绘制点，所以如果轮廓只存储了关键点而不是所有点，是看不到连起来的轮廓线的</span>
+<span class="token comment" spellcheck="true"># @params（部分）</span>
+<span class="token comment" spellcheck="true">#   image：绘制的目标图像</span>
+<span class="token comment" spellcheck="true">#   contours：要绘制的轮廓list</span>
+<span class="token comment" spellcheck="true">#   contourIdx：要绘制的轮廓索引，负值则绘制所有轮廓</span>
+<span class="token comment" spellcheck="true">#   color：轮廓颜色</span>
+<span class="token comment" spellcheck="true">#   thickness：轮廓粗细，负值则轮廓内部被填充</span>
+cv2<span class="token punctuation">.</span>drawContours<span class="token punctuation">(</span>bimg<span class="token punctuation">,</span> contours<span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> color<span class="token punctuation">,</span> thickness<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-2-轮廓特征"><a href="#2-2-轮廓特征" class="headerlink" title="2.2 轮廓特征"></a>2.2 轮廓特征</h3><p>提取出来的轮廓可以进一步处理，如求周长、面积、最包围矩形、最小包围矩形、最小外接圆等等。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 都是对单个轮廓c的计算</span>
+<span class="token comment" spellcheck="true"># 单个轮廓是点的list。所以如果算多个轮廓的特征，把点都放到一个list就可以（周长面积不能这么做）</span>
+
+<span class="token comment" spellcheck="true"># 周长，True为闭合长度，False为不闭合长度</span>
+perimeter <span class="token operator">=</span> cv2<span class="token punctuation">.</span>arcLength<span class="token punctuation">(</span>c<span class="token punctuation">,</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 面积（也叫0阶矩）</span>
+area <span class="token operator">=</span> cv2<span class="token punctuation">.</span>contourArea<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 包围矩形AABB的左上顶点、宽高</span>
+x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> w<span class="token punctuation">,</span> h <span class="token operator">=</span> cv2<span class="token punctuation">.</span>boundingRect<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 最小包围矩形的中心、宽高、旋转角（单位是度）</span>
+rect <span class="token operator">=</span> cv2<span class="token punctuation">.</span>minAreaRect<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 获取最小包围矩形的顶点</span>
+box <span class="token operator">=</span> cv2<span class="token punctuation">.</span>boxPoints<span class="token punctuation">(</span>rect<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 最小外接圆的圆心、半径</span>
+<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">,</span> radius <span class="token operator">=</span> cv2<span class="token punctuation">.</span>minEnclosingCircle<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 凸性检测的布尔值</span>
+k<span class="token operator">=</span>cv2<span class="token punctuation">.</span>isContourConvex<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 凸包的点</span>
+hull <span class="token operator">=</span> cv2<span class="token punctuation">.</span>convexHull<span class="token punctuation">(</span>c<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-3-轮廓矩和轮廓匹配"><a href="#2-3-轮廓矩和轮廓匹配" class="headerlink" title="2.3 轮廓矩和轮廓匹配"></a>2.3 轮廓矩和轮廓匹配</h3><p>前面写到面积是0阶矩，实际上可以用<code>M=cv2.moments(c)</code>计算一个轮廓的各阶矩，返回一个字典。各阶矩之间的运算可以得到很多特征，例如轮廓的重心可以用以下方式求得：</p>
+<pre class="line-numbers language-python"><code class="language-python">cX <span class="token operator">=</span> int<span class="token punctuation">(</span>M<span class="token punctuation">[</span><span class="token string">"m10"</span><span class="token punctuation">]</span> <span class="token operator">/</span> M<span class="token punctuation">[</span><span class="token string">"m00"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+cY <span class="token operator">=</span> int<span class="token punctuation">(</span>M<span class="token punctuation">[</span><span class="token string">"m01"</span><span class="token punctuation">]</span> <span class="token operator">/</span> M<span class="token punctuation">[</span><span class="token string">"m00"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>Hu矩是归一化中心矩的线性组合，可以用来衡量两个轮廓的相似性，具有平移T、旋转R、尺度S、镜像M不变性。</p>
+<p>除了Hu矩以外，常用的还有Zernike矩，也具有RST不变性，它比Hu矩描述了更多细节，因此对一些稍微复杂的轮廓描述能力更强一些，但计算较为复杂。OpenCV中没有Zernike矩的实现，这里不再赘述。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># Hu矩匹配</span>
+<span class="token comment" spellcheck="true"># @params（部分）</span>
+<span class="token comment" spellcheck="true">#    method:CV_CONTOURS_MATCH_I1, CV_CONTOURS_MATCH_I2, CV_CONTOURS_MATCH_I3，Hu矩匹配的计算参数，不同的值匹配结果略有差别</span>
+r <span class="token operator">=</span> cv2<span class="token punctuation">.</span>matchShapes<span class="token punctuation">(</span>c1<span class="token punctuation">,</span>c2<span class="token punctuation">,</span>cv2<span class="token punctuation">.</span>cv<span class="token punctuation">.</span>CV_CONTOURS_MATCH_I1<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>虽然还有轮廓树、成对几何直方图的匹配方法，但相对Hu矩匹配来说效果都要差一些。Hu矩匹配对形状比较复杂、有较多大凹陷的轮廓匹配效果不太好。</p>
+<h3 id="2-4-傅里叶描述子Fourier-Descriptor"><a href="#2-4-傅里叶描述子Fourier-Descriptor" class="headerlink" title="2.4 傅里叶描述子Fourier Descriptor"></a>2.4 傅里叶描述子Fourier Descriptor</h3><p>和矩一样，傅里叶描述子也可以作为轮廓的描述子。它的思路就是将轮廓点(x,y)表示为复数s=x+iy，然后对s进行傅里叶变换，取前几个模/第一个模，形成傅里叶描述子。傅里叶描述子具有RST不变性。numpy可以很容易地对数据进行快速傅里叶变换：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 使用np的fft2对轮廓进行傅里叶变换并求模(取前7阶)</span>
+f <span class="token operator">=</span> np<span class="token punctuation">.</span>abs<span class="token punctuation">(</span>np<span class="token punctuation">.</span>fft<span class="token punctuation">.</span>fft<span class="token punctuation">(</span>c<span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 计算傅里叶描述子</span>
+fd <span class="token operator">=</span> <span class="token punctuation">[</span>i<span class="token operator">/</span>f<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> f<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-HOG"><a href="#3-HOG" class="headerlink" title="3 HOG"></a>3 HOG</h2><p>方向梯度直方图HOG是物体检测的一种重要特征。HOG+SVM是图像识别的经典算法。HOG实际上是图像中梯度的统计信息。HOG的大体流程如下：</p>
+<ul>
+<li>灰度化</li>
+<li>gamma校正。这一步是为了避免阴影光照等的影响。不过对于被识别的对象内部纹理变化较为剧烈（如动物的花纹）的则不太适合用gamma校正</li>
+<li>计算每个像素的梯度。一般都是用检测边缘的核进行卷积</li>
+<li>图像划分为细胞cell，每个细胞内统计梯度直方图得到描述子<blockquote>
+<p>直方图的构建在SIFT中已有过描述，就是360°分成若干个角度区域、统计落在对应角度的梯度，直方的值是落在该角度内梯度的幅值之和</p>
+</blockquote>
+</li>
+<li>几个细胞组成一个块block，每个块内的细胞的描述子归一化后串联起来，得到该块的HOG。block之间是有重叠的</li>
+<li>图像的所有块的HOG串联起来，得到最终HOG</li>
+</ul>
+<p>例如对于一个3x3个细胞的块，直方图维度9通道（9个角度区域）则一块的HOG特征有3x3x9维。</p>
+<p>HOG最初是用来做行人检测的，是一个Object Detection的场景。OPENCV提取hog特征时，一般也是先滑窗获取ROI，再对ROI进行HOG特征提取。如果不设置ROI相关参数，就是对整张图片计算HOG了。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># HOG描述子构造函数</span>
+<span class="token comment" spellcheck="true"># @params（部分）</span>
+<span class="token comment" spellcheck="true">#   winSize：滑窗ROI大小</span>
+<span class="token comment" spellcheck="true">#   blockSize：块大小</span>
+<span class="token comment" spellcheck="true">#   blockStride：块步长</span>
+<span class="token comment" spellcheck="true">#   cellSize：细胞大小</span>
+<span class="token comment" spellcheck="true">#   nbins：直方图维度</span>
+hog <span class="token operator">=</span> cv2<span class="token punctuation">.</span>HOGDescriptor<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># HOG提取</span>
+<span class="token comment" spellcheck="true"># @params（部分）</span>
+<span class="token comment" spellcheck="true">#   img：输入图像</span>
+<span class="token comment" spellcheck="true">#   winStride：滑窗步长(s,s)</span>
+hist <span class="token operator">=</span> hog<span class="token punctuation">.</span>compute<span class="token punctuation">(</span>img<span class="token punctuation">,</span>winStride<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 提取到的HOG特征hist就可以用于后续的任务</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-LightField-Descriptor-LFD"><a href="#4-LightField-Descriptor-LFD" class="headerlink" title="4 LightField Descriptor(LFD)"></a>4 LightField Descriptor(LFD)</h2><p>最后简单提一下3D物体的描述子光场描述子LFD，是对物体进行正20面体投影得到20个2D图像。那么这20个图像就可以用上述的各种方法进行特征提取，得到LFD。当然，在深度学习如此流行的今天，20个图直接喂进CNN效率更高。</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

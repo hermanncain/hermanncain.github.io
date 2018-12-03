@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >绕过拉格朗日乘子法理解SVM</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="Hinge-Loss"><a href="#Hinge-Loss" class="headerlink" title="Hinge Loss"></a>Hinge Loss</h2><p>设输入是x，模型是f，输出是$\hat y$理想的loss是</p>
+<p>$$<br>L(f) = \sum_n\delta(g(x^n)\neq \hat y^n)<br>$$</p>
+<p>但是没法微分，所以使用函数l做一个逼近：</p>
+<p>$$<br>L(f) = \sum_n l(f(x^n), \hat y^n)<br>$$</p>
+<p>常见的l有均方误差、交叉熵等。Hinge Loss的定义是$\sum_n max(0,1-\hat y^n f(x))$</p>
+<h2 id="线性SVM"><a href="#线性SVM" class="headerlink" title="线性SVM"></a>线性SVM</h2><p>模型是$f(x)=w^Tx$，其中$w=[w_i,b],x=[x_i,1]$；损失函数是Hinge Loss；和逻辑回归的差别只是损失函数。</p>
+<p>考虑损失函数$L(f) = \sum_n max(0,1-\hat y^n f(x))+\lambda ||w||_2$，令$max(0,1-\hat y^n f(x)) = \epsilon^n$，最小化损失就要最小化$\epsilon^n$，即</p>
+<p>$$\hat y^n f(x) &gt;= 1-\epsilon^n$$</p>
+<p>将$\epsilon^n$称为松弛因子。</p>
+<blockquote>
+<p>从几何角度上来说，SVM就是找一个分隔平面，使该平面距离两类点的最小距离（即间隔）最大。有松弛因子的SVM叫做软间隔SVM。</p>
+</blockquote>
+<h2 id="支持向量"><a href="#支持向量" class="headerlink" title="支持向量"></a>支持向量</h2><p>对损失函数进行梯度下降的计算：</p>
+<p>$$<br>\frac{\partial L}{\partial w} = \frac{\partial L}{\partial f}\frac{\partial f}{\partial w}= \frac{\partial L}{\partial f}x<br>$$</p>
+<p>$$<br>w \gets w - \eta \sum \frac{\partial L}{\partial f}x<br>$$</p>
+<p>分析梯度下降的式子，因为使用的是Hinge Loss，梯度很多是0，所以不是所有的x都对参数更新有贡献。剩下的对参数有贡献的x，就是<strong>支持向量</strong>。</p>
+<blockquote>
+<p>几何上，支持向量就是决定了间隔的样本点</p>
+</blockquote>
+<h2 id="核方法"><a href="#核方法" class="headerlink" title="核方法"></a>核方法</h2><p>再看梯度下降的式子，可以发现最终的w实际上是x的线性函数，可以表示为$w=\sum \alpha_n x^n = X\bold \alpha$。于是模型可以表示为</p>
+<p>$$<br>f(x)=\bold\alpha^T X^Tx=\sum \alpha_n(x^n\cdot x)=\sum \alpha K(x^n,x)<br>$$</p>
+<p>$K(x^n,x)$就是核函数。于是问题转化为求$\alpha$使得loss最小。而核函数的存在则让我们在求解$\alpha$的时候不需要再去关注x，只需要关注K的结果就足以，即所谓的<strong>核技巧</strong>。</p>
+<p>核技巧是一种泛化能力很强的转换特征的方法（另一种常见的特征转换方法是神经网络）。</p>
+<blockquote>
+<p>几何上，当样本点线性不可分时，使用核函数K将x映射到高维空间，变得线性可分，找到超平面$\alpha$。这种方法比我们自己设计特征映射要容易得多。</p>
+</blockquote>
+<p>常用的核函数有很多种（线性、多项式、高斯、拉普拉斯、sigmoid等），也可以自己定义，只要满足Mercer准则（半正定）就可以，这里不再赘述。</p>
+<h2 id="多分类"><a href="#多分类" class="headerlink" title="多分类"></a>多分类</h2><p>SVM进行多分类有两种方法：</p>
+<ul>
+<li>1对多。分类器判断是否属于该类，因此需要训练分类数量个SVM。如果属于多个类，取分类器最大结果对应的分类。</li>
+<li>1对1。任意两个样本之间训练1个分类器，属于哪类就往哪类投一票，取累积最多票的类。因此需要训练n(n-1)/2个SVM。</li>
+</ul>
+<p>SVM适合小样本，因为求解支持向量的过程对时间和空间要求较高。<br>SVM受噪音影响较大，因为支持向量数量本来就少。</p>
+<p>吴恩达选取核函数的经验：</p>
+<ul>
+<li>样本特征比较多时，可能线性可分，因此选线性核甚至逻辑回归</li>
+<li>数量多、特征少时，考虑是否可以增加特征再用线性核</li>
+<li>数量少、特征少时，考虑使用高斯核</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

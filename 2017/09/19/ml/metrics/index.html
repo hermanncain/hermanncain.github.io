@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >机器学习模型的评估</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-回归"><a href="#1-回归" class="headerlink" title="1 回归"></a>1 回归</h2><p>评价回归模型，均方误差MSE最常用了：$1/m\sum^m_{i=1}(f(x_i)-y_i)^2$，衡量了回归结果和实际结果之间的整体误差。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># sklearn</span>
+metrics<span class="token punctuation">.</span>mean_squared_error<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># tensorflow</span>
+tf<span class="token punctuation">.</span>metrics<span class="token punctuation">.</span>mean_squared_error<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 或手动算</span>
+tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-分类问题"><a href="#2-分类问题" class="headerlink" title="2 分类问题"></a>2 分类问题</h2><h3 id="2-1-混淆矩阵"><a href="#2-1-混淆矩阵" class="headerlink" title="2.1 混淆矩阵"></a>2.1 混淆矩阵</h3><p>对于分类问题，可以通过混淆矩阵计算详细的评估指标</p>
+<table>
+<thead>
+<tr>
+<th>实际</th>
+<th>预测</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td>正例</td>
+<td>负例</td>
+</tr>
+<tr>
+<td>正例</td>
+<td>真正例TP</td>
+<td>假反例FN</td>
+</tr>
+<tr>
+<td>负例</td>
+<td>假正例FP</td>
+<td>真反例TN</td>
+</tr>
+</tbody>
+</table>
+<p>注意上述是二分类时的情况。多分类时，混淆矩阵是一个<code>类别数x类别数</code>的矩阵，列是预测标签，行是实际标签。该混淆矩阵的元素a_ij含义是将本是j类的样本分到了i类里的数量，当i=j时，即对角线上的元素对应的数量才是正确的预测。</p>
+<p>sklearn中计算混淆矩阵的API为</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> confusion_matrix
+
+<span class="token comment" spellcheck="true"># y_pred是预测标签，下同</span>
+confusion_matrix<span class="token punctuation">(</span>y_true<span class="token operator">=</span>y_true<span class="token punctuation">,</span> y_pred<span class="token operator">=</span>y_pred<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>tensorflow中混淆矩阵的API为</p>
+<pre class="line-numbers language-python"><code class="language-python">tf<span class="token punctuation">.</span>confusion_matrix<span class="token punctuation">(</span>
+    labels<span class="token punctuation">,</span>
+    predictions<span class="token punctuation">,</span>
+    num_classes<span class="token operator">=</span>None<span class="token punctuation">,</span>   <span class="token comment" spellcheck="true"># 不指定类别数量就取数据或预测标签中最大值+1</span>
+    dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>int32<span class="token punctuation">,</span>
+    name<span class="token operator">=</span>None<span class="token punctuation">,</span>
+    weights<span class="token operator">=</span>None
+<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>有了混淆矩阵，就可以进一步计算详细的评估指标。在实际中，一般不需要特地计算混淆矩阵。</p>
+<h3 id="2-2-精度accuracy"><a href="#2-2-精度accuracy" class="headerlink" title="2.2 精度accuracy"></a>2.2 精度accuracy</h3><p>精度accuracy是分类正确的数量占样本总数的比例。这个指标其实不需要混淆矩阵就可以计算，用混淆矩阵计算的话，精度就是对角线值的和/总数。对二分类即<code>(TP+TN)/(TP+FP+FN+TN)</code>。</p>
+<p>精度的问题是对分布不均衡的数据，大类别会主导计算。平均精度是对每个类单独计算精度，然后取平均，以解决大类别主导精度计算的问题。然而因为小类别数据量少，相应的精度的方差会很大。</p>
+<p>sklearn中的API为：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> accuracy_score
+
+accuracy_score<span class="token punctuation">(</span>y_true<span class="token operator">=</span>y_true<span class="token punctuation">,</span> y_pred<span class="token operator">=</span>y_pred<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 平均精度</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> average_precision_score
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用tensorflow的API计算精度需要稍微费一点功夫。因为损失计算的原因，softmax会在计算损失的时候和交叉熵一起算，所以一般多分类NN最后一层输出是类别数量长度的序列，其中的最大值对应的index就是所属的分类。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># tf.argmax  取最大值的index，即计算分类结果</span>
+<span class="token comment" spellcheck="true"># tf.equal  对比预测分类是否和真实分类相同，得到一串布尔值</span>
+correct_prediction <span class="token operator">=</span> tf<span class="token punctuation">.</span>equal<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>y_conv<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>y<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># tf.cast  将布尔值转化为浮点数</span>
+<span class="token comment" spellcheck="true"># tf.reduce_mean  计算平均值</span>
+<span class="token comment" spellcheck="true"># 该平均值就是正确分类所占的百分比，即精度</span>
+accuracy <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>correct_prediction<span class="token punctuation">,</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 除了像上边那样自己写acc，也可以在得到最终预测结果predictions之后直接调用tf.metrics计算，labels是真实结果（下同）</span>
+tf<span class="token punctuation">.</span>metrics<span class="token punctuation">.</span>accuracy<span class="token punctuation">(</span>labels<span class="token punctuation">,</span> predictions<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2-3-查准率precision"><a href="#2-3-查准率precision" class="headerlink" title="2.3 查准率precision"></a>2.3 查准率precision</h3><p>查准率precision：P=TP/(TP+FP)，预测出来的正例中有多少是真正的正例，又叫查准率</p>
+<blockquote>
+<p>precision的翻译太多样了，如准确率、精准率等等，甚至和accuracy重复而无法区分。因此这里使用“查准率”这个翻译</p>
+</blockquote>
+<h3 id="2-4-查全率recall"><a href="#2-4-查全率recall" class="headerlink" title="2.4 查全率recall"></a>2.4 查全率recall</h3><p>查全率recall：R=TP/(TP+FN)，真正的正例有多少被分到了正例里，又叫召回率</p>
+<h3 id="2-5-F分数f-score"><a href="#2-5-F分数f-score" class="headerlink" title="2.5 F分数f-score"></a>2.5 F分数f-score</h3><p>结合了查准率和查全率的指标，F1-score为二者的调和平均数：2*precision*recall/(precision+recall)</p>
+<p>为了更明确评估过程中更看重查准率还是查全率，F-分数更通用的形式为加权调和平均$F_\beta$，其中$\beta$为查全率与查准率的权重比</p>
+<p>$$<br>F_\beta=(1+\beta^2)\frac{precision\times recall}{\beta^2 precision+recall}<br>$$</p>
+<h3 id="2-6-接受者工作特征ROC"><a href="#2-6-接受者工作特征ROC" class="headerlink" title="2.6 接受者工作特征ROC"></a>2.6 接受者工作特征ROC</h3><ul>
+<li>真正例比率TPR:TP/(TP+FN)，和查全率的计算方法相同</li>
+<li>假正例比率FPR:FP/(FP+TN)</li>
+</ul>
+<p>ROC曲线描绘了TPR-FPR的变化关系。但混淆矩阵得到之后，只能得到一组TPR-FPR。如何得到多组呢？</p>
+<p>在分类时，输出是属于某类的概率（或评分）。一般我们定0.5作为阈值，超过就认为属于该类，否则不属于该类。这个0.5的阈值就叫做截断点。截断点发生变动时，TPR-FPR就可以形成一条曲线了。</p>
+<p>考查TPR-FPR平面，可以找到四个特殊点和一条特殊线：</p>
+<ul>
+<li>(0,0): TP=FP=0，所有数据都预测为负例</li>
+<li>(0,1): FP=0, FN=0，全对，完美分类</li>
+<li>(1,0): TN=0, TP=0，全错，最差分类</li>
+<li>(1,1): TN=0,FN=0，所有数据都预测为正例</li>
+<li>TPR=FPR: 过原点斜率为1的直线，预测正误一半半，相当于随机猜测</li>
+</ul>
+<p>左上角的(0,1)处是完美分类器，所以ROC曲线越接近左上角说明模型性能越好。ROC曲线的好处是通过TPR和FPR减小了样本分布变化对评估指标结果造成的影响。</p>
+<p>曲线下方的面积就是AUC，可以根据AUC的值来判断ROC是否更接近左上角。</p>
+<p>上述的precision, recall, f-score, ROC都是基于二分类而言的。对于多分类的情况，混淆矩阵更加复杂，有两种策略求得全局的上述指标：</p>
+<ul>
+<li>宏平均macro-average。先单独计算每个分类上的各指标，然后取平均</li>
+<li>微平均micro-average。先将各混淆矩阵取平均得到一个混淆矩阵，再根据这个混淆矩阵算指标</li>
+</ul>
+<p>如果各类样本数量差不多，两种策略的结果差异不大。如果各类样本差异很大，结果就有较大差异。这时根据需求选择使用哪一个：</p>
+<ul>
+<li>更关注样本数量多的类：宏平均</li>
+<li>更关注样本数量少的类：微平均</li>
+</ul>
+<p>查准率、查全率、F分数和ROC都是基于混淆矩阵的评估指标，这里放在一起实现。sklearn中的API：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> sklearn <span class="token keyword">import</span> metrics
+
+<span class="token comment" spellcheck="true"># precision</span>
+metrics<span class="token punctuation">.</span>precision_score<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># recall</span>
+metrics<span class="token punctuation">.</span>recall_score<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># f1-score</span>
+metrics<span class="token punctuation">.</span>f1_score<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># ROC曲线</span>
+<span class="token comment" spellcheck="true"># scores为属于各分类的概率或评分</span>
+<span class="token comment" spellcheck="true"># i为认为是正例的分类编号（单独求第i类的FPR,TPR和截断点。如果多分类要求全部需要手动指定一遍）</span>
+fpr<span class="token punctuation">,</span> tpr<span class="token punctuation">,</span> thresholds <span class="token operator">=</span> metrics<span class="token punctuation">.</span>roc_curve<span class="token punctuation">(</span>y<span class="token punctuation">,</span> scores<span class="token punctuation">,</span> pos_label<span class="token operator">=</span>i<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># AUC</span>
+metric<span class="token punctuation">.</span>auc<span class="token punctuation">(</span>fpr<span class="token punctuation">,</span>tpr<span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># 或直接从scores计算</span>
+metrics<span class="token punctuation">.</span>roc_auc_score<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> scores<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># precision_score, recall_score, f1_score和roc_auc_score都还可以传入参数average，设置多分类下求平均的方式，除了宏平均macro和微平均micro外，加权weighted和采样samples两种方法</span>
+
+<span class="token comment" spellcheck="true"># 分类报告</span>
+<span class="token comment" spellcheck="true"># 返回每个分类的precision、recall、f1-score、数量和平均值</span>
+<span class="token comment" spellcheck="true"># names是分类名称的列表，显示用</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>metrics <span class="token keyword">import</span> classification_report
+
+classification_report<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">,</span> target_names<span class="token operator">=</span>names<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在tensorflow中的API实现：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># precision</span>
+tf<span class="token punctuation">.</span>metrics<span class="token punctuation">.</span>precision<span class="token punctuation">(</span>labels<span class="token punctuation">,</span> predictions<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># recall</span>
+tf<span class="token punctuation">.</span>metrics<span class="token punctuation">.</span>recall<span class="token punctuation">(</span>labels<span class="token punctuation">,</span> predictions<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># f1-score</span>
+<span class="token comment" spellcheck="true"># tf.metric里没有提供f-score的API，需要自己根据P,R手写，或者调用tf.contrib.metric里的API</span>
+<span class="token comment" spellcheck="true"># contrib里的参数顺序是反过来的</span>
+tf<span class="token punctuation">.</span>contrib<span class="token punctuation">.</span>metrics<span class="token punctuation">.</span>f1_score<span class="token punctuation">(</span>predictions<span class="token punctuation">,</span> labels<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># ROC and AUC</span>
+<span class="token comment" spellcheck="true"># 没有ROC的API，需要自己根据tf.metrics.true_positives等先计算出TPR, FPR算</span>
+tf<span class="token punctuation">.</span>metrics<span class="token punctuation">.</span>auc<span class="token punctuation">(</span>labels<span class="token punctuation">,</span> predictions<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-交叉验证CV"><a href="#3-交叉验证CV" class="headerlink" title="3 交叉验证CV"></a>3 交叉验证CV</h2><p>我们知道，一般机器学习的数据会分成3部分，就是所谓的<strong>留出法</strong>：</p>
+<ul>
+<li>训练集，用来训练模型</li>
+<li>验证集，用来测试训练集训练的结果，作为模型改进的参考</li>
+<li>测试集，用来测试最终优化过模型的泛化能力</li>
+</ul>
+<p>三份数据的比例对于小数据来说一般是8:1:1，对于大数据是98:1:1。但对于缺乏数据的情况，就需要采取K折交叉验证的方法对数据进行划分，将训练集和验证集轮着交叉训练和验证模型：</p>
+<ol>
+<li>将数据拿出一小部分作为测试集，剩下的数据分成K份</li>
+<li>其中K-1份用作测试集，剩下的1份用作验证集。训练模型</li>
+<li>重复第2步K次，每次都用不同的1份数据作为验证集</li>
+<li>计算K次评估指标均值，得到模型的评估</li>
+</ol>
+<p>当K和数据总数相等时，叫做<strong>留一法</strong>，相当于验证集只有一个样本。训练集就更接近数据原始分布，但计算量翻K倍增加的更多了，缺乏数据时才用。</p>
+<p>tensorflow中没有交叉验证的API，一般DL也不需要CV。sklearn中实现交叉验证的API有<code>sklearn.model_selection.KFold(n_splits=k)</code>方法划分数据，但是一般用实现了划分+训练+评价一条龙的另外一个API：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 仅数据划分，一般不太用，而是直接用下边一条龙的方法</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> KFold
+
+kf <span class="token operator">=</span> KFold<span class="token punctuation">(</span>n_splits<span class="token operator">=</span>k<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 划分、训练、评价一条龙</span>
+<span class="token comment" spellcheck="true"># clf是模型</span>
+<span class="token comment" spellcheck="true"># scoring是指定的模型评估指标</span>
+<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>model_selection <span class="token keyword">import</span> cross_val_score<span class="token punctuation">,</span>cross_validate
+
+scores <span class="token operator">=</span> cross_val_score<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> data<span class="token punctuation">,</span> labels<span class="token punctuation">,</span> cv<span class="token operator">=</span>k<span class="token punctuation">,</span> scoring<span class="token operator">=</span><span class="token string">'f1_macro'</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># cross_validate可以指定多个评估指标</span>
+scores <span class="token operator">=</span> cross_val_score<span class="token punctuation">(</span>clf<span class="token punctuation">,</span> data<span class="token punctuation">,</span> labels<span class="token punctuation">,</span> cv<span class="token operator">=</span>k<span class="token punctuation">,</span> scoring<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'precision_macro'</span><span class="token punctuation">,</span><span class="token string">'recall_macro'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>

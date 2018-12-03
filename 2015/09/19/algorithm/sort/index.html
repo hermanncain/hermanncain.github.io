@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<link rel="bookmark"  type="image/x-icon"  href="/img/v.png"/>
+	<link rel="shortcut icon" href="/img/v.png">
+	
+			    <title>
+    Hermann Cain
+    </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/css/mic_main.css" />
+    <link rel="stylesheet" href="/css/dropdownMenu.css" />
+    <meta name="keywords" content="hermann" />
+    
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css" />
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/bg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+<link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_okaidia.css" />
+<link rel="stylesheet" href="/css/typo.css" />
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">HermannCain</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special" >
+            <ul class="menu links" >
+			<!-- Homepage  主页  --> 
+			<li >
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        <a class="category-link" href="/categories/CAD/">CAD</a></li><li><a class="category-link" href="/categories/CV/">CV</a></li><li><a class="category-link" href="/categories/NLP/">NLP</a></li><li><a class="category-link" href="/categories/产业/">产业</a></li><li><a class="category-link" href="/categories/机器学习/">机器学习</a></li><li><a class="category-link" href="/categories/深度学习/">深度学习</a></li><li><a class="category-link" href="/categories/游戏开发/">游戏开发</a></li><li><a class="category-link" href="/categories/算法/">算法</a></li><li><a class="category-link" href="/categories/读文/">读文</a>
+	                    </ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/projects/" title="项目">
+		                项目
+		            </a>
+		        </li>
+		        
+		        <li>
+		            <a href="/tag/" title="标签">
+		                标签
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+		            
+		                <li><a href="https://github.com/hermanncain" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		            
+		            
+		            
+		            
+			</ul>
+</nav>
+
+        <div id="main" >
+            <div class ="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;" >
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2 >8种经典排序算法解析及python实现</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1 冒泡排序"></a>1 冒泡排序</h2><ol>
+<li>比较一对相邻元素，如果两个元素顺序不对，交换</li>
+<li>重复上述步骤直到数组末尾，则此时最大的元素已经在数组末尾</li>
+<li>对数组前N-1个元素重复执行上述操作</li>
+</ol>
+<p>显然，算法有2层循环嵌套，比较交换一共执行了<code>(N-1)+(N-2)+...+1=N(N-1)/2</code>次，因此时间复杂度为O(n^2)</p>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">bubbleSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># step 4</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># step 3</span>
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># step 1,2</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>nums<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> nums
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2-选择排序"><a href="#2-选择排序" class="headerlink" title="2 选择排序"></a>2 选择排序</h2><p>定义一个初始位置L=0</p>
+<ol>
+<li>在[L,N-1]范围找到最小的数X</li>
+<li>将第L个元素和X交换</li>
+<li>增加L，并重复上述步骤直到L=N-2</li>
+</ol>
+<p>时间复杂度查找最小为O(N)，遍历为O(N)，所以嵌套之后为O(n^2)。不稳定</p>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">selectSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># step 3</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># step 1,2</span>
+        idx <span class="token operator">=</span> i
+        <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token operator">></span>nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                idx <span class="token operator">=</span> j
+        nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>idx<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>idx<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> nums
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="3-插入排序"><a href="#3-插入排序" class="headerlink" title="3 插入排序"></a>3 插入排序</h2><p>就像打扑克牌时一样：</p>
+<ol>
+<li>指定要插入序列的数</li>
+<li>将该数和已经排好的序列中对数比较，插入正确的位置</li>
+<li>重复上述步骤</li>
+</ol>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">insertionSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 元素比前一个小，插入到前边的序列中</span>
+        <span class="token keyword">if</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            x <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+            j <span class="token operator">=</span> i<span class="token number">-1</span>
+            <span class="token comment" spellcheck="true"># 将前边已经排列好的序列中比该元素大的右移，腾出插入的位置</span>
+            <span class="token keyword">while</span> j<span class="token operator">>=</span><span class="token number">0</span> <span class="token operator">and</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>x<span class="token punctuation">:</span>
+                nums<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+                j <span class="token operator">-=</span> <span class="token number">1</span>
+            <span class="token comment" spellcheck="true"># 插入</span>
+            nums<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> x
+    <span class="token keyword">return</span> nums
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-归并排序"><a href="#4-归并排序" class="headerlink" title="4 归并排序"></a>4 归并排序</h2><ol>
+<li>分治：将数组递归地二分得到每一个元素（复杂度O(logN)）</li>
+<li>归并：将2个元素合并排序成1个2元素的有序数组，进而将2个2元素的有序数组合并排序为1个4元素有序数组，以此类推，直到全部合并。</li>
+<li>具体的合并排序两个有序数组的方法：取两个数组的第1个元素，小的放到临时数组，然后再取第一个再比较、放入，直到1个数组空了，没空的数组剩下的元素直接拼接到临时数组后边即可。最后临时数组就是归并2个数组以后排序好的数组。（复杂度O(N)）</li>
+</ol>
+<p>时间复杂度O(NlogN)，比前面几种O(N^2)的快了不少，但是因为需要临时数组存放归并结果，所以空间复杂度增加了，变成了O(N)</p>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 合并排序2个有序数组</span>
+<span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> len<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> len<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>a<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            r<span class="token punctuation">.</span>append<span class="token punctuation">(</span>b<span class="token punctuation">.</span>pop<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    r <span class="token operator">+=</span> a
+    r <span class="token operator">+=</span> b
+    <span class="token keyword">return</span> r
+
+<span class="token keyword">def</span> <span class="token function">mergeSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 分治</span>
+    <span class="token keyword">if</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> nums
+    mid <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">//</span><span class="token number">2</span>
+    left <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token punctuation">:</span>mid<span class="token punctuation">]</span>
+    right <span class="token operator">=</span> nums<span class="token punctuation">[</span>mid<span class="token punctuation">:</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 递归</span>
+    r_left <span class="token operator">=</span> mergeSort<span class="token punctuation">(</span>left<span class="token punctuation">)</span>
+    r_right <span class="token operator">=</span> mergeSort<span class="token punctuation">(</span>right<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 合并排序</span>
+    <span class="token keyword">return</span> merge<span class="token punctuation">(</span>r_left<span class="token punctuation">,</span>r_right<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="5-快速排序"><a href="#5-快速排序" class="headerlink" title="5 快速排序"></a>5 快速排序</h2><p>快排也是分治策略。作为面试出镜率相当高的经典算法，理解它的思想是十分必要的</p>
+<p>指定一个数，将数组中比它小的放到它左边，比它大的放到它右边，再对左右重复执行上述步骤，完成排序。这是快排的基本思想</p>
+<p>实现：</p>
+<ol>
+<li>指定数组第一个元素为“基准”</li>
+<li>将数组从两头往中间遍历。先从右向左找到第一个比基准小的数，再从左向右找到第一个比基准大的数，如果2个数顺序不对，交换。继续遍历直到两边遍历到同一个元素，交换基准和该元素。这一步将大小和基准分开了</li>
+<li>对基准两侧的部分重复执行上述步骤</li>
+</ol>
+<p>考虑最好的情况，如果每次基准都能将数组二分，则logN次就可以递归完。遍历排序的时间复杂度为O(N)，于是总的时间复杂度为O(NlogN)</p>
+<p>考虑最坏的情况，即每次分完之后只能得到基准和一个数组，另一个数组是空的。那么需要做N次递归，于是总的时间复杂度为O(N^2)</p>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">quickSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>l<span class="token punctuation">,</span>r<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> l<span class="token operator">>=</span>r<span class="token punctuation">:</span>
+        <span class="token keyword">return</span>
+    start <span class="token operator">=</span> l
+    end <span class="token operator">=</span> r
+    key <span class="token operator">=</span> nums<span class="token punctuation">[</span>start<span class="token punctuation">]</span>
+    <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r<span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 从右向左找第一个比基准小的数</span>
+        <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r <span class="token operator">and</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token operator">></span>key<span class="token punctuation">:</span>
+            r <span class="token operator">-=</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># 从左向右找第一个比基准大的数</span>
+        <span class="token keyword">while</span> l<span class="token operator">&lt;</span>r <span class="token operator">and</span> nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">&lt;=</span>key<span class="token punctuation">:</span>
+            l <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token comment" spellcheck="true"># 交换</span>
+        nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>l<span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 交换基准和遍历结束所在的元素</span>
+    nums<span class="token punctuation">[</span>start<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>start<span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 递归</span>
+    quickSort<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>start<span class="token punctuation">,</span>l<span class="token number">-1</span><span class="token punctuation">)</span>
+    quickSort<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>随机快排通过随机选取基准来减少最坏情况发生的可能，平均时间复杂度达到O(NlogN)</p>
+<h2 id="6-计数排序"><a href="#6-计数排序" class="headerlink" title="6 计数排序"></a>6 计数排序</h2><p>以上都是基于比较的排序方式，时间复杂度的下限是O(NlogN)。计数排序不是基于比较的。</p>
+<p>计数排序的思想很简单。假设输入的数组元素最大值为k，那么只需要统计0～k各数字出现的次数，出现一次就放到临时数组对应的位置，全部放完后再按顺序取出排好即可。</p>
+<ol>
+<li>遍历数组，对每个出现的数字计数，放入计数数组c</li>
+<li>将计数数组c的元素累加，从而计数转化为序号</li>
+<li>将原数组的元素i放到结果数组的c[i]位置</li>
+</ol>
+<p>3次遍历，时间复杂度分别为O(N),O(k),O(N)。所以总的时间复杂度为O(2N+k)。序列比较集中时，可以看作线性复杂度O(N)，速度还是很快的。不过可以想象，临时数组很占空间(O(k)) ，总的空间复杂度为O(N+k)。如果虽然数组不大但数值跨度特别大，空间就是个问题</p>
+<p>pytyon实现：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">countingSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    N <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 计数数组</span>
+    temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>k<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 结果数组</span>
+    r <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>N<span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 计数</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+        temp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token comment" spellcheck="true"># 将计数转化为序号</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        temp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+=</span> temp<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true"># 放入结果</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+        r<span class="token punctuation">[</span>temp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> i
+        temp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-=</span> <span class="token number">1</span>
+    <span class="token keyword">return</span> r
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="7-基数排序"><a href="#7-基数排序" class="headerlink" title="7 基数排序"></a>7 基数排序</h2><p>基数排序的思路也很简单，将多位数的各位分开计数排序，实际上就是考察关键字</p>
+<ol>
+<li>建立0-9一共10个桶存放数字</li>
+<li>只考察数字的某位，将每个数字放入对应的桶</li>
+<li>从个位开始考察到最高位，每次执行1-2步骤，完成排序</li>
+</ol>
+<p>桶的放入和取出时间复杂度都是O(N)，根据位数d要重复d次，所以总的时间复杂度是O(2N*d)，一般来说位数比序列数量小得多，所以时间复杂度可以认为也是线性O(N)。空间复杂度为O(N+d)</p>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">radixSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">,</span> d<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># d为位数</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># 0-9的桶存放数字</span>
+        s <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 按位放入桶</span>
+        <span class="token keyword">for</span> k <span class="token keyword">in</span> nums<span class="token punctuation">:</span>
+            s<span class="token punctuation">[</span>k<span class="token operator">/</span><span class="token number">10</span><span class="token operator">**</span>i<span class="token operator">%</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">.</span>append<span class="token punctuation">(</span>k<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 从桶中取出放入结果</span>
+        r <span class="token operator">=</span> <span class="token punctuation">[</span>a <span class="token keyword">for</span> b <span class="token keyword">in</span> s <span class="token keyword">for</span> a <span class="token keyword">in</span> b<span class="token punctuation">]</span>
+    <span class="token keyword">return</span> r
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="8-堆排序"><a href="#8-堆排序" class="headerlink" title="8 堆排序"></a>8 堆排序</h2><p>堆排序作为一种复杂的排序方法在面试出现的频率也很高，是一种利用堆这种数据结构来排序的方法，也是一种选择排序，是不稳定的，时间复杂度O(NlogN)</p>
+<p>堆是一种完全二叉树结构，<strong>最大堆</strong>每个节点值都大于子节点的值，<strong>最小堆</strong>每个节点值都小于子节点的值。升序排列时用最大堆，降序用最小堆</p>
+<p>堆排序的思想是将序列构造成最大堆，则根节点就是最大值。将根节点的元素与数组末尾元素交换，于是将数组中最大的元素放到了数组末尾。剩下的N-1个节点再构造最大堆，重复上述步骤……最终完成排序</p>
+<p>最大堆的构建就是堆排序的关键。堆是二叉树，所以数组形式的最大堆表达式为<strong>a[i]&gt;=a[2i+1] &amp;&amp; a[i]&gt;=a[2i+2]</strong>；最小堆表达式为<strong>a[i]&lt;=a[2i+1] &amp;&amp; a[i]&lt;=a[2i+2]</strong>。所以只要让数组满足上述条件，即可完成最大/小堆的构造。一旦了解了堆排序的思想，实现就不难了，步骤如下：</p>
+<ol>
+<li>从最后一个非叶节点开始往前遍历所有非叶节点，进行调整操作（步骤2）</li>
+<li>考察一个节点和它的两个子节点，将大的和它交换。需要注意的是交换可能打破子树中节点-子节点的大小关系，因此发生了交换就要调整子树，以被换到子节点的节点为考察节点，递归执行此步</li>
+<li>经过上述2步后最大堆已经构建完毕，根结点就是最大值，将它和堆尾元素交换。然后以其他节点为考察对象继续构建最大堆……在这过程中最大，次大……元素不断被找出，完成排序</li>
+</ol>
+<p>python代码：</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 调整使大于子节点</span>
+<span class="token keyword">def</span> <span class="token function">maxHeapify</span><span class="token punctuation">(</span>heap<span class="token punctuation">,</span> size<span class="token punctuation">,</span> curr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    left <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> curr <span class="token operator">+</span> <span class="token number">1</span>
+    right <span class="token operator">=</span> left <span class="token operator">+</span> <span class="token number">1</span>
+    larger <span class="token operator">=</span> curr
+    <span class="token comment" spellcheck="true"># 找节点和子节点的最大值</span>
+    <span class="token keyword">if</span> left<span class="token operator">&lt;</span>size <span class="token operator">and</span> heap<span class="token punctuation">[</span>left<span class="token punctuation">]</span><span class="token operator">></span>heap<span class="token punctuation">[</span>larger<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        larger <span class="token operator">=</span> left
+    <span class="token keyword">if</span> right<span class="token operator">&lt;</span>size <span class="token operator">and</span> heap<span class="token punctuation">[</span>right<span class="token punctuation">]</span><span class="token operator">></span>heap<span class="token punctuation">[</span>larger<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        larger <span class="token operator">=</span> right
+    <span class="token comment" spellcheck="true"># 如果子节点比节点大，交换</span>
+    <span class="token keyword">if</span> larger <span class="token operator">!=</span> curr<span class="token punctuation">:</span>
+        heap<span class="token punctuation">[</span>larger<span class="token punctuation">]</span><span class="token punctuation">,</span>heap<span class="token punctuation">[</span>curr<span class="token punctuation">]</span> <span class="token operator">=</span> heap<span class="token punctuation">[</span>curr<span class="token punctuation">]</span><span class="token punctuation">,</span>heap<span class="token punctuation">[</span>larger<span class="token punctuation">]</span>
+        <span class="token comment" spellcheck="true"># 交换之后heap[curr]成了heap[larger]子节点</span>
+        <span class="token comment" spellcheck="true"># 但这可能会影响heap[curr]和其子节点的大小关系</span>
+        <span class="token comment" spellcheck="true"># 因此需要再以heap[curr]的索引larger为传入参数再调整</span>
+        maxHeapify<span class="token punctuation">(</span>heap<span class="token punctuation">,</span> size<span class="token punctuation">,</span> larger<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">heapSort</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    N <span class="token operator">=</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 从最后一个非叶节点往前遍历调整，构建最大堆</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>N<span class="token operator">//</span><span class="token number">2</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        maxHeapify<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>N<span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># 将最大元素放到堆尾，将前边元素调整为最大堆</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>N<span class="token number">-1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+        maxHeapify<span class="token punctuation">(</span>nums<span class="token punctuation">,</span>i<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>算法</th>
+<th>平均时间复杂度</th>
+<th>最坏</th>
+<th>最好</th>
+<th>空间复杂度</th>
+<th>稳定性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>冒泡</td>
+<td>O(N^2)</td>
+<td>O(N^2)</td>
+<td>O(N)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>选择</td>
+<td>O(N^2)</td>
+<td>O(N^2)</td>
+<td>O(N^2)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>插入</td>
+<td>O(N^2)</td>
+<td>O(N^2)</td>
+<td>O(N)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>归并</td>
+<td>O(NlogN)</td>
+<td>O(NlogN)</td>
+<td>O(NlogN)</td>
+<td>O(N)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>快排</td>
+<td>O(NlogN)</td>
+<td>O(N^2)</td>
+<td>O(NlogN)</td>
+<td>O(NlogN)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>计数</td>
+<td>O(N+k)</td>
+<td>O(N+k)</td>
+<td>O(N+k)</td>
+<td>O(N+k)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>基数</td>
+<td>O(N*k)</td>
+<td>O(N*k)</td>
+<td>O(N*k)</td>
+<td>O(N+k)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>堆排</td>
+<td>O(NlogN)</td>
+<td>O(NlogN)</td>
+<td>O(NlogN)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+</tbody>
+</table>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+				<span id="busuanzi_container_site_pv"> 2018 </span> 
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
